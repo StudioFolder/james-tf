@@ -41,26 +41,34 @@ for (let i = 1; i < parts.length; i += 2) {
 const baseDelay = 0.3;  // name delay
 const step = 0.2;       // gap between each element
 
+// Separate footer section from nav sections
+const footerSection = sections.find(s => s.slug === 'footer');
+const navSections = sections.filter(s => s.slug !== 'footer');
+
 // Build nav — each item gets its own delay
-const nav = sections.map((s, i) => {
+const nav = navSections.map((s, i) => {
   const delay = baseDelay + step * (i + 1);
   return `<button class="nav-item" data-section="${s.slug}" style="animation-delay: ${delay}s">${s.title}</button>`;
 }).join('\n');
 
 // Footer gets a delay after the last nav item
-const footerDelay = baseDelay + step * (sections.length + 1);
+const footerDelay = baseDelay + step * (navSections.length + 1);
 
 // Build content panels
-const content = sections.map((s, i) => {
+const content = navSections.map((s, i) => {
   const top = `${i * LINE_HEIGHT}em`;
   return `<div class="section-panel" id="${s.slug}" style="top: ${top}">${s.content}</div>`;
 }).join('\n');
+
+// Footer content
+const footerContent = footerSection ? footerSection.content : '';
 
 // Inject into template
 let output = template
   .replace('{{NAV}}', nav)
   .replace('{{CONTENT}}', content)
-  .replace('{{FOOTER_DELAY}}', `${footerDelay}s`);
+  .replace('{{FOOTER_DELAY}}', `${footerDelay}s`)
+  .replace('{{FOOTER}}', footerContent);
 
 fs.writeFileSync('index.html', output);
 console.log('✓ Built index.html from content.md');

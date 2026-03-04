@@ -15,3 +15,7 @@
 2025 | This Hong Kong Art Show Aims to Put You to Sleep by Christy Choi, The New York Times (22/03, Section S, Page 7)  
 2025 | Hong Kong ASMR show triggers ‘weird sensation’ of internet trend by Ashlyn Chak, South China Morning Post  
 2024 | James Taylor-Foster × ĒTER on their One Night Only Installation: MEATRACK by Anna Barr, Fucking Young!
+
+# footer
+
+Content on this website created by James Taylor-Foster is licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).

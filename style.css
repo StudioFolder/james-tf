@@ -82,7 +82,7 @@ h1 {
 /* ── Navigation ── */
 
 .sections {
-  display:none;
+  /* display:none; */
   position: fixed;
   top: 33vh;
   left: var(--left);
@@ -220,6 +220,6 @@ h1 {
     bottom: 1.25rem;
     left: 1.75rem;
     max-width: calc(100vw - 3.5rem);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
   }
 }
