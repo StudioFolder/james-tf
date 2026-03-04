@@ -37,7 +37,7 @@ for (let i = 1; i < parts.length; i += 2) {
 
 // Cascade timing
 // name is delay 0 (set in CSS at 0.3s)
-// each nav item steps by 0.3s after that
+// each nav item steps by 0.2s after that
 const baseDelay = 0.3;  // name delay
 const step = 0.2;       // gap between each element
 

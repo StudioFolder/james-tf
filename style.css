@@ -150,6 +150,17 @@ h1 {
   display: block;
 }
 
+.section-panel .entry,
+.section-panel .entry-full {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.section-panel .entry.visible,
+.section-panel .entry-full.visible {
+  opacity: 1;
+}
+
 /* ── Footer ── */
 
 .footer {
