@@ -240,4 +240,8 @@ h1 {
     max-width: calc(100vw - 3.5rem);
     font-size: 0.75rem;
   }
+
+  .footer a::after {
+    height: 0.5px;
+  }
 }
