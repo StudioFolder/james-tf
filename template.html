@@ -12,20 +12,22 @@
 </head>
 <body>
   <div class="layout">
+    <span class="face">
+      <span class="eye left-eye">◕</span>
+      <span class="mouth">‿</span>
+      <span class="eye right-eye">◕</span>
+    </span>
     <aside class="col-left">
-      <span class="face">
-        <span class="eye left-eye">◕</span>
-        <span class="mouth">‿</span>
-        <span class="eye right-eye">◕</span>
-      </span>
       <h1 class="name">James Taylor-Foster</h1>
       <section class="bio">
         <div class="bio-panel" id="bio-short" data-words="{{BIO_SHORT_WORDS}}">{{BIO_SHORT}}</div>
         <div class="bio-panel" id="bio-medium" data-words="{{BIO_MEDIUM_WORDS}}">{{BIO_MEDIUM}}</div>
         <div class="bio-panel" id="bio-long" data-words="{{BIO_LONG_WORDS}}">{{BIO_LONG}}</div>
         <div class="bio-controls">
-          <button class="bio-btn" id="bio-minus">–</button>
-          <button class="bio-btn" id="bio-plus">+</button>
+          <span class="bio-buttons">
+            <button class="bio-btn" id="bio-minus">–</button>
+            <button class="bio-btn" id="bio-plus">+</button>
+          </span>
           <span class="bio-wordcount"></span>
         </div>
       </section>
@@ -80,6 +82,7 @@
           bioMinus.disabled = index === 0;
           bioPlus.disabled = index === bioPanels.length - 1;
           bioWordCount.textContent = bioPanels[index].dataset.words + ' words';
+          document.fonts.ready.then(() => positionNav());
         }
 
         // Initialise
@@ -98,6 +101,24 @@
             showBio(bioIndex);
           }
         });
+
+        // Push primary nav down to minimum 33vh
+        function positionNav() {
+          const primary = document.querySelector('.sections-primary');
+          primary.style.marginTop = '0px';
+          const primaryTop = primary.getBoundingClientRect().top;
+          const minTop = window.innerHeight * 0.33;
+          if (primaryTop < minTop) {
+            const diff = minTop - primaryTop;
+            primary.style.marginTop = diff + 'px';
+          }
+        }
+
+        document.fonts.ready.then(() => {
+          positionNav();
+        });
+
+        window.addEventListener('resize', positionNav);
 
         // Nav interactions
         const items = document.querySelectorAll('.nav-item');
