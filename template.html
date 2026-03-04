@@ -19,8 +19,21 @@
         <span class="eye right-eye">◕</span>
       </span>
       <h1 class="name">James Taylor-Foster</h1>
-      <nav class="sections">
-        {{NAV}}
+      <section class="bio">
+        <div class="bio-panel" id="bio-short" data-words="{{BIO_SHORT_WORDS}}">{{BIO_SHORT}}</div>
+        <div class="bio-panel" id="bio-medium" data-words="{{BIO_MEDIUM_WORDS}}">{{BIO_MEDIUM}}</div>
+        <div class="bio-panel" id="bio-long" data-words="{{BIO_LONG_WORDS}}">{{BIO_LONG}}</div>
+        <div class="bio-controls">
+          <button class="bio-btn" id="bio-minus">–</button>
+          <button class="bio-btn" id="bio-plus">+</button>
+          <span class="bio-wordcount"></span>
+        </div>
+      </section>
+      <nav class="sections sections-primary">
+        {{NAV_PRIMARY}}
+      </nav>
+      <nav class="sections sections-secondary">
+        {{NAV_SECONDARY}}
       </nav>
       <footer class="footer" style="animation-delay: {{FOOTER_DELAY}}">
         {{FOOTER}}
@@ -32,34 +45,82 @@
   </div>
 
   <script>
-      // Blinking eyes
-      function blink() {
-        const eyes = document.querySelectorAll('.eye');
-        eyes.forEach(e => e.classList.add('blinking'));
-        setTimeout(() => {
-          eyes.forEach(e => e.classList.remove('blinking'));
-        }, 120);
-        const next = 2000 + Math.random() * 4000;
-        setTimeout(blink, next);
-      }
-      setTimeout(blink, 1000 + Math.random() * 2000);
-
-      // Dark mode toggle
-      document.querySelector('.face').addEventListener('click', () => {
-        document.body.classList.toggle('dark');
-      });
 
       document.addEventListener('DOMContentLoaded', () => {
+
+        // Blinking eyes
+        function blink() {
+          const eyes = document.querySelectorAll('.eye');
+          eyes.forEach(e => e.classList.add('blinking'));
+          setTimeout(() => {
+            eyes.forEach(e => e.classList.remove('blinking'));
+          }, 120);
+          const next = 2000 + Math.random() * 4000;
+          setTimeout(blink, next);
+        }
+        setTimeout(blink, 1000 + Math.random() * 2000);
+
+        // Dark mode toggle
+        document.querySelector('.face').addEventListener('click', () => {
+          document.body.classList.toggle('dark');
+        });
+
+        // Bio version switcher
+        const bioPanels = document.querySelectorAll('.bio-panel');
+        const bioMinus = document.getElementById('bio-minus');
+        const bioPlus = document.getElementById('bio-plus');
+        let bioIndex = 0;
+
+        const bioWordCount = document.querySelector('.bio-wordcount');
+
+        function showBio(index) {
+          bioPanels.forEach((panel, i) => {
+            panel.classList.toggle('active', i === index);
+          });
+          bioMinus.disabled = index === 0;
+          bioPlus.disabled = index === bioPanels.length - 1;
+          bioWordCount.textContent = bioPanels[index].dataset.words + ' words';
+        }
+
+        // Initialise
+        showBio(bioIndex);
+
+        bioMinus.addEventListener('click', () => {
+          if (bioIndex > 0) {
+            bioIndex--;
+            showBio(bioIndex);
+          }
+        });
+
+        bioPlus.addEventListener('click', () => {
+          if (bioIndex < bioPanels.length - 1) {
+            bioIndex++;
+            showBio(bioIndex);
+          }
+        });
+
+        // Nav interactions
         const items = document.querySelectorAll('.nav-item');
         const panels = document.querySelectorAll('.section-panel');
+        let pinned = null;
+        let hideTimeout = null;
+
+        const ENTRY_IN_STEP = 0.06;   // seconds between each entry fading in
+        const ENTRY_OUT_STEP = 0.04;  // seconds between each entry fading out
+        const HIDE_DELAY = 2400;      // ms before content hides after mouseleave
 
         function showPanel(target) {
+          clearTimeout(hideTimeout);
           panels.forEach(p => {
             if (p.id === target) {
-              p.classList.add('visible');
               const entries = p.querySelectorAll('.entry, .entry-full');
+              entries.forEach(entry => {
+                entry.classList.remove('leaving');
+                entry.style.transitionDelay = '';
+              });
+              p.classList.add('visible');
               entries.forEach((entry, i) => {
-                entry.style.transitionDelay = `${i * 0.06}s`;
+                entry.style.transitionDelay = `${i * ENTRY_IN_STEP}s`;
                 entry.classList.add('visible');
               });
             } else {
@@ -67,38 +128,79 @@
               entries.forEach(entry => {
                 entry.style.transitionDelay = '0s';
                 entry.classList.remove('visible');
+                entry.classList.remove('leaving');
               });
               p.classList.remove('visible');
             }
           });
         }
 
+        function hideAll() {
+          panels.forEach(p => {
+            if (p.classList.contains('visible')) {
+              const entries = p.querySelectorAll('.entry, .entry-full');
+              const visibleEntries = Array.from(entries).filter(e => e.classList.contains('visible'));
+              visibleEntries.reverse().forEach((entry, i) => {
+                entry.style.transitionDelay = `${i * ENTRY_OUT_STEP}s`;
+                entry.classList.add('leaving');
+                entry.classList.remove('visible');
+              });
+              setTimeout(() => {
+                p.classList.remove('visible');
+                visibleEntries.forEach(entry => {
+                  entry.classList.remove('leaving');
+                  entry.style.transitionDelay = '';
+                });
+              }, visibleEntries.length * ENTRY_OUT_STEP * 1000 + 400);
+            }
+          });
+        }
+
         items.forEach(item => {
           item.addEventListener('mouseenter', () => {
-            showPanel(item.dataset.section);
+            if (!pinned) showPanel(item.dataset.section);
+          });
+
+          item.addEventListener('click', () => {
+            const target = item.dataset.section;
+            if (pinned === target) {
+              pinned = null;
+              item.classList.remove('pinned');
+              clearTimeout(hideTimeout);
+              hideAll();
+            } else {
+              if (pinned) items.forEach(i => i.classList.remove('pinned'));
+              pinned = target;
+              item.classList.add('pinned');
+              showPanel(target);
+            }
+          });
+        });
+
+        document.querySelectorAll('.sections-primary, .sections-secondary').forEach(nav => {
+          nav.addEventListener('mouseleave', () => {
+            if (!pinned) hideTimeout = setTimeout(hideAll, HIDE_DELAY);
+          });
+
+          document.querySelector('.col-right').addEventListener('mouseenter', () => {
+            clearTimeout(hideTimeout);
+          });
+
+          document.querySelector('.col-right').addEventListener('mouseleave', () => {
+            if (!pinned) hideTimeout = setTimeout(hideAll, HIDE_DELAY);
+          });
+
+          nav.addEventListener('mouseenter', () => {
+            clearTimeout(hideTimeout);
           });
         });
 
         document.querySelector('.layout').addEventListener('mouseleave', () => {
-          panels.forEach(p => {
-            const entries = p.querySelectorAll('.entry, .entry-full');
-            entries.forEach(entry => {
-              entry.style.transitionDelay = '0s';
-              entry.classList.remove('visible');
-            });
-            p.classList.remove('visible');
-          });
+          if (!pinned) hideTimeout = setTimeout(hideAll, HIDE_DELAY);
         });
-      });
 
-      document.querySelector('.layout').addEventListener('mouseleave', () => {
-        panels.forEach(p => {
-          const entries = p.querySelectorAll('.entry, .entry-full');
-          entries.forEach(entry => {
-            entry.style.transitionDelay = '0s';
-            entry.classList.remove('visible');
-          });
-          p.classList.remove('visible');
+        document.querySelector('.layout').addEventListener('mouseenter', () => {
+          clearTimeout(hideTimeout);
         });
       });
     </script>

@@ -74,24 +74,44 @@ The client (James Taylor-Foster) **never edits** `index.html` or `template.html`
 
 The build script (`build.js`) performs the following steps:
 
-1. Reads `template.html` — the structural HTML shell with `{{NAV}}` and `{{CONTENT}}` placeholders
-2. Reads `content.md` and splits it into sections by `# Heading` markers
+1. Reads `template.html` — the structural HTML shell with `{{NAV_PRIMARY}}`, `{{NAV_SECONDARY}}`, `{{CONTENT}}`, `{{FOOTER}}` and `{{FOOTER_DELAY}}` placeholders
+2. Reads `content.md` and splits it into sections by heading level (`#` for primary, `##` for secondary)
 3. For each section, generates a nav button (left column) and a content panel (right column)
-4. Injects the generated HTML into the placeholders and writes `index.html`
+4. Calculates individual animation delays for each element in the cascade
+5. Injects all generated HTML into the placeholders and writes `index.html`
 
 ### content.md structure
 
-Sections are defined by top-level Markdown headings (`# Title`). The section title becomes both the nav label and the panel ID. All standard Markdown formatting is supported within sections.
+Sections are defined by Markdown headings. `#` marks a primary section (upper nav block), `##` marks a secondary section (lower nav block). The footer is a special `##` section with the slug `footer` — it is excluded from the nav and injected into the footer element instead.
 
 ```markdown
 # Projects
 
-2025–27 *Project Title* – Institution
+2025–27 | *Project Title* – Institution
 
 # Writings
 
-[*Article Title*](https://url.com), Publication
+2026 | [*Article Title*](https://url.com), Publication
+
+## Contact
+
+For inquiries, please contact [name@email.com](mailto:name@email.com)
+
+## footer
+
+Content on this website created by James Taylor-Foster is licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 ```
+
+### Entry formatting
+
+Lines beginning with a year (including year ranges like `2025–27`) followed by a `|` separator are automatically formatted as two-column entries — year in a fixed-width left column, content in a fluid right column. All standard Markdown formatting (italics, links) is supported within entries.
+
+```markdown
+2025–27 | *Title* – Institution
+2026    | [*Article*](https://url.com), Publication
+```
+
+Lines without the year `|` pattern are rendered as full-width text blocks.
 
 ### Running the build
 
@@ -122,7 +142,14 @@ James Taylor-Foster can update all page content autonomously, without any techni
 3. Make changes using standard Markdown syntax
 4. Click "Commit changes" — Vercel redeploys automatically within ~30 seconds
 
-*Note: the client currently pushes directly to `main`, which deploys immediately to the live site. This can be changed to a separate branch with a pull request flow if a review step is desired.*
+The client pushes directly to `main`, which deploys immediately to the live site.
+
+### What the client can edit
+
+- All section titles (changing `# Projects` to `# Selected Projects` updates the nav label automatically)
+- All entry content within sections
+- Footer text and links
+- Adding or removing entire sections by adding or removing `#` or `##` headings
 
 ---
 
@@ -132,7 +159,7 @@ James Taylor-Foster can update all page content autonomously, without any techni
 
 - **Typeface:** Instrument Sans (Google Fonts)
 - **Base size:** `0.8rem`
-- **Line height:** `1.4`
+- **Line height:** `1.4` (`--line-height`)
 - **Weight:** 400 throughout
 - **Case:** uppercase for all UI elements
 - **Letter spacing:** `0.01em`
@@ -141,51 +168,94 @@ James Taylor-Foster can update all page content autonomously, without any techni
 
 - **Background:** `#f0f0f0` (`--color-bg`)
 - **Text:** `#1a1a1a` (`--color-text`)
+- **Dark mode background:** `#2d2c2c`
+- **Dark mode text:** `#edebeb`
+
+All colours are defined as CSS custom properties on `:root` and applied throughout via `var()`. Dark mode is toggled by adding the `.dark` class to `<body>`, which overrides the custom properties — the `transition` on `body` ensures a smooth 0.6s crossfade.
+
+### CSS Variables
+
+```css
+:root {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  --line-height: 1.4;
+  --color-text: #1a1a1a;
+  --color-bg: #f0f0f0;
+  --left: 12rem;
+  --top: 1.5rem;
+}
+```
+
+`--left` controls the left column offset and is used consistently across all fixed-position elements. `--line-height` mirrors the root `line-height` and is also used in `build.js` (as `LINE_HEIGHT`) to calculate panel vertical offsets.
 
 ### Layout
 
-- **Left column offset:** `--left: 12rem`
-- **Top offset:** `--top: 1.5rem`
-- **Face offset:** `calc(--left - 3.5rem)`
-- **Right column:** begins at `33vh` vertically
+- All left-column elements (`name`, `sections-primary`, `sections-secondary`, `footer`) share `left: var(--left)`
+- The face sits independently at `left: calc(var(--left) - 5rem)`, positioned outside the column
+- The `–` nav indicator sits outside the column via `position: absolute; right: 100%`, so it never affects text alignment
+- Right column (`col-right`) begins at `left: calc(var(--left) + 280px)` with `width: calc(100vw - var(--left) - 280px - 3rem)`
+
+### Navigation structure
+
+- **Primary sections** — fixed at `top: 33vh`, left column
+- **Secondary sections** — fixed at `top: 66vh`, left column
+- **Section panels** — absolutely positioned within `.col-right`:
+  - Primary panels: `top: calc(33vh + N * LINE_HEIGHT em)`
+  - Secondary panels: `top: calc(66vh + N * LINE_HEIGHT em)`
+  - This ensures each panel's baseline aligns exactly with its nav title
 
 ### Animations
 
-- **Fade-in cascade:** name → sections → footer, each 0.3s apart, 0.6s duration
+- **Fade-in cascade:** name (0.3s) → primary nav items (stepping by 0.2s each) → secondary nav items (continuing the sequence) → footer (last). All delays generated dynamically in `build.js`.
 - **Eye blink:** JS-driven, both eyes sync, random interval 2–6s
+- **Dark mode toggle:** clicking the face toggles `.dark` on `<body>`, 0.6s ease transition on background and text colour
 - **Section panels:** opacity + visibility transition on hover, 0.3s ease
-- **Link underline:** scaleX from right to left, 0.2s linear
+- **Entry cascade (show):** entries fade in top to bottom, `0.06s` step between each
+- **Entry cascade (hide):** entries fade out bottom to top, `0.04s` step between each, triggered after `2400ms` delay when mouse leaves nav area
+- **Link underline:** pseudo-element `scaleX` from right to left, `0.2s` linear
+- **Nav indicator (`–`):** appears on hover and stays visible when section is pinned
+
+### Pinning behaviour
+
+Hovering a nav item shows its panel temporarily. Clicking pins it — the content persists until the item is clicked again. Only one section can be pinned at a time. The `–` indicator remains visible while pinned.
 
 ### Mobile (≤768px)
 
 - Face: fixed top right
-- Name: fixed top left, reduced left margin (`1.75rem`)
-- Sections and right column: hidden
-- Footer: fixed bottom left, full width minus margins
+- Name: fixed top left, `left: 1.75rem`
+- Primary and secondary nav sections: hidden
+- Right column: hidden
+- Footer: fixed bottom left, full width minus margins, `font-size: 0.75rem`
+- Link underlines: `0.5px` height
 
 ---
 
-## 8. Planned Holding Page Sections
+## 8. Holding Page Sections
 
-The following sections are planned for the holding page, all within a single page with no routing:
+All sections are defined in `content.md` and require no code changes to add, remove, or rename.
 
+### Primary sections (upper nav, `33vh`)
 - **Projects**
 - **Writings**
 - **Press**
+
+### Secondary sections (lower nav, `66vh`)
 - **Contact**
 - **Inquiries**
-- **Portrait** — photo viewable and downloadable (interaction TBD)
 
-On desktop, section content appears in the right column on hover. On mobile, sections will appear as accordion dropdowns (implementation pending).
+### Special sections
+- **Portrait** — interaction TBD, not yet implemented
+- **Footer** — defined as `## footer` in `content.md`, injected into the footer element
 
 ---
 
 ## 9. Next Steps
 
-- Finalise visual design of holding page (all sections)
-- Implement all sections in `content.md`
-- Design and implement mobile accordion interaction
-- Decide portrait interaction pattern
+- Finalise and add all content to `content.md` (Writings, Press, Contact, Inquiries)
+- Design and implement portrait interaction
+- Design and implement mobile accordion for sections
 - Connect custom domain `james.tf` to Vercel production
+- Merge `dev` into `main` for first live deploy
 - Give client GitHub access to `content.md`
 - Plan full SvelteKit website architecture and CMS selection

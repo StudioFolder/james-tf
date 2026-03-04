@@ -23,17 +23,34 @@ marked.use({ renderer });
 const template = fs.readFileSync('template.html', 'utf-8');
 const markdown = fs.readFileSync('content.md', 'utf-8');
 
-// Split into sections by h1
-const sections = [];
-const parts = markdown.split(/^# (.+)$/m);
+// Split into sections by heading level
+const primary = [];
+const secondary = [];
 
-for (let i = 1; i < parts.length; i += 2) {
-  sections.push({
-    title: parts[i].trim(),
-    slug: parts[i].trim().toLowerCase().replace(/\s+/g, '-'),
-    content: marked.parse(parts[i + 1].trim())
-  });
+const sectionRegex = /^(#{1,2}) (.+)$/gm;
+const parts = markdown.split(sectionRegex);
+
+for (let i = 1; i < parts.length; i += 3) {
+  const level = parts[i].trim();
+  const title = parts[i + 1].trim();
+  const body = parts[i + 2] || '';
+  const section = {
+    title,
+    slug: title.toLowerCase().replace(/\s+/g, '-'),
+    content: marked.parse(body.trim())
+  };
+  if (level === '#') primary.push(section);
+  else if (level === '##') secondary.push(section);
 }
+
+const specialSlugs = ['footer', 'bio-short', 'bio-medium', 'bio-long'];
+const footerSection = secondary.find(s => s.slug === 'footer');
+const bioShort = secondary.find(s => s.slug === 'bio-short');
+const bioMedium = secondary.find(s => s.slug === 'bio-medium');
+const bioLong = secondary.find(s => s.slug === 'bio-long');
+const navPrimary = primary.filter(s => !specialSlugs.includes(s.slug));
+const navSecondary = secondary.filter(s => !specialSlugs.includes(s.slug));
+const navSections = [...navPrimary, ...navSecondary];
 
 // Cascade timing
 // name is delay 0 (set in CSS at 0.3s)
@@ -41,34 +58,58 @@ for (let i = 1; i < parts.length; i += 2) {
 const baseDelay = 0.3;  // name delay
 const step = 0.2;       // gap between each element
 
-// Separate footer section from nav sections
-const footerSection = sections.find(s => s.slug === 'footer');
-const navSections = sections.filter(s => s.slug !== 'footer');
-
-// Build nav — each item gets its own delay
-const nav = navSections.map((s, i) => {
+const navPrimaryHtml = navPrimary.map((s, i) => {
   const delay = baseDelay + step * (i + 1);
-  return `<button class="nav-item" data-section="${s.slug}" style="animation-delay: ${delay}s">${s.title}</button>`;
+  return `<button class="nav-item" data-section="${s.slug}" style="animation-delay: ${delay}s"><span class="nav-indicator">–</span><span class="nav-label">${s.title}</span></button>`;
 }).join('\n');
 
-// Footer gets a delay after the last nav item
+const navSecondaryHtml = navSecondary.map((s, i) => {
+  const delay = baseDelay + step * (navPrimary.length + i + 1);
+  return `<button class="nav-item" data-section="${s.slug}" style="animation-delay: ${delay}s"><span class="nav-indicator">–</span><span class="nav-label">${s.title}</span></button>`;
+}).join('\n');
+
 const footerDelay = baseDelay + step * (navSections.length + 1);
 
 // Build content panels
-const content = navSections.map((s, i) => {
-  const top = `${i * LINE_HEIGHT}em`;
+const primaryContent = navPrimary.map((s, i) => {
+  const top = `calc(33vh + ${i * LINE_HEIGHT}em)`;
   return `<div class="section-panel" id="${s.slug}" style="top: ${top}">${s.content}</div>`;
 }).join('\n');
+
+const secondaryContent = navSecondary.map((s, i) => {
+  const top = `calc(66vh + ${i * LINE_HEIGHT}em)`;
+  return `<div class="section-panel" id="${s.slug}" style="top: ${top}">${s.content}</div>`;
+}).join('\n');
+
+const content = primaryContent + '\n' + secondaryContent;
 
 // Footer content
 const footerContent = footerSection ? footerSection.content : '';
 
 // Inject into template
+function wordCount(html) {
+  return html.replace(/<[^>]+>/g, '').trim().split(/\s+/).length;
+}
+
+const bioShortContent = bioShort ? bioShort.content : '';
+const bioMediumContent = bioMedium ? bioMedium.content : '';
+const bioLongContent = bioLong ? bioLong.content : '';
+const bioShortWords = bioShort ? wordCount(bioShortContent) : 0;
+const bioMediumWords = bioMedium ? wordCount(bioMediumContent) : 0;
+const bioLongWords = bioLong ? wordCount(bioLongContent) : 0;
+
 let output = template
-  .replace('{{NAV}}', nav)
+  .replace('{{NAV_PRIMARY}}', navPrimaryHtml)
+  .replace('{{NAV_SECONDARY}}', navSecondaryHtml)
   .replace('{{CONTENT}}', content)
   .replace('{{FOOTER_DELAY}}', `${footerDelay}s`)
-  .replace('{{FOOTER}}', footerContent);
+  .replace('{{FOOTER}}', footerContent)
+  .replace('{{BIO_SHORT}}', bioShortContent)
+  .replace('{{BIO_MEDIUM}}', bioMediumContent)
+  .replace('{{BIO_LONG}}', bioLongContent)
+  .replace('{{BIO_SHORT_WORDS}}', bioShortWords)
+  .replace('{{BIO_MEDIUM_WORDS}}', bioMediumWords)
+  .replace('{{BIO_LONG_WORDS}}', bioLongWords);
 
 fs.writeFileSync('index.html', output);
 console.log('✓ Built index.html from content.md');

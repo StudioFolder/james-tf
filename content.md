@@ -1,3 +1,15 @@
+## bio-short
+
+James Taylor-Foster is a curator, editor, and writer based between Stockholm and Bangkok.
+
+## bio-medium
+
+James Taylor-Foster is a curator, editor, and writer. He was Senior Curator at ArkDes, the Swedish national centre for architecture and design, from 2018 to 2026. He has produced exhibitions, publications, and projects that move between architecture, design, art, and culture.
+
+## bio-long
+
+James Taylor-Foster is a curator, editor, and writer. He was Senior Curator at ArkDes, the Swedish national centre for architecture and design, from 2018 to 2026. He has produced exhibitions, publications, and projects that move between architecture, design, art, and culture. His work is animated by a curiosity about how spaces, objects, and images shape — and are shaped by — the bodies and communities that inhabit them. He writes criticism, fiction, and poetry, and speaks regularly at institutions and events internationally.
+
 # Projects
 
 2025-27 | Worldglimpsing: Role Play and the Design of Alternate Realities – ArkDes × Nieuwe Instituut with Shedhalle (Zurich), Callie’s (Berlin), Haus der Kunst (Munich)  
@@ -16,6 +28,18 @@
 2025 | Hong Kong ASMR show triggers ‘weird sensation’ of internet trend by Ashlyn Chak, South China Morning Post  
 2024 | James Taylor-Foster × ĒTER on their One Night Only Installation: MEATRACK by Anna Barr, Fucking Young!
 
-# footer
+## Speaking
+
+For speaking inquiries, please contact [Agency](mailto:name@email.com)
+
+## Portrait
+
+View, Download
+
+## Contact
+
+[email](mailto:name@email.com), [Instagram](mailto:name@email.com), [Arena](mailto:name@email.com)
+
+## footer
 
 Content on this website created by James Taylor-Foster is licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
