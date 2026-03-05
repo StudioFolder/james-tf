@@ -419,6 +419,12 @@ button {
     padding-left: 1.75rem;
   }
 
+.name {
+    position: fixed;
+    top: 1.25rem;
+    left: 1.75rem;
+  }
+
   .sections-primary,
   .sections-secondary {
     display: none;
