@@ -355,6 +355,22 @@ button {
   display: block;
 }
 
+/* ── Cursor portrait ── */
+
+.cursor-portrait {
+  position: fixed;
+  width: 350px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.cursor-portrait.visible {
+  opacity: 1;
+}
+
 /* ── Footer ── */
 
 .footer {

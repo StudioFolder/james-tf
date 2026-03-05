@@ -23,6 +23,7 @@
     </noscript>
 </head>
 <body>
+  <img class="cursor-portrait" src="" alt="">
   <div class="layout">
     <span class="face">
       <span class="eye left-eye">◕</span>
@@ -61,7 +62,7 @@
       </nav>
       <nav class="sections sections-secondary">
         <div class="nav-row"><button class="nav-item" data-section="speaking" style="animation-delay: 1.5000000000000002s"><span class="nav-indicator">–</span><span class="nav-label">Speaking</span></button><div class="section-panel" id="speaking"><p><span class="entry-full">For speaking inquiries, please contact <a href="mailto:name@email.com">Agency</a></span></p></div></div>
-<div class="nav-row"><button class="nav-item" data-section="portrait" style="animation-delay: 1.7000000000000002s"><span class="nav-indicator">–</span><span class="nav-label">Portrait</span></button><div class="section-panel" id="portrait"><p><span class="entry-full">View, Download</span></p></div></div>
+<div class="nav-row"><button class="nav-item" data-section="portrait" style="animation-delay: 1.7000000000000002s"><span class="nav-indicator">–</span><span class="nav-label">Portrait</span></button><div class="section-panel" id="portrait"><p><span class="entry-full"><a href="/assets/images/portrait-01.jpg">View</a>, Download</span></p></div></div>
 <div class="nav-row"><button class="nav-item" data-section="contact" style="animation-delay: 1.9000000000000001s"><span class="nav-indicator">–</span><span class="nav-label">Contact</span></button><div class="section-panel" id="contact"><p><span class="entry-full"><a href="mailto:name@email.com">email</a>, <a href="mailto:name@email.com">Instagram</a>, <a href="mailto:name@email.com">Arena</a></span></p></div></div>
       </nav>
       <footer class="footer" style="animation-delay: 2.1s">
@@ -298,6 +299,35 @@
 
         document.querySelector('.layout').addEventListener('mouseenter', () => {
           clearTimeout(hideTimeout);
+        });
+
+        // Cursor-following portrait
+        const cursorPortrait = document.querySelector('.cursor-portrait');
+        let portraitVisible = false;
+
+        document.addEventListener('mousemove', (e) => {
+          if (portraitVisible) {
+            cursorPortrait.style.left = e.clientX + 20 + 'px';
+            cursorPortrait.style.top = e.clientY + 20 + 'px';
+          }
+        });
+
+        document.querySelectorAll('.section-panel a').forEach(link => {
+          const href = link.getAttribute('href');
+          if (!href || !href.match(/\.(jpg|jpeg|png|gif|webp)$/i)) return;
+
+          link.addEventListener('click', (e) => e.preventDefault());
+
+          link.addEventListener('mouseenter', () => {
+            cursorPortrait.src = href;
+            cursorPortrait.classList.add('visible');
+            portraitVisible = true;
+          });
+
+          link.addEventListener('mouseleave', () => {
+            cursorPortrait.classList.remove('visible');
+            portraitVisible = false;
+          });
         });
 
       });

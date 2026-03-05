@@ -238,15 +238,20 @@ The page consists of a single `.layout` div containing two elements: the `.face`
 .layout
 ├── .face                   — fixed, left: calc(var(--left) - 5rem), outside the column
 └── .col-left (fixed, left: var(--left), height: 100vh, flex-direction: column)
-    ├── .name               — top of column, padding-top: var(--top)
-    ├── .bio                — flows below name, margin-left: -6rem (outdented)
+    ├── .name               — top of column, padding-top: var(--top), flex-shrink: 0
+    ├── .bio                — flows below name, margin-left: -6rem (outdented), flex-shrink: 0
     ├── .bio-controls       — flows below bio, aligned to column edge
-    ├── .sections-primary   — minimum top: 33vh (enforced by JS), pushed down by bio if needed
+    ├── .bio-spacer         — flex-shrink: 1, absorbs compression when viewport shrinks
+    ├── .sections-primary   — flex-shrink: 0
     │   └── .nav-row ×N     — each contains a .nav-item button + .section-panel
-    ├── .sections-secondary — margin-top: auto (pushed to lower third)
+    ├── .sections-secondary — margin-top: auto (pushed to lower third), flex-shrink: 0
     │   └── .nav-row ×N     — each contains a .nav-item button + .section-panel
-    └── .footer             — margin-top: auto (pinned to bottom)
+    └── .footer             — margin-top: auto (pinned to bottom), flex-shrink: 0
 ```
+
+### Flex shrink strategy
+
+The `.col-left` flex column is constrained to `100vh`. When the viewport shrinks vertically, the `.bio-spacer` (the gap between bio-controls and primary nav) compresses first, since it is the only element with `flex-shrink: 1`. All other flex children have `flex-shrink: 0` and hold their size. Once the spacer is fully compressed, the `.bio` container clips its content via `overflow: hidden` as a last resort.
 
 ### Bio outdent
 
@@ -271,7 +276,7 @@ Section panels are `position: fixed` with `left: calc(var(--left) + 280px)` and 
 All JS lives inside a single `DOMContentLoaded` listener in `template.html`. There is no `positionPanels()` function — panels are aligned via CSS `translate` rather than JS-calculated `top` values.
 
 ### `positionNav()`
-Calculates where `.sections-primary` should sit. On first call, locks a resting position at `max(33vh, natural flow position)`. On subsequent calls, only moves the nav down if the bio-controls plus one line of text would breach the locked position. Uses `marginTop` on `.sections-primary` to achieve this. Called on `fonts.ready`, `resize`, and whenever bio version changes. The cached `navFixedTop` is reset to `null` on `resize`.
+Sets the `.bio-spacer` flex-basis to push `.sections-primary` to the ideal 33vh position. First recalculates the `.bio` container height from the active panel's `scrollHeight` (to account for text reflow on resize). Then measures the gap between the bottom of `.bio-controls` and 33vh, and sets the spacer's `flex-basis` to that gap with a minimum of one line-height. The flex container handles compression automatically — when the viewport is too small, the spacer (the only `flex-shrink: 1` child) compresses first. Called on `fonts.ready`, `resize`, and whenever bio version changes.
 
 ### `showBio(index, animate)`
 Manages the three-step bio transition: fade out current panel → animate container height → fade in next panel. Updates control states immediately (disabled buttons, wordcount display, `.at-longest` class). When `animate` is false (initial load), performs an instant switch. Uses a `bioAnimating` lock to prevent overlapping transitions. The height transition completion is detected via `transitionend` on the `.bio` container, filtered to `propertyName === 'height'`.
@@ -280,7 +285,7 @@ Manages the three-step bio transition: fade out current panel → animate contai
 The wordcount button doubles as a copy-to-clipboard button. Its `::before` pseudo-element shows the word count by default, switches to "copy" on hover, and "copied" after clicking (via `data-state` attribute). The copied state resets after 2 seconds.
 
 ### `showPanel(target)` / `hideAll()`
-Controls section panel visibility with staggered entry animations. Entries fade in top-to-bottom (`ENTRY_IN_STEP: 0.06s`) and fade out bottom-to-top (`ENTRY_OUT_STEP: 0.04s`). `hideAll()` is triggered after `HIDE_DELAY: 2400ms` when mouse leaves the nav or layout area.
+Controls section panel visibility with staggered entry animations. Entries fade in top-to-bottom (`ENTRY_IN_STEP: 0.06s`) and fade out bottom-to-top (`ENTRY_OUT_STEP: 0.04s`). `hideAll()` is triggered after `HIDE_DELAY: 2400ms` when mouse leaves the nav or layout area. Panel cleanup timeouts are tracked in a `Map` keyed by panel ID, and cleared when a panel is re-shown via `showPanel` — this prevents stale `hideAll` timeouts from stripping classes on panels that are mid-entrance.
 
 ### Pinning behaviour
 Hovering a nav item shows its panel temporarily. Clicking pins it — content persists until the item is clicked again. Only one section can be pinned at a time. The `–` indicator remains visible while pinned. Unpinning triggers `hideAll()` immediately.
@@ -356,7 +361,7 @@ Mobile accordion interaction for sections is a planned next step.
 - Design and implement portrait/image interaction
 - Design and implement mobile accordion for sections
 - Fix mobile bio layout (outdent and controls positioning)
-- Add `<noscript>` fallback for non-JS environments
+- Remove dead `.col-right` rule from mobile media query
 - Add favicon
 - Populate all sections with final content in `content.md`
 - James to write final bio texts (short, medium, long)

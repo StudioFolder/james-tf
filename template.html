@@ -23,6 +23,7 @@
     </noscript>
 </head>
 <body>
+  <img class="cursor-portrait" src="" alt="">
   <div class="layout">
     <span class="face">
       <span class="eye left-eye">◕</span>
@@ -294,6 +295,35 @@
 
         document.querySelector('.layout').addEventListener('mouseenter', () => {
           clearTimeout(hideTimeout);
+        });
+
+        // Cursor-following portrait
+        const cursorPortrait = document.querySelector('.cursor-portrait');
+        let portraitVisible = false;
+
+        document.addEventListener('mousemove', (e) => {
+          if (portraitVisible) {
+            cursorPortrait.style.left = e.clientX + 20 + 'px';
+            cursorPortrait.style.top = e.clientY + 20 + 'px';
+          }
+        });
+
+        document.querySelectorAll('.section-panel a').forEach(link => {
+          const href = link.getAttribute('href');
+          if (!href || !href.match(/\.(jpg|jpeg|png|gif|webp)$/i)) return;
+
+          link.addEventListener('click', (e) => e.preventDefault());
+
+          link.addEventListener('mouseenter', () => {
+            cursorPortrait.src = href;
+            cursorPortrait.classList.add('visible');
+            portraitVisible = true;
+          });
+
+          link.addEventListener('mouseleave', () => {
+            cursorPortrait.classList.remove('visible');
+            portraitVisible = false;
+          });
         });
 
       });

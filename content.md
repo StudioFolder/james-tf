@@ -40,7 +40,7 @@ For speaking inquiries, please contact [Agency](mailto:name@email.com)
 
 ## Portrait
 
-View, Download
+[View](/assets/images/portrait-01.jpg), Download
 
 ## Contact
 
