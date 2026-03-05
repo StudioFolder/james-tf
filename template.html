@@ -18,13 +18,13 @@
       <span class="eye right-eye">◕</span>
     </span>
     <aside class="col-left">
-      <h1 class="name">James Taylor-Foster</h1>
-      <section class="bio">
+      <h1 class="name" style="animation-delay: {{NAME_DELAY}}">James Taylor-Foster</h1>
+      <section class="bio" style="animation-delay: {{BIO_DELAY}}">
         <div class="bio-panel" id="bio-short" data-words="{{BIO_SHORT_WORDS}}">{{BIO_SHORT}}</div>
         <div class="bio-panel" id="bio-medium" data-words="{{BIO_MEDIUM_WORDS}}">{{BIO_MEDIUM}}</div>
         <div class="bio-panel" id="bio-long" data-words="{{BIO_LONG_WORDS}}">{{BIO_LONG}}</div>
       </section>
-        <div class="bio-controls">
+        <div class="bio-controls" style="animation-delay: {{BIO_CONTROLS_DELAY}}">
           <span class="bio-buttons">
             <button class="bio-btn" id="bio-minus">
               <svg width="11" height="5" viewBox="0 0 22 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +39,7 @@
               </svg>
             </button>
           </span>
-          <span class="bio-wordcount"></span>
+          <button class="bio-wordcount" id="bio-copy" aria-label="Copy bio"></button>
         </div>
       <nav class="sections sections-primary">
         {{NAV_PRIMARY}}
@@ -82,7 +82,23 @@
         const bioMinus = document.getElementById('bio-minus');
         const bioPlus = document.getElementById('bio-plus');
         let bioIndex = 0;
-        const bioWordCount = document.querySelector('.bio-wordcount');
+        const bioWordCount = document.getElementById('bio-copy');
+
+        // Bio copy button
+        const bioCopy = document.getElementById('bio-copy');
+        let copyResetTimeout = null;
+
+        bioCopy.addEventListener('click', () => {
+          const activePanel = bioPanels[bioIndex];
+          const text = activePanel.innerText.trim();
+          navigator.clipboard.writeText(text).then(() => {
+            bioCopy.dataset.state = 'copied';
+            clearTimeout(copyResetTimeout);
+            copyResetTimeout = setTimeout(() => {
+              delete bioCopy.dataset.state;
+            }, 2000);
+          });
+        });
 
         function showBio(index) {
           bioPanels.forEach((panel, i) => {
@@ -90,7 +106,8 @@
           });
           bioMinus.disabled = index === 0;
           bioPlus.disabled = index === bioPanels.length - 1;
-          bioWordCount.textContent = bioPanels[index].dataset.words + ' words';
+          bioWordCount.dataset.words = bioPanels[index].dataset.words + ' words';
+          delete bioWordCount.dataset.state;
           document.querySelector('.bio-buttons').classList.toggle('at-longest', index === bioPanels.length - 1);
           requestAnimationFrame(() => {
             positionNav();
