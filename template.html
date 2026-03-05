@@ -318,11 +318,13 @@
             cursorPortrait.src = href;
             cursorPortrait.classList.add('visible');
             portraitVisible = true;
+            document.querySelectorAll('.eye').forEach(e => e.textContent = '◡');
           });
 
           link.addEventListener('mouseleave', () => {
             cursorPortrait.classList.remove('visible');
             portraitVisible = false;
+            document.querySelectorAll('.eye').forEach(e => e.textContent = '◕');
           });
         });
 
