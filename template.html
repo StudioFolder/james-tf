@@ -1,17 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<noscript>
-  <style>
-    .name,
-    .bio,
-    .bio-controls,
-    .nav-item,
-    .footer {
-      opacity: 1 !important;
-      animation: none !important;
-    }
-  </style>
-</noscript>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +9,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <noscript>
+      <style>
+        .name,
+        .bio,
+        .bio-controls,
+        .nav-item,
+        .footer {
+          opacity: 1 !important;
+          animation: none !important;
+        }
+      </style>
+    </noscript>
 </head>
 <body>
   <div class="layout">
@@ -184,6 +184,7 @@
         const panels = document.querySelectorAll('.section-panel');
         let pinned = null;
         let hideTimeout = null;
+        const panelCleanupTimeouts = new Map();
 
         const ENTRY_IN_STEP = 0.06;
         const ENTRY_OUT_STEP = 0.04;
@@ -220,6 +221,8 @@
           clearTimeout(hideTimeout);
           panels.forEach(p => {
             if (p.id === target) {
+              clearTimeout(panelCleanupTimeouts.get(p.id));
+              panelCleanupTimeouts.delete(p.id);
               const entries = p.querySelectorAll('.entry, .entry-full');
               entries.forEach(entry => {
                 entry.classList.remove('leaving');
@@ -252,13 +255,15 @@
                 entry.classList.add('leaving');
                 entry.classList.remove('visible');
               });
-              setTimeout(() => {
+                const cleanupId = setTimeout(() => {
                 p.classList.remove('visible');
                 visibleEntries.forEach(entry => {
                   entry.classList.remove('leaving');
                   entry.style.transitionDelay = '';
                 });
+                panelCleanupTimeouts.delete(p.id);
               }, visibleEntries.length * ENTRY_OUT_STEP * 1000 + 400);
+              panelCleanupTimeouts.set(p.id, cleanupId);
             }
           });
         }

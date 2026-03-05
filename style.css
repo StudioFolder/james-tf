@@ -417,10 +417,6 @@ button {
     display: none;
   }
 
-  .col-right {
-    display: none;
-  }
-
   .footer {
     position: fixed;
     bottom: 1.25rem;
