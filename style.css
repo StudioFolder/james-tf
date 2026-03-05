@@ -548,6 +548,7 @@ button {
   .nav-item {
     cursor: default;
     pointer-events: none;
+    line-height: 1.75;
   }
 
   .nav-indicator {
