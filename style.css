@@ -43,7 +43,7 @@ body {
 
 body.dark {
   --color-bg: #2d2c2c;
-  --color-text: #edebeb;
+  --color-text: #EFE1E8;
 }
 
 h1 {
@@ -81,6 +81,7 @@ button {
   top: var(--top);
   left: calc(var(--left) - 5rem);
   cursor: pointer;
+  z-index: 100;
 }
 
 .eye {
