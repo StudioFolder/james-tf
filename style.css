@@ -423,24 +423,24 @@ button {
 
 @media (max-width: 768px) {
 
-
   html, body {
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .col-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 0 1.75rem;
     overflow-y: auto;
     overflow-x: hidden;
   }
 
-  .col-left {
-    position: static;
-    left: 0;
-    width: 100vw;
-    height: auto;
-    min-height: 100vh;
-    padding: 0 1.75rem;
-  }
-
   .name {
     padding-top: 1.25rem;
-    margin-left: 1.75rem;
   }
 
   .face {
@@ -452,35 +452,34 @@ button {
   }
 
   .bio {
-    margin-left: 0;
+    margin-left: -0.5rem;
     margin-top: 1.5rem;
     width: 100%;
     max-width: 100%;
   }
-
   .bio-panel {
     font-size: 1.2rem;
   }
 
   .bio-controls {
-    margin-left: 1.75rem;
-    width: calc(100vw - 3.5rem);
+    margin-left: 0;
+    width: 100%;
     position: relative;
   }
 
   .bio-buttons {
     position: absolute;
-    right: 0.5rem;
+    right: 0;
     top: 0.1em;
     left: auto;
-    padding-right: 1.25rem;
+    padding-right: 0;
     display: flex;
     gap: 1.25rem;
     align-items: baseline;
   }
 
   .bio-spacer {
-    display: none;
+    flex-shrink: 1;
   }
 
   .bio-wordcount:hover::before {
@@ -491,9 +490,26 @@ button {
     transform: none;
   }
 
+  .sections-primary {
+    display: block;
+    margin-top: 9rem;
+    margin-bottom: 1.4rem;
+    pointer-events: none;
+  }
 
-  .sections-primary,
   .sections-secondary {
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 7.5rem;
+    pointer-events: none;
+  }
+
+  .nav-item {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .nav-indicator {
     display: none;
   }
 
@@ -502,17 +518,27 @@ button {
   }
 
   .footer {
-    position: sticky;
+    position: fixed;
     bottom: 0;
-    margin-top: auto;
-    margin-left: 0;
-    padding-bottom: 0.75rem;
-    max-width: calc(100vw - 3.5rem);
+    left: 0;
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    max-width: 100%;
     font-size: 0.75rem;
     background-color: var(--color-bg);
   }
 
   .footer a::after {
     height: 0.5px;
+  }
+
+  .name,
+  .bio-controls,
+  .sections-primary,
+  .sections-secondary {
+    padding-left: 1.75rem;
   }
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="James Taylor-Foster — curator, editor, and writer">
   <title>James Taylor-Foster</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -196,15 +196,15 @@
           const activePanel = bioPanels[bioIndex];
           bioContainer.style.height = activePanel.scrollHeight + 'px';
 
+          if (window.innerWidth <= 768) return;
+
           const spacer = document.querySelector('.bio-spacer');
           const bioControls = document.querySelector('.bio-controls');
           const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
           const oneLine = remPx * parseFloat(getComputedStyle(document.body).lineHeight);
-
           const bcBottom = bioControls.getBoundingClientRect().bottom;
           const idealTop = window.innerHeight * 0.33;
           const gap = idealTop - bcBottom;
-
           spacer.style.flexBasis = Math.max(oneLine, gap) + 'px';
         }
 
