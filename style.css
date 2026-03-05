@@ -559,6 +559,48 @@ button {
     display: none;
   }
 
+  .portrait-overlay {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-bg);
+  z-index: 80;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.portrait-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.portrait-overlay img {
+  width: 100%;
+  display: block;
+}
+
+.portrait-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text);
+  font-family: inherit;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  padding: 0;
+  margin-top: auto;
+  padding-bottom: 1.5rem;
+  padding-left: calc(1.75rem + 1.75rem);
+  font-size: 0.75rem;
+  text-align: left;
+}
+
   .footer {
     position: fixed;
     bottom: 0;

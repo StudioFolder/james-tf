@@ -358,8 +358,31 @@
           });
         });
 
+        // Portrait overlay (mobile)
+        if (window.innerWidth <= 768) {
+          const overlay = document.querySelector('.portrait-overlay');
+          const portraitNavItem = Array.from(items).find(i => i.dataset.section === 'portrait');
+          
+          if (portraitNavItem) {
+            portraitNavItem.style.pointerEvents = 'auto';
+            portraitNavItem.style.cursor = 'pointer';
+            portraitNavItem.addEventListener('click', () => {
+              overlay.classList.add('visible');
+            });
+          }
+
+          document.querySelector('.portrait-close').addEventListener('click', () => {
+            overlay.classList.remove('visible');
+          });
+        }
+
       });
     </script>
+
+    <div class="portrait-overlay">
+      <img src="/assets/images/portrait-01.jpg" alt="Portrait">
+      <button class="portrait-close">Close</button>
+    </div>
 
 </body>
 </html>
