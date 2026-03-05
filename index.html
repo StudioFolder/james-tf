@@ -212,6 +212,14 @@
           spacer.style.flexBasis = Math.max(oneLine, gap) + 'px';
         }
 
+        // Keep section panels aligned with nav when column scrolls
+        const colLeft = document.querySelector('.col-left');
+        colLeft.addEventListener('scroll', () => {
+          panels.forEach(p => {
+            p.style.translate = `0 calc(-1 * var(--line-height) * 0.9rem - ${colLeft.scrollTop}px)`;
+          });
+        });
+
         function showPanel(target) {
           clearTimeout(hideTimeout);
           panels.forEach(p => {
