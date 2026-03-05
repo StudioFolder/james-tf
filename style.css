@@ -560,46 +560,58 @@ button {
   }
 
   .portrait-overlay {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--color-bg);
-  z-index: 80;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
-}
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-bg);
+    z-index: 80;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
 
-.portrait-overlay.visible {
-  opacity: 1;
-  visibility: visible;
-}
+  .portrait-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+  }
 
-.portrait-overlay img {
-  width: 100%;
-  display: block;
-}
+  .portrait-overlay img {
+    width: 100%;
+    display: block;
+    flex-shrink: 0;
+  }
 
-.portrait-close {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--color-text);
-  font-family: inherit;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
-  padding: 0;
-  margin-top: auto;
-  padding-bottom: 1.5rem;
-  padding-left: calc(1.75rem + 1.75rem);
-  font-size: 0.75rem;
-  text-align: left;
-}
+ .portrait-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-left: calc(1.75rem + 1.75rem);
+    padding-right: 3.5rem;
+    padding-bottom: 1.5rem;
+    background-color: var(--color-bg);
+  }
+
+  .portrait-share,
+  .portrait-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text);
+    font-family: inherit;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    font-size: 1rem;
+    padding: 0;
+  }
 
   .footer {
     position: fixed;
@@ -609,7 +621,7 @@ button {
     padding-left: 1.5rem;
     padding-right: 0.5rem;
     padding-bottom: 0.5rem;
-    padding-top: 0.5rem;
+    padding-top: 1rem;
     max-width: 100%;
     font-size: 0.75rem;
     background-color: var(--color-bg);

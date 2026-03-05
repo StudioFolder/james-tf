@@ -367,7 +367,13 @@
           const overlay = document.querySelector('.portrait-overlay');
           const portraitNavItem = Array.from(items).find(i => i.dataset.section === 'portrait');
           
-          if (portraitNavItem) {
+          const portraitPanel = document.getElementById('portrait');
+          if (portraitNavItem && portraitPanel) {
+            const link = portraitPanel.querySelector('a');
+            if (link) {
+              overlay.querySelector('img').src = link.getAttribute('href');
+            }
+
             portraitNavItem.style.pointerEvents = 'auto';
             portraitNavItem.style.cursor = 'pointer';
             portraitNavItem.addEventListener('click', () => {
@@ -378,14 +384,30 @@
           document.querySelector('.portrait-close').addEventListener('click', () => {
             overlay.classList.remove('visible');
           });
+
+          document.querySelector('.portrait-share').addEventListener('click', async () => {
+            const imgSrc = overlay.querySelector('img').src;
+            try {
+              const response = await fetch(imgSrc);
+              const blob = await response.blob();
+              const file = new File([blob], 'portrait.jpg', { type: blob.type });
+              await navigator.share({ files: [file] });
+            } catch (err) {
+              console.log('Share failed:', err);
+            }
+          });
         }
 
       });
     </script>
 
     <div class="portrait-overlay">
-      <img src="/assets/images/portrait-01.jpg" alt="Portrait">
-      <button class="portrait-close">Close</button>
+      <img src="" alt="Portrait">
+      <p class="portrait-caption"></p>
+      <div class="portrait-controls">
+        <button class="portrait-share">Share</button>
+        <button class="portrait-close">Close</button>
+      </div>
     </div>
 
 </body>
