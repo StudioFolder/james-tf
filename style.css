@@ -146,6 +146,28 @@ button {
   margin-top: 1em;
 }
 
+.bio-panel a {
+  color: var(--color-text);
+  text-decoration: none;
+  position: relative;
+}
+
+.bio-panel a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-text);
+  transform-origin: right;
+  transition: transform 0.2s linear;
+}
+
+.bio-panel a:hover::after {
+  transform: scaleX(0);
+}
+
 .bio-controls {
   margin-top: 0.75rem;
   margin-bottom: 1.4rem;
