@@ -73,9 +73,6 @@ button {
 /* ── Face ── */
 
 .face {
-  position: fixed;
-  top: var(--top);
-  left: calc(var(--left) - 5rem);
   cursor: pointer;
 }
 
@@ -420,19 +417,6 @@ button {
   .layout {
     padding-top: 1.25rem;
     padding-left: 1.75rem;
-  }
-
-  .face {
-    position: fixed;
-    top: 1.25rem;
-    left: auto;
-    right: 1.75rem;
-  }
-
-  .name {
-    position: fixed;
-    top: 1.25rem;
-    left: 1.75rem;
   }
 
   .sections-primary,
