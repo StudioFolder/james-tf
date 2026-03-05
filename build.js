@@ -1,8 +1,6 @@
 const fs = require('fs');
 const { marked } = require('marked');
 
-const LINE_HEIGHT = 1.4; // keep in sync with --line-height in style.css
-
 const renderer = new marked.Renderer();
 
 renderer.paragraph = (token) => {
@@ -52,6 +50,10 @@ const navPrimary = primary.filter(s => !specialSlugs.includes(s.slug));
 const navSecondary = secondary.filter(s => !specialSlugs.includes(s.slug));
 const navSections = [...navPrimary, ...navSecondary];
 
+if (!bioShort || !bioMedium || !bioLong) {
+  console.warn('⚠ One or more bio sections missing from content.md');
+}
+
 // Cascade timing
 // name is delay 0 (set in CSS at 0.3s)
 // each nav item steps by 0.2s after that
@@ -71,14 +73,12 @@ const navSecondaryHtml = navSecondary.map((s, i) => {
 const footerDelay = baseDelay + step * (navSections.length + 1);
 
 // Build content panels
-const primaryContent = navPrimary.map((s, i) => {
-  const top = `calc(33vh + ${i * LINE_HEIGHT}em)`;
-  return `<div class="section-panel" id="${s.slug}" style="top: ${top}">${s.content}</div>`;
+const primaryContent = navPrimary.map((s) => {
+  return `<div class="section-panel" id="${s.slug}">${s.content}</div>`;
 }).join('\n');
 
-const secondaryContent = navSecondary.map((s, i) => {
-  const top = `calc(66vh + ${i * LINE_HEIGHT}em)`;
-  return `<div class="section-panel" id="${s.slug}" style="top: ${top}">${s.content}</div>`;
+const secondaryContent = navSecondary.map((s) => {
+  return `<div class="section-panel" id="${s.slug}">${s.content}</div>`;
 }).join('\n');
 
 const content = primaryContent + '\n' + secondaryContent;
