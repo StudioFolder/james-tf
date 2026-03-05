@@ -100,33 +100,64 @@
           });
         });
 
-        function showBio(index) {
-          bioPanels.forEach((panel, i) => {
-            panel.classList.toggle('active', i === index);
-          });
+        let bioAnimating = false;
+
+        function showBio(index, animate = true) {
+          const bioContainer = document.querySelector('.bio');
+          const currentPanel = bioPanels[bioIndex];
+          const nextPanel = bioPanels[index];
+
+          // Update controls immediately
           bioMinus.disabled = index === 0;
           bioPlus.disabled = index === bioPanels.length - 1;
           bioWordCount.dataset.words = bioPanels[index].dataset.words + ' words';
           delete bioWordCount.dataset.state;
           document.querySelector('.bio-buttons').classList.toggle('at-longest', index === bioPanels.length - 1);
-          requestAnimationFrame(() => {
-            positionNav();
-            positionPanels();
-          });
+
+          if (!animate || bioAnimating || index === bioIndex) {
+            // Instant switch (initial load or same index)
+            bioPanels.forEach((panel, i) => panel.classList.toggle('active', i === index));
+            bioContainer.style.height = nextPanel.scrollHeight + 'px';
+            requestAnimationFrame(() => { positionNav(); positionPanels(); });
+            return;
+          }
+
+          bioAnimating = true;
+
+          // Step 1: fade out current
+          currentPanel.classList.remove('active');
+
+          setTimeout(() => {
+            // Step 2: animate height to next panel's height
+            bioContainer.style.height = nextPanel.scrollHeight + 'px';
+
+            setTimeout(() => {
+              // Step 3: fade in next
+              nextPanel.classList.add('active');
+              bioAnimating = false;
+              requestAnimationFrame(() => { positionNav(); positionPanels(); });
+            }, 300); // matches height transition duration
+
+          }, 200); // matches fade out duration
         }
 
         // Initialise
-        showBio(bioIndex);
+        // Set initial height before first show so there's no jump
+        document.fonts.ready.then(() => {
+          const bioContainer = document.querySelector('.bio');
+          bioContainer.style.height = bioPanels[0].scrollHeight + 'px';
+          showBio(bioIndex, false);
+        });
 
         bioMinus.addEventListener('click', () => {
-          if (bioIndex > 0) {
+          if (bioIndex > 0 && !bioAnimating) {
             bioIndex--;
             showBio(bioIndex);
           }
         });
 
         bioPlus.addEventListener('click', () => {
-          if (bioIndex < bioPanels.length - 1) {
+          if (bioIndex < bioPanels.length - 1 && !bioAnimating) {
             bioIndex++;
             showBio(bioIndex);
           }
