@@ -417,9 +417,25 @@ button {
 /* ── Mobile ── */
 
 @media (max-width: 768px) {
-  .layout {
+
+
+  html, body {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .col-left {
+    position: static;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+    padding: 0 1.75rem;
+  }
+
+  .name {
     padding-top: 1.25rem;
-    padding-left: 1.75rem;
+    margin-left: 1.75rem;
   }
 
   .face {
@@ -427,25 +443,68 @@ button {
     top: 1.25rem;
     left: auto;
     right: 1.75rem;
+    z-index: 100;
   }
 
-  .name {
-    position: fixed;
-    top: 1.25rem;
-    left: 1.75rem;
+  .bio {
+    margin-left: 0;
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 100%;
   }
+
+  .bio-panel {
+    font-size: 1.2rem;
+  }
+
+  .bio-controls {
+    margin-left: 1.75rem;
+    width: calc(100vw - 3.5rem);
+    position: relative;
+  }
+
+  .bio-buttons {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.1em;
+    left: auto;
+    padding-right: 1.25rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: baseline;
+  }
+
+  .bio-spacer {
+    display: none;
+  }
+
+  .bio-wordcount:hover::before {
+    content: attr(data-words);
+  }
+
+  .bio-wordcount:hover::after {
+    transform: none;
+  }
+
 
   .sections-primary,
   .sections-secondary {
     display: none;
   }
 
+  .section-panel {
+    display: none;
+  }
+
   .footer {
-    position: fixed;
-    bottom: 1.25rem;
-    left: 1.75rem;
+    position: sticky;
+    bottom: 0;
+    margin-top: auto;
+    margin-left: 0;
+    padding-bottom: 0.75rem;
     max-width: calc(100vw - 3.5rem);
     font-size: 0.75rem;
+    background-color: var(--color-bg);
   }
 
   .footer a::after {
