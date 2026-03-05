@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+<noscript>
+  <style>
+    .name,
+    .bio,
+    .bio-controls,
+    .nav-item,
+    .footer {
+      opacity: 1 !important;
+      animation: none !important;
+    }
+  </style>
+</noscript>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,9 +63,6 @@
         {{FOOTER}}
       </footer>
     </aside>
-    <main class="col-right">
-      {{CONTENT}}
-    </main>
   </div>
 
   <script>
@@ -118,7 +127,7 @@
             // Instant switch (initial load or same index)
             bioPanels.forEach((panel, i) => panel.classList.toggle('active', i === index));
             bioContainer.style.height = nextPanel.scrollHeight + 'px';
-            requestAnimationFrame(() => { positionNav(); positionPanels(); });
+            requestAnimationFrame(() => { positionNav(); });
             return;
           }
 
@@ -128,17 +137,18 @@
           currentPanel.classList.remove('active');
 
           setTimeout(() => {
-            // Step 2: animate height to next panel's height
+            // Step 2: animate height
             bioContainer.style.height = nextPanel.scrollHeight + 'px';
 
-            setTimeout(() => {
-              // Step 3: fade in next
+            // Step 3: reposition exactly when height transition ends
+            bioContainer.addEventListener('transitionend', function onTransitionEnd(e) {
+              if (e.propertyName !== 'height') return;
+              bioContainer.removeEventListener('transitionend', onTransitionEnd);
               nextPanel.classList.add('active');
               bioAnimating = false;
-              requestAnimationFrame(() => { positionNav(); positionPanels(); });
-            }, 300); // matches height transition duration
-
-          }, 200); // matches fade out duration
+              positionNav();
+            });
+          }, 200);
         }
 
         // Initialise
@@ -147,6 +157,12 @@
           const bioContainer = document.querySelector('.bio');
           bioContainer.style.height = bioPanels[0].scrollHeight + 'px';
           showBio(bioIndex, false);
+          positionNav();
+        });
+
+        window.addEventListener('resize', () => {
+          navFixedTop = null;
+          positionNav();
         });
 
         bioMinus.addEventListener('click', () => {
@@ -173,39 +189,32 @@
         const ENTRY_OUT_STEP = 0.04;
         const HIDE_DELAY = 2400;
 
-        // Push primary nav down to minimum 33vh
+        // Position nav: pinned at 33vh, only moves if bio fills the gap
+        let navFixedTop = null;
+
         function positionNav() {
           const primary = document.querySelector('.sections-primary');
-          primary.style.marginTop = '0px';
-          const primaryTop = primary.getBoundingClientRect().top;
-          const minTop = window.innerHeight * 0.33;
-          if (primaryTop < minTop) {
-            const diff = minTop - primaryTop;
-            primary.style.marginTop = diff + 'px';
+          const bioControls = document.querySelector('.bio-controls');
+          const bcBottom = bioControls.getBoundingClientRect().bottom;
+          const bcMarginBottom = parseFloat(getComputedStyle(bioControls).marginBottom);
+          const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
+          const oneLine = remPx * parseFloat(getComputedStyle(document.body).lineHeight);
+
+          // Where nav sits with 0 JS margin (derived, no reflow)
+          const naturalTop = bcBottom + bcMarginBottom;
+
+          // First call: lock the resting position
+          if (navFixedTop === null) {
+            navFixedTop = Math.max(window.innerHeight * 0.33, naturalTop);
           }
+
+          // Only move if bio-controls + one line breaches the resting position
+          const targetTop = Math.max(navFixedTop, bcBottom + oneLine);
+
+          // Apply margin to reach target (no reset, no reflow)
+          const margin = targetTop - naturalTop;
+          primary.style.marginTop = (margin > 0 ? margin : 0) + 'px';
         }
-
-        // Align section panels with their nav titles
-        function positionPanels() {
-          items.forEach(item => {
-            const target = item.dataset.section;
-            const panel = document.getElementById(target);
-            if (panel) {
-              const top = item.getBoundingClientRect().top;
-              panel.style.top = top + 'px';
-            }
-          });
-        }
-
-        document.fonts.ready.then(() => {
-          positionNav();
-          positionPanels();
-        });
-
-        window.addEventListener('resize', () => {
-          positionNav();
-          positionPanels();
-        });
 
         function showPanel(target) {
           clearTimeout(hideTimeout);
@@ -282,14 +291,6 @@
           nav.addEventListener('mouseenter', () => {
             clearTimeout(hideTimeout);
           });
-        });
-
-        document.querySelector('.col-right').addEventListener('mouseenter', () => {
-          clearTimeout(hideTimeout);
-        });
-
-        document.querySelector('.col-right').addEventListener('mouseleave', () => {
-          if (!pinned) hideTimeout = setTimeout(hideAll, HIDE_DELAY);
         });
 
         document.querySelector('.layout').addEventListener('mouseleave', () => {

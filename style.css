@@ -70,13 +70,6 @@ button {
   flex-direction: column;
 }
 
-.col-right {
-  position: fixed;
-  top: 0;
-  left: calc(var(--left) + 280px);
-  width: calc(100vw - var(--left) - 280px - 3rem);
-}
-
 /* ── Face ── */
 
 .face {
@@ -141,6 +134,10 @@ button {
 .bio-panel.active {
   opacity: 1;
   pointer-events: auto;
+}
+
+.bio-panel p + p {
+  margin-top: 1em;
 }
 
 .bio-controls {
@@ -238,6 +235,7 @@ button {
 .sections-primary {
   margin-top: 2rem;
   margin-bottom: 1.4rem;
+  transition: margin-top 0.3s ease;
 }
 
 .sections-secondary {
@@ -262,6 +260,10 @@ button {
   position: relative;
 }
 
+.nav-row {
+  position: relative;
+}
+
 .nav-indicator {
   position: absolute;
   right: 100%;
@@ -280,9 +282,10 @@ button {
 /* ── Section panels ── */
 
 .section-panel {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: fixed;
+  left: calc(var(--left) + 280px);
+  width: calc(100vw - var(--left) - 280px - 3rem);
+  translate: 0 calc(-1 * var(--line-height) * 0.9rem);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease;

@@ -68,26 +68,15 @@ const navOffset    = 3;
 
 const navPrimaryHtml = navPrimary.map((s, i) => {
   const delay = baseDelay + step * (navOffset + i);
-  return `<button class="nav-item" data-section="${s.slug}" style="animation-delay: ${delay}s"><span class="nav-indicator">–</span><span class="nav-label">${s.title}</span></button>`;
+  return `<div class="nav-row"><button class="nav-item" data-section="${s.slug}" style="animation-delay: ${delay}s"><span class="nav-indicator">–</span><span class="nav-label">${s.title}</span></button><div class="section-panel" id="${s.slug}">${s.content}</div></div>`;
 }).join('\n');
 
 const navSecondaryHtml = navSecondary.map((s, i) => {
   const delay = baseDelay + step * (navOffset + navPrimary.length + i);
-  return `<button class="nav-item" data-section="${s.slug}" style="animation-delay: ${delay}s"><span class="nav-indicator">–</span><span class="nav-label">${s.title}</span></button>`;
+  return `<div class="nav-row"><button class="nav-item" data-section="${s.slug}" style="animation-delay: ${delay}s"><span class="nav-indicator">–</span><span class="nav-label">${s.title}</span></button><div class="section-panel" id="${s.slug}">${s.content}</div></div>`;
 }).join('\n');
 
 const footerDelay = baseDelay + step * (navOffset + navSections.length);
-
-// Build content panels
-const primaryContent = navPrimary.map((s) => {
-  return `<div class="section-panel" id="${s.slug}">${s.content}</div>`;
-}).join('\n');
-
-const secondaryContent = navSecondary.map((s) => {
-  return `<div class="section-panel" id="${s.slug}">${s.content}</div>`;
-}).join('\n');
-
-const content = primaryContent + '\n' + secondaryContent;
 
 // Footer content
 const footerContent = footerSection ? footerSection.content : '';
@@ -107,7 +96,6 @@ const bioLongWords = bioLong ? wordCount(bioLongContent) : 0;
 let output = template
   .replace('{{NAV_PRIMARY}}', navPrimaryHtml)
   .replace('{{NAV_SECONDARY}}', navSecondaryHtml)
-  .replace('{{CONTENT}}', content)
   .replace('{{NAME_DELAY}}', `${nameDelay}s`)
   .replace('{{BIO_DELAY}}', `${bioDelay}s`)
   .replace('{{BIO_CONTROLS_DELAY}}', `${bioCtrlDelay}s`)

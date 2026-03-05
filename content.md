@@ -1,14 +1,20 @@
 ## bio-short
 
-James Taylor-Foster is a curator, editor, and writer based between Stockholm and Bangkok.
+james taylor-foster [he/they] is a curator, writer, and cultural leader investigating how the creativity of artists, designers and thinkers reimagines our world – shaping popular culture and public life.
 
 ## bio-medium
 
-James Taylor-Foster is a curator, editor, and writer. He was Senior Curator at ArkDes, the Swedish national centre for architecture and design, from 2018 to 2026. He has produced exhibitions, publications, and projects that move between architecture, design, art, and culture.
+james taylor-foster [he/they] is a curator, writer, and cultural leader investigating how the creativity of artists, designers and thinkers reimagines our world – shaping popular culture and public life.  
+  
+Their practice bridges contemporary art, design, architecture, and digital culture, blurring disciplinary boundaries and exploring unconventional ways of nurturing institutions and their audiences. This expansive approach is both greenhouse and staging ground: cultivating emergent ideas for wider cultural spheres while building ambitious platforms for assembling many forms of making into new ways of seeing, feeling, and imagining.
 
 ## bio-long
 
-James Taylor-Foster is a curator, editor, and writer. He was Senior Curator at ArkDes, the Swedish national centre for architecture and design, from 2018 to 2026. He has produced exhibitions, publications, and projects that move between architecture, design, art, and culture. His work is animated by a curiosity about how spaces, objects, and images shape — and are shaped by — the bodies and communities that inhabit them. He writes criticism, fiction, and poetry, and speaks regularly at institutions and events internationally.
+james taylor-foster [he/they] is a curator, writer, and cultural leader investigating how the creativity of artists, designers and thinkers reimagines our world – shaping popular culture and public life.  
+  
+Their practice bridges contemporary art, design, architecture, and digital culture, blurring disciplinary boundaries and exploring unconventional ways of nurturing institutions and their audiences. This expansive approach is both greenhouse and staging ground: cultivating emergent ideas for wider cultural spheres while building ambitious platforms for assembling many forms of making into new ways of seeing, feeling, and imagining.  
+  
+Their most recent group exhibition—Worldglimpsing: Roleplay and the Design of Alternate Realities—is currently on view at ArkDes/Moderna Museet in Stockholm with a second chapter opening at the Nieuwe Instituut in Rotterdam later this year. Over the past decade, his curatorial projects and artistic collaborations have traced queer belonging (Cruising Pavilion: Architecture, Gay Sex and Cruising Culture, 2019; MEATRACK, 2024), investigated how creativity meets technology and popular culture (WEIRD SENSATION FEELS GOOD: The World of ASMR, 2020-2025), and explored the city as an expressive body (through projects by Studio Ossidiana, 2021; Swedish Girls, 2022; MYCKET, 2023, and more). They have twice co-organised exhibitions for the Nordic Countries Pavilion at La Biennale di Venezia, most recently facilitating Joar Nango and collaborators’ Girjegumpi: The Sámi Architecture Library (2023) from Sápmi to Venice. Their work, ideas, and creative alliances have been featured in the likes of The New York Times, PIN-UP, London Review of Books, The Economist, e-flux, The Guardian, and BBC Culture.
 
 # Projects
 

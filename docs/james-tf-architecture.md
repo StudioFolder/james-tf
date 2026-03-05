@@ -18,7 +18,7 @@ The project is built with plain HTML and CSS (with minimal vanilla JavaScript), 
 
 - **HTML + CSS + vanilla JS** — no framework, no build framework
 - **marked.js** — Markdown parser (Node.js, build time only)
-- **Instrument Sans** — served via Google Fonts
+- **Instrument Sans** — served via Google Fonts (400, 500, italic 400)
 - **ABC Diatype Mono Condensed** — loaded locally via `@font-face` (Regular + Italic OTF), used for bio text only
 - **Node.js v23** — runs the build script locally and on Vercel
 
@@ -78,13 +78,22 @@ The client (James Taylor-Foster) **never edits** `index.html` or `template.html`
 
 The build script (`build.js`) performs the following steps:
 
-1. Reads `template.html` — the HTML shell with `{{NAV_PRIMARY}}`, `{{NAV_SECONDARY}}`, `{{CONTENT}}`, `{{FOOTER}}`, `{{FOOTER_DELAY}}`, `{{BIO_SHORT}}`, `{{BIO_MEDIUM}}`, `{{BIO_LONG}}`, `{{BIO_SHORT_WORDS}}`, `{{BIO_MEDIUM_WORDS}}`, `{{BIO_LONG_WORDS}}` placeholders
+1. Reads `template.html` — the HTML shell with `{{NAV_PRIMARY}}`, `{{NAV_SECONDARY}}`, `{{NAME_DELAY}}`, `{{BIO_DELAY}}`, `{{BIO_CONTROLS_DELAY}}`, `{{FOOTER_DELAY}}`, `{{FOOTER}}`, `{{BIO_SHORT}}`, `{{BIO_MEDIUM}}`, `{{BIO_LONG}}`, `{{BIO_SHORT_WORDS}}`, `{{BIO_MEDIUM_WORDS}}`, `{{BIO_LONG_WORDS}}` placeholders
 2. Reads `content.md` and splits it into sections by heading level (`#` for primary nav, `##` for secondary nav and special sections)
 3. Detects special sections by slug and routes them appropriately
-4. For each nav section, generates a nav button (left column) and a content panel (right column)
-5. Calculates staggered animation delays for the fade-in cascade
+4. For each nav section, generates a `.nav-row` containing a nav button and its corresponding section panel
+5. Calculates staggered animation delays for the full fade-in cascade (name → bio → bio-controls → primary nav items → secondary nav items → footer)
 6. Calculates word counts for each bio version
 7. Injects all generated HTML into the placeholders and writes `index.html`
+
+### Custom Markdown renderer
+
+The build script uses a custom `marked` paragraph renderer. Each line within a paragraph is examined:
+
+- Lines matching `year | content` (e.g. `2025–27 | *Title*`) are wrapped in `<span class="entry">` with separate `.entry-year` and `.entry-text` spans
+- All other lines are wrapped in `<span class="entry-full">`
+
+This allows individual entries to fade in/out as part of the section panel cascade.
 
 ### content.md structure
 
@@ -141,7 +150,7 @@ Lines beginning with a year (including ranges like `2025–27`) followed by `|` 
 2026    | [*Article*](https://url.com), Publication
 ```
 
-Lines without the year `|` pattern are rendered as full-width text blocks.
+Lines without the year `|` pattern are rendered as full-width text blocks (`.entry-full`).
 
 ### Running the build
 
@@ -221,59 +230,63 @@ All colours are CSS custom properties on `:root`. Dark mode is toggled by adding
 
 ## 8. Layout
 
-### Left column
+### DOM structure
 
-`.col-left` is `position: fixed`, full viewport height, flex column flowing top to bottom:
+The page consists of a single `.layout` div containing two elements: the `.face` (positioned independently) and `.col-left` (the main column). There is no `.col-right` container — section panels are positioned via `position: fixed` from within `.nav-row` elements inside the nav.
 
 ```
-.col-left (fixed, left: var(--left), height: 100vh, flex-direction: column)
-├── .name               — top of column, padding-top: var(--top)
-├── .bio                — flows below name, margin-left: -6rem (outdented)
-├── .bio-controls       — flows below bio, aligned to column edge
-├── .sections-primary   — minimum top: 33vh (enforced by JS), pushed down by bio if needed
-├── .sections-secondary — margin-top: auto (pushed to lower third)
-└── .footer             — margin-top: auto (pinned to bottom)
+.layout
+├── .face                   — fixed, left: calc(var(--left) - 5rem), outside the column
+└── .col-left (fixed, left: var(--left), height: 100vh, flex-direction: column)
+    ├── .name               — top of column, padding-top: var(--top)
+    ├── .bio                — flows below name, margin-left: -6rem (outdented)
+    ├── .bio-controls       — flows below bio, aligned to column edge
+    ├── .sections-primary   — minimum top: 33vh (enforced by JS), pushed down by bio if needed
+    │   └── .nav-row ×N     — each contains a .nav-item button + .section-panel
+    ├── .sections-secondary — margin-top: auto (pushed to lower third)
+    │   └── .nav-row ×N     — each contains a .nav-item button + .section-panel
+    └── .footer             — margin-top: auto (pinned to bottom)
 ```
 
 ### Bio outdent
 
-`.bio` uses `margin-left: -6rem` to visually extend left beyond `--left`, giving it a wider, more prominent position. All other column elements stay flush at `--left`.
+`.bio` uses `margin-left: -6rem` to visually extend left beyond `--left`, giving it a wider, more prominent position. Its width is `calc(100vw - var(--left) - 3rem)` with `max-width: 80vw`. All other column elements stay flush at `--left`.
 
 ### Face
 
-`.face` is independently `position: fixed` at `left: calc(var(--left) - 5rem)`, outside the column. Clicking toggles dark mode.
+`.face` is independently `position: fixed` at `left: calc(var(--left) - 5rem)`, outside the column. It renders as `◕‿◕` with blinking eye animation. Clicking toggles dark mode.
 
 ### Nav indicators
 
-The `–` indicator on each nav item uses `position: absolute; right: 100%` to sit outside the column to the left, never affecting text alignment.
+The `–` indicator on each nav item uses `position: absolute; right: 100%` to sit outside the column to the left, never affecting text alignment. It appears on hover and when pinned.
 
-### Right column
+### Section panels
 
-`.col-right` is `position: fixed`, top 0, beginning at `left: calc(var(--left) + 280px)`. Section panels are absolutely positioned within it, with `top` values set dynamically by JS to align with their corresponding nav titles.
+Section panels are `position: fixed` with `left: calc(var(--left) + 280px)` and `width: calc(100vw - var(--left) - 280px - 3rem)`. They use a vertical translate of `calc(-1 * var(--line-height) * 0.9rem)` to align with their nav item's baseline. Panels live inside `.nav-row` divs as siblings of their corresponding `.nav-item` button.
 
 ---
 
 ## 9. JavaScript
 
-All JS lives inside a single `DOMContentLoaded` listener in `template.html`. Key functions:
+All JS lives inside a single `DOMContentLoaded` listener in `template.html`. There is no `positionPanels()` function — panels are aligned via CSS `translate` rather than JS-calculated `top` values.
 
 ### `positionNav()`
-Resets `.sections-primary` margin to `0`, measures its natural flow position, then adds margin if needed to enforce a minimum top of `33vh`. Called on `fonts.ready`, `resize`, and whenever bio version changes.
+Calculates where `.sections-primary` should sit. On first call, locks a resting position at `max(33vh, natural flow position)`. On subsequent calls, only moves the nav down if the bio-controls plus one line of text would breach the locked position. Uses `marginTop` on `.sections-primary` to achieve this. Called on `fonts.ready`, `resize`, and whenever bio version changes. The cached `navFixedTop` is reset to `null` on `resize`.
 
-### `positionPanels()`
-Reads each `.nav-item`'s `getBoundingClientRect().top` and sets the corresponding `.section-panel`'s `top` to match. Ensures right column content always aligns with its nav title regardless of bio height. Called on `fonts.ready`, `resize`, and bio version change.
+### `showBio(index, animate)`
+Manages the three-step bio transition: fade out current panel → animate container height → fade in next panel. Updates control states immediately (disabled buttons, wordcount display, `.at-longest` class). When `animate` is false (initial load), performs an instant switch. Uses a `bioAnimating` lock to prevent overlapping transitions. The height transition completion is detected via `transitionend` on the `.bio` container, filtered to `propertyName === 'height'`.
 
-### `showBio(index)`
-Activates the correct bio panel, updates disabled state of `–`/`+` buttons, updates wordcount display, toggles `.at-longest` class on `.bio-buttons`, then calls `positionNav()` and `positionPanels()` via `requestAnimationFrame`.
+### Bio copy
+The wordcount button doubles as a copy-to-clipboard button. Its `::before` pseudo-element shows the word count by default, switches to "copy" on hover, and "copied" after clicking (via `data-state` attribute). The copied state resets after 2 seconds.
 
 ### `showPanel(target)` / `hideAll()`
-Controls section panel visibility with staggered entry animations. Entries fade in top-to-bottom (`ENTRY_IN_STEP: 0.06s`) and fade out bottom-to-top (`ENTRY_OUT_STEP: 0.04s`). `hideAll()` is triggered after `HIDE_DELAY: 2400ms` when mouse leaves the nav or right column area.
+Controls section panel visibility with staggered entry animations. Entries fade in top-to-bottom (`ENTRY_IN_STEP: 0.06s`) and fade out bottom-to-top (`ENTRY_OUT_STEP: 0.04s`). `hideAll()` is triggered after `HIDE_DELAY: 2400ms` when mouse leaves the nav or layout area.
 
 ### Pinning behaviour
-Hovering a nav item shows its panel temporarily. Clicking pins it — content persists until the item is clicked again. Only one section can be pinned at a time. The `–` indicator remains visible while pinned.
+Hovering a nav item shows its panel temporarily. Clicking pins it — content persists until the item is clicked again. Only one section can be pinned at a time. The `–` indicator remains visible while pinned. Unpinning triggers `hideAll()` immediately.
 
 ### Mouse event zones
-The hide timeout is managed across three zones: `.sections-primary`/`.sections-secondary` (nav area), `.col-right` (content area), and `.layout` (full page). Moving between any of these cancels the timeout. The timeout only fires when the mouse leaves all three.
+The hide timeout is managed across two zone types: `.sections-primary`/`.sections-secondary` (nav areas) and `.layout` (full page). Moving between these cancels the timeout. The timeout only fires when the mouse leaves all zones. Note: there is no separate `.col-right` zone since no `.col-right` element exists in the DOM.
 
 ---
 
@@ -281,24 +294,28 @@ The hide timeout is managed across three zones: `.sections-primary`/`.sections-s
 
 The bio sits between the name and the primary nav, set in ABC Diatype Mono Condensed at `2rem`. It has three versions (short, medium, long) defined in `content.md` as `## bio-short`, `## bio-medium`, `## bio-long`.
 
+The `.bio` container uses `overflow: hidden` and an explicit `height` (set via JS) to animate between versions. Each `.bio-panel` is `position: absolute` within the container, with only the `.active` panel visible (`opacity: 1`, `pointer-events: auto`).
+
 Controls sit below the bio text, aligned to the column edge:
-- `–` and `+` are SVG buttons sitting to the left of the wordcount via `position: absolute; right: 100%`
-- At the shortest bio, only `+` is visible; at the longest, only `–` is visible
+- `–` and `+` are inline SVG buttons sitting to the left of the wordcount via `position: absolute; right: 100%`
+- At the shortest bio, `–` is hidden (`disabled` + `display: none`); at the longest, `+` is hidden
 - At the longest bio, `.bio-buttons` gets the `.at-longest` class which nudges the `–` down to align with the wordcount
-- Wordcount displays the word count of the active bio version (calculated at build time, stored as `data-words` on each panel)
+- Wordcount displays the word count of the active bio version (calculated at build time, stored as `data-words` on each `.bio-panel`)
+- Clicking the wordcount copies the active bio text to clipboard
 
 ---
 
 ## 11. Animations
 
-- **Fade-in cascade:** name (0.3s delay) → primary nav items (0.5s, 0.7s...) → secondary nav items → footer. Steps of 0.2s, generated dynamically in `build.js`
-- **Eye blink:** both eyes sync, random interval 2–6s, `scaleY(0.1)` for 120ms
+- **Fade-in cascade:** name → bio → bio-controls → primary nav items → secondary nav items → footer. Base delay 0.3s, step 0.2s, calculated dynamically in `build.js`. Name is index 0, bio index 1, bio-controls index 2, nav items start at index 3.
+- **Eye blink:** both eyes sync, random interval 2–6s, `scaleY(0.1)` for 120ms. First blink after 1–3s random delay.
 - **Dark mode:** 0.6s ease transition on `background-color` and `color`
+- **Bio transition:** three-step sequence — 0.2s fade out, 0.3s height animation, 0.2s fade in
 - **Section panels:** `opacity` + `visibility` transition, 0.3s ease
 - **Entry cascade in:** top to bottom, 0.06s step
-- **Entry cascade out:** bottom to top, 0.04s step, after 2400ms delay
-- **Link underline:** `scaleX(0)` from right, 0.2s linear, via `::after` pseudo-element
-- **Nav indicator:** `opacity` transition 0.2s on hover and when pinned
+- **Entry cascade out:** bottom to top, 0.04s step, panel removed after cascade + 400ms buffer
+- **Link underline:** `scaleX(0)` from right (`transform-origin: right`), 0.2s linear, via `::after` pseudo-element. Applied to section panel links, footer links, and wordcount button.
+- **Nav indicator:** `opacity` transition 0.2s on hover and when pinned. Indicator is scaled `scaleX(1.8)` with slight upward nudge `translateY(-0.1em)`.
 
 ---
 
@@ -325,9 +342,10 @@ Mobile styles are in place but the full mobile experience is not yet designed. C
 
 - Face: fixed top right
 - Name: fixed top left
+- Bio: visible but uses desktop layout assumptions (outdented, needs attention)
 - Primary and secondary nav: hidden
-- Right column: hidden
-- Footer: fixed bottom left, smaller font
+- Section panels: not accessible (no accordion interaction yet)
+- Footer: fixed bottom left, smaller font (0.75rem), thinner link underlines (0.5px)
 
 Mobile accordion interaction for sections is a planned next step.
 
@@ -337,6 +355,9 @@ Mobile accordion interaction for sections is a planned next step.
 
 - Design and implement portrait/image interaction
 - Design and implement mobile accordion for sections
+- Fix mobile bio layout (outdent and controls positioning)
+- Add `<noscript>` fallback for non-JS environments
+- Add favicon
 - Populate all sections with final content in `content.md`
 - James to write final bio texts (short, medium, long)
 - Connect custom domain `james.tf` to Vercel production
