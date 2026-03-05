@@ -53,6 +53,7 @@
           </span>
           <button class="bio-wordcount" id="bio-copy" aria-label="Copy bio"></button>
         </div>
+      <div class="bio-spacer"></div>
       <nav class="sections sections-primary">
         {{NAV_PRIMARY}}
       </nav>
@@ -160,10 +161,7 @@
           positionNav();
         });
 
-        window.addEventListener('resize', () => {
-          navFixedTop = null;
-          positionNav();
-        });
+        window.addEventListener('resize', positionNav);
 
         bioMinus.addEventListener('click', () => {
           if (bioIndex > 0 && !bioAnimating) {
@@ -191,30 +189,22 @@
         const HIDE_DELAY = 2400;
 
         // Position nav: pinned at 33vh, only moves if bio fills the gap
-        let navFixedTop = null;
-
         function positionNav() {
-          const primary = document.querySelector('.sections-primary');
+          // Update bio height in case text has reflowed
+          const bioContainer = document.querySelector('.bio');
+          const activePanel = bioPanels[bioIndex];
+          bioContainer.style.height = activePanel.scrollHeight + 'px';
+
+          const spacer = document.querySelector('.bio-spacer');
           const bioControls = document.querySelector('.bio-controls');
-          const bcBottom = bioControls.getBoundingClientRect().bottom;
-          const bcMarginBottom = parseFloat(getComputedStyle(bioControls).marginBottom);
           const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
           const oneLine = remPx * parseFloat(getComputedStyle(document.body).lineHeight);
 
-          // Where nav sits with 0 JS margin (derived, no reflow)
-          const naturalTop = bcBottom + bcMarginBottom;
+          const bcBottom = bioControls.getBoundingClientRect().bottom;
+          const idealTop = window.innerHeight * 0.33;
+          const gap = idealTop - bcBottom;
 
-          // First call: lock the resting position
-          if (navFixedTop === null) {
-            navFixedTop = Math.max(window.innerHeight * 0.33, naturalTop);
-          }
-
-          // Only move if bio-controls + one line breaches the resting position
-          const targetTop = Math.max(navFixedTop, bcBottom + oneLine);
-
-          // Apply margin to reach target (no reset, no reflow)
-          const margin = targetTop - naturalTop;
-          primary.style.marginTop = (margin > 0 ? margin : 0) + 'px';
+          spacer.style.flexBasis = Math.max(oneLine, gap) + 'px';
         }
 
         function showPanel(target) {
