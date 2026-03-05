@@ -59,9 +59,11 @@ james-tf/
 ├── package-lock.json
 ├── node_modules/           ← gitignored
 ├── assets/
-│   └── fonts/
-│       ├── ABCDiatypeMonoCondensed-Regular.otf
-│       └── ABCDiatypeMonoCondensed-RegularItalic.otf
+│   ├── fonts/
+│   │   ├── ABCDiatypeMonoCondensed-Regular.otf
+│   │   └── ABCDiatypeMonoCondensed-RegularItalic.otf
+│   └── images/
+│       └── portrait-01.jpg
 ├── docs/                   ← project documentation
 └── .gitignore              ← ignores node_modules
 ```
@@ -232,34 +234,39 @@ All colours are CSS custom properties on `:root`. Dark mode is toggled by adding
 
 ### DOM structure
 
-The page consists of a single `.layout` div containing two elements: the `.face` (positioned independently) and `.col-left` (the main column). There is no `.col-right` container — section panels are positioned via `position: fixed` from within `.nav-row` elements inside the nav.
+The page consists of a `.cursor-portrait` image (for the cursor-following portrait interaction), a `.layout` div containing the `.face` (positioned independently) and `.col-left` (the main column). There is no `.col-right` container — section panels are positioned via `position: fixed` from within `.nav-row` elements inside the nav.
 
 ```
+.cursor-portrait              — fixed, pointer-events: none, z-index: 1000
 .layout
-├── .face                   — fixed, left: calc(var(--left) - 5rem), outside the column
-└── .col-left (fixed, left: var(--left), height: 100vh, flex-direction: column)
-    ├── .name               — top of column, padding-top: var(--top), flex-shrink: 0
-    ├── .bio                — flows below name, margin-left: -6rem (outdented), flex-shrink: 0
-    ├── .bio-controls       — flows below bio, aligned to column edge
-    ├── .bio-spacer         — flex-shrink: 1, absorbs compression when viewport shrinks
-    ├── .sections-primary   — flex-shrink: 0
-    │   └── .nav-row ×N     — each contains a .nav-item button + .section-panel
-    ├── .sections-secondary — margin-top: auto (pushed to lower third), flex-shrink: 0
-    │   └── .nav-row ×N     — each contains a .nav-item button + .section-panel
-    └── .footer             — margin-top: auto (pinned to bottom), flex-shrink: 0
+├── .face                     — fixed, left: calc(var(--left) - 5rem), outside the column
+└── .col-left (fixed, left: 0, width: 100vw, height: 100vh, padding-left: var(--left))
+    ├── .name                 — top of column, padding-top: var(--top), flex-shrink: 0
+    ├── .bio                  — flows below name, margin-left: -6rem (outdented into padding), flex-shrink: 0
+    ├── .bio-controls         — flows below bio, aligned to column edge
+    ├── .bio-spacer           — flex-shrink: 1, absorbs compression when viewport shrinks
+    ├── .sections-primary     — flex-shrink: 0
+    │   └── .nav-row ×N       — each contains a .nav-item button + .section-panel
+    ├── .sections-secondary   — margin-top: auto (pushed to lower third), flex-shrink: 0
+    │   └── .nav-row ×N       — each contains a .nav-item button + .section-panel
+    └── .footer               — margin-top: auto (pinned to bottom), flex-shrink: 0
 ```
+
+### Scrolling strategy
+
+`.col-left` spans the full viewport width (`left: 0; width: 100vw`) with `padding-left: var(--left)` to position content. It uses `overflow-y: auto; overflow-x: hidden`. On most viewports, content fits within `100vh` and no scrollbar appears. When the bio is long enough to push nav labels and footer below the viewport, the column becomes scrollable with the scrollbar at the right edge of the window.
 
 ### Flex shrink strategy
 
-The `.col-left` flex column is constrained to `100vh`. When the viewport shrinks vertically, the `.bio-spacer` (the gap between bio-controls and primary nav) compresses first, since it is the only element with `flex-shrink: 1`. All other flex children have `flex-shrink: 0` and hold their size. Once the spacer is fully compressed, the `.bio` container clips its content via `overflow: hidden` as a last resort.
+When the viewport shrinks vertically, the `.bio-spacer` (the gap between bio-controls and primary nav) compresses first, since it is the only element with `flex-shrink: 1`. All other flex children have `flex-shrink: 0` and hold their size. Once the spacer is fully compressed, the column overflows and becomes scrollable.
 
 ### Bio outdent
 
-`.bio` uses `margin-left: -6rem` to visually extend left beyond `--left`, giving it a wider, more prominent position. Its width is `calc(100vw - var(--left) - 3rem)` with `max-width: 80vw`. All other column elements stay flush at `--left`.
+`.bio` uses `margin-left: -6rem` to visually extend left into the `padding-left` area of `.col-left`. Since the column now starts at `left: 0` with `padding-left: var(--left)`, the negative margin pulls the bio into the padding space rather than outside the container — this allows `overflow-x: hidden` on the column without clipping the bio. Its width is `calc(100vw - var(--left) - 3rem)` with `max-width: 80vw`. All other column elements stay flush at `--left`.
 
 ### Face
 
-`.face` is independently `position: fixed` at `left: calc(var(--left) - 5rem)`, outside the column. It renders as `◕‿◕` with blinking eye animation. Clicking toggles dark mode.
+`.face` is independently `position: fixed` at `left: calc(var(--left) - 5rem)`, outside the column. It renders as `◕‿◕` with blinking eye animation. Clicking toggles dark mode. The face expression changes contextually — when hovering a portrait image link, the eyes change to `◡` (blushing: `◡‿◡`).
 
 ### Nav indicators
 
@@ -293,6 +300,9 @@ Hovering a nav item shows its panel temporarily. Clicking pins it — content pe
 ### Mouse event zones
 The hide timeout is managed across two zone types: `.sections-primary`/`.sections-secondary` (nav areas) and `.layout` (full page). Moving between these cancels the timeout. The timeout only fires when the mouse leaves all zones. Note: there is no separate `.col-right` zone since no `.col-right` element exists in the DOM.
 
+### Cursor-following portrait
+A fixed `<img class="cursor-portrait">` element follows the cursor when hovering links inside section panels that point to image files (matched by extension: jpg, jpeg, png, gif, webp). The image is offset 20px right and 20px above the cursor (anchored at its bottom-left corner above the cursor). On mouseenter, the image fades in (`opacity` transition, 0.25s), the link's default click is prevented, and the face expression changes to blushing (`◡‿◡`). On mouseleave, the image fades out and the face resets. This interaction is wired up once at page load by scanning all `.section-panel a` elements.
+
 ---
 
 ## 10. Bio Component
@@ -321,6 +331,8 @@ Controls sit below the bio text, aligned to the column edge:
 - **Entry cascade out:** bottom to top, 0.04s step, panel removed after cascade + 400ms buffer
 - **Link underline:** `scaleX(0)` from right (`transform-origin: right`), 0.2s linear, via `::after` pseudo-element. Applied to section panel links, footer links, and wordcount button.
 - **Nav indicator:** `opacity` transition 0.2s on hover and when pinned. Indicator is scaled `scaleX(1.8)` with slight upward nudge `translateY(-0.1em)`.
+- **Cursor portrait:** `opacity` transition 0.25s ease on the fixed `<img>`, triggered by hovering image links in section panels.
+- **Noscript fallback:** A `<noscript>` block in `<head>` forces `opacity: 1` and `animation: none` on all animated elements (`.name`, `.bio`, `.bio-controls`, `.nav-item`, `.footer`), ensuring content is visible without JavaScript.
 
 ---
 
@@ -332,8 +344,9 @@ Controls sit below the bio text, aligned to the column edge:
 - **Press**
 
 ### Secondary sections (lower nav, auto-pushed to lower third)
+- **Speaking**
+- **Portrait** — contains image link(s) that trigger the cursor-following portrait interaction
 - **Contact**
-- **Inquiries**
 
 ### Special sections (not in nav)
 - **Bio** (short/medium/long) — injected into bio component
@@ -341,16 +354,34 @@ Controls sit below the bio text, aligned to the column edge:
 
 ---
 
-## 13. Mobile (≤768px) — Partial
+## 13. Mobile (≤768px)
 
-Mobile styles are in place but the full mobile experience is not yet designed. Current state:
+Mobile layout reimagines the desktop column as a full-width scrollable page.
 
-- Face: fixed top right
-- Name: fixed top left
-- Bio: visible but uses desktop layout assumptions (outdented, needs attention)
-- Primary and secondary nav: hidden
-- Section panels: not accessible (no accordion interaction yet)
-- Footer: fixed bottom left, smaller font (0.75rem), thinner link underlines (0.5px)
+### Layout changes
+- `html, body`: `overflow-y: auto; overflow-x: hidden` — page scrolls vertically when bio is long
+- `.col-left`: `position: static; width: 100vw; height: auto; min-height: 100vh; padding: 0 1.75rem` — no longer fixed, flows naturally
+- `.name`: `padding-top: 1.25rem; margin-left: 1.75rem` — indented from left edge, aligns with bio-controls
+- `.face`: `position: fixed; top: 1.25rem; right: 1.75rem; z-index: 100` — pinned top-right, above all content
+- `.bio`: `margin-left: 0; width: 100%; max-width: 100%` — full width, no outdent
+- `.bio-panel`: `font-size: 1.2rem` — reduced from desktop 2rem
+- `.bio-spacer`: `display: none` — no spacer needed on mobile
+
+### Controls layout
+- `.bio-controls`: `margin-left: 1.75rem; width: calc(100vw - 3.5rem); position: relative` — spans from indent to right edge
+- `.bio-buttons`: `position: absolute; right: 0.5rem; padding-right: 1.25rem` — aligned right, mirroring face position
+- `.bio-wordcount`: hover state disabled on mobile (no "copy" label on hover, just shows word count; tap copies and shows "copied")
+
+### Sections
+- `.sections-primary`, `.sections-secondary`: `display: none` — hidden, accordion interaction planned
+- `.section-panel`: `display: none` — not accessible on mobile yet
+
+### Footer
+- `position: sticky; bottom: 0` — sticks to bottom of viewport, pushed down by bio when content is long
+- `margin-left: 0` — aligned with bio, not indented like name/controls
+- `font-size: 0.75rem` — smaller than desktop
+- `background-color: var(--color-bg)` — prevents bio text showing through when scrolling
+- `padding-bottom: 0.75rem` — reduced from desktop
 
 Mobile accordion interaction for sections is a planned next step.
 
@@ -358,10 +389,8 @@ Mobile accordion interaction for sections is a planned next step.
 
 ## 14. Next Steps
 
-- Design and implement portrait/image interaction
 - Design and implement mobile accordion for sections
-- Fix mobile bio layout (outdent and controls positioning)
-- Remove dead `.col-right` rule from mobile media query
+- Explore additional face expressions for different interaction states
 - Add favicon
 - Populate all sections with final content in `content.md`
 - James to write final bio texts (short, medium, long)
