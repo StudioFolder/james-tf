@@ -308,7 +308,7 @@
         document.addEventListener('mousemove', (e) => {
           if (portraitVisible) {
             cursorPortrait.style.left = e.clientX + 20 + 'px';
-            cursorPortrait.style.top = e.clientY + 20 + 'px';
+            cursorPortrait.style.top = e.clientY - cursorPortrait.offsetHeight - 20 + 'px';
           }
         });
 
