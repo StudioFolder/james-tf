@@ -24,6 +24,7 @@
 </head>
 <body>
   <img class="cursor-portrait" src="" alt="">
+  <div class="mobile-header"></div>
   <div class="layout">
     <span class="face">
       <span class="eye left-eye">◕</span>
@@ -210,10 +211,23 @@
 
         // Keep section panels aligned with nav when column scrolls
         const colLeft = document.querySelector('.col-left');
+        const mobileHeader = document.querySelector('.mobile-header');
+        const nameEl = document.querySelector('.name');
         colLeft.addEventListener('scroll', () => {
           panels.forEach(p => {
             p.style.translate = `0 calc(-1 * var(--line-height) * 0.9rem - ${colLeft.scrollTop}px)`;
           });
+          if (window.innerWidth <= 768) {
+            const scrolled = colLeft.scrollTop > 10;
+            mobileHeader.classList.toggle('visible', scrolled);
+            if (scrolled && !mobileHeader.querySelector('.name-clone')) {
+              const clone = document.createElement('span');
+              clone.className = 'name-clone';
+              clone.textContent = 'James Taylor-Foster';
+              mobileHeader.appendChild(clone);
+            }
+            mobileHeader.classList.toggle('name-visible', scrolled);
+          }
         });
 
         function showPanel(target) {
