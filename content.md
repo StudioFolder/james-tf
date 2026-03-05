@@ -1,6 +1,6 @@
 ## bio-short
 
-james taylor-foster [he/they] is a curator, writer, and cultural leader investigating how the creativity of artists, designers and thinkers reimagines our world – shaping popular culture and public life.
+james taylor-foster [he/they] is a curator, writer, and cultural leader investigating how the creativity of artists, designers, and thinkers reimagines our world – shaping popular culture and public life.
 
 ## bio-medium
 
@@ -14,13 +14,25 @@ james taylor-foster [he/they] is a curator, writer, and cultural leader investig
   
 Their practice bridges contemporary art, design, architecture, and digital culture, blurring disciplinary boundaries and exploring unconventional ways of nurturing institutions and their audiences. This expansive approach is both greenhouse and staging ground: cultivating emergent ideas for wider cultural spheres while building ambitious platforms for assembling many forms of making into new ways of seeing, feeling, and imagining.  
   
-Their most recent group exhibition—*Worldglimpsing: Roleplay and the Design of Alternate Realities*—is currently on view at ArkDes/Moderna Museet in Stockholm with a second chapter opening at the Nieuwe Instituut in Rotterdam later this year. Over the past decade, his curatorial projects and artistic collaborations have traced queer belonging (Cruising Pavilion: Architecture, Gay Sex and Cruising Culture, 2019; MEATRACK, 2024), investigated how creativity meets technology and popular culture (WEIRD SENSATION FEELS GOOD: The World of ASMR, 2020-2025), and explored the city as an expressive body (through projects by Studio Ossidiana, 2021; Swedish Girls, 2022; MYCKET, 2023, and more). They have twice co-organised exhibitions for the Nordic Countries Pavilion at La Biennale di Venezia, most recently facilitating Joar Nango and collaborators’ Girjegumpi: The Sámi Architecture Library (2023) from Sápmi to Venice. Their work, ideas, and creative alliances have been featured in the likes of The New York Times, PIN-UP, London Review of Books, The Economist, e-flux, The Guardian, and BBC Culture.
+Their most recent group exhibition ([*Worldglimpsing: Roleplay and the Design of Alternate Realities*](https://www.e-flux.com/announcements/674326/worldglimpsing)) is currently on view at ArkDes/Moderna Museet in Stockholm, with a second chapter opening at the Nieuwe Instituut in Rotterdam in 2026. Over the past decade, their curatorial projects and artistic collaborations have traced queer belonging, investigated how creativity meets technology and popular culture, and explored the city as an expressive body. They have twice co-organised exhibitions for the Nordic Countries Pavilion at *La Biennale di Venezia*. Their work, ideas, and creative alliances have been featured in the likes of *The New York Times*, *PIN-UP*, *London Review of Books*, *The Economist*, *e-flux*, *The Guardian*, and *BBC Culture*. They write criticism, fiction, and poetry, and speaks regularly at institutions and events internationally.
 
 # Projects
 
-2025-27 | Worldglimpsing: Role Play and the Design of Alternate Realities – ArkDes × Nieuwe Instituut with Shedhalle (Zurich), Callie’s (Berlin), Haus der Kunst (Munich)  
-2020-25 | WEIRD SENSATION FEELS GOOD: The World of ASMR – ArkDes × the Design Museum with Gate 33 / AIRSIDE  
-2023 | Joar Nango and collaborators: Girjegumpi: The Sámi Architecture Library – Nordic Countries Pavilion, 18th Biennale Architettura – ArkDes × Nasjonalmuseum × MFA with Carlos Mínguez Carrasco
+2025-27 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://www.e-flux.com/announcements/642952/worldglimpsing/), ArkDes/Moderna Museet × Nieuwe Instituut with Shedhalle, Callie’s, Haus der Kunst
+2020-25 | [WEIRD SENSATION FEELS GOOD: The World of ASMR](https://www.e-flux.com/announcements/465138/weird-sensation-feels-good), ArkDes × the Design Museum with Gate 33/AIRSIDE 《感官怪奇：走進ASMR的世界》
+2024 | [MEATRACK](https://www.rigaartweek.com/en-events/meatrack-jtf-x-eter) by james taylor-foster × ĒTER, supported by WEEKDAY (Paris Art Week, 2024; Riga Art Week, 2025)
+2024 | [The New ArkDes](https://www.e-flux.com/announcements/623179/reopening-in-stockholm), ArkDes
+2023 | [MYCKET: Utsikten](https://www.e-flux.com/announcements/613790/mycketutsikten), Utsikten, ArkDes
+2023 | [Joar Nango and collaborators: Girjegumpi: The Sámi Architecture Library](https://www.e-flux.com/announcements/514462/joar-nangogirjegumpi/), Nordic Countries Pavilion, 18th *Biennale Architettura* with Carlos Mínguez Carrasco
+2018-23 | [BOXEN](https://www.e-flux.com/announcements/206872/boxen-at-arkdes/) by Dehlin Brattgård Arkitekter, ArkDes
+2022 | [Watch & Chill 2.0: Streaming Senses](https://www.e-flux.com/announcements/470228/watch-and-chill-2-0-streaming-senses/), ArkDes × National Museum of Modern and Contemporary Art, Korea × Sharjah Art Foundation with Jihoi Lee, Hoor Al Qasimi
+2022 | [Swedish Girls: Utomhusverket 2022](https://www.e-flux.com/announcements/437164/mira-bergh-and-josefin-zachrisson/), Utsikten, ArkDes; Alcova 2022
+2021 | [Studio Ossidiana: Utomhusverket 2021](https://www.e-flux.com/announcements/399526/studio-ossidianautomhusverket-2021/), Exercisplan, ArkDes
+2021-22 | [Solicited: Proposals](https://www.e-flux.com/architecture/solicited-proposals/) feat. Esther Choi, Jia Yi Gu, Gilly Karjevsky and Rosario Talevi, Vasif Kortun, Prem Krishnamurthy, Maria Lind, Federico Martelli, Mpho Matsipa, Lynhan Balatbat-Helbock, Molemo Moiloa, Shirley Surya, ArkDes × *e-flux Architecture* with Nikolaus Hirsch, Nick Axel
+2020 | [Interdependence](https://archive.pinupmagazine.org/articles/interdependence-video-sweden-response-covid-james-taylor-foster) by james taylor-foster × Studio Reko, presented by *PIN-UP*
+2019 | [Cruising Pavilion: Architecture, Gay Sex, and Cruising Culture](https://www.e-flux.com/announcements/265850/cruising-pavilion/), Boxen, ArkDes, with Pierre-Alexandre Mateos, Rasmus Myrup, Octave Perrault, Charles Teyssou
+2018 | [Space Popular: Value in the Virtual](https://www.e-flux.com/announcements/214128/space-popularvalue-in-the-virtual/), Boxen, ArkDes
+2016 | [In Therapy], Nordic Countries Pavilion, 16th *Biennale Architettura* with David Basulto
 
 # Writing
 
