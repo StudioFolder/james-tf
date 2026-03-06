@@ -837,7 +837,7 @@ button {
   }
 
   .section-overlay .entry-year {
-    margin-top: 2rem;
+    margin-top: 0.5rem;
     margin-bottom: 0.3rem;
     padding-left: 1.75rem;
     font-family: 'ABCDiatypeMono', monospace;
