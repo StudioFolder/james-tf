@@ -499,6 +499,14 @@ button {
     opacity: 0;
   }
 
+  .mobile-header.overlay-open {
+      opacity: 1;
+    }
+
+    .mobile-header.overlay-open .name-jtf {
+      opacity: 1;
+    }
+
   .col-left {
     position: fixed;
     top: 0;

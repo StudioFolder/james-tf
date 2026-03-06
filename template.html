@@ -402,7 +402,8 @@
                 link.setAttribute('rel', 'noopener noreferrer');
               });
               overlayContent.scrollTop = 0;
-              mobileHeader.classList.remove('visible', 'name-visible');
+              mobileHeader.classList.remove('name-visible');
+              mobileHeader.classList.add('overlay-open');
               overlay.classList.add('visible');
             });
           });
@@ -410,7 +411,7 @@
           document.querySelector('.section-overlay-close').addEventListener('click', () => {
             overlay.classList.remove('visible');
             overlayContent.scrollTop = 0;
-            mobileHeader.classList.remove('visible', 'name-visible');
+            mobileHeader.classList.remove('visible', 'name-visible', 'overlay-open');
           });
 
           // Portrait overlay
