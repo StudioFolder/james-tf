@@ -372,6 +372,10 @@ button {
   opacity: 0;
 }
 
+.section-overlay {
+  display: none;
+}
+
 .entry {
   display: grid;
   grid-template-columns: 5rem 1fr;
@@ -579,6 +583,88 @@ button {
 
   .section-panel {
     display: none;
+  }
+
+  .section-overlay {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-bg);
+    z-index: 80;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    overflow: hidden;
+  }
+
+  .section-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .section-overlay-content {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    flex: 1;
+    padding: 1.75rem;
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+  }
+
+  .section-overlay .entry {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+  }
+
+  .section-overlay .entry-year {
+    font-size: 0.75rem;
+    opacity: 0.5;
+  }
+
+  .section-overlay .entry-full {
+    margin-bottom: 1.2rem;
+  }
+
+  .section-overlay-bar {
+    position: fixed;
+    bottom: 0.6rem;
+    left: 1rem;
+    right: 1rem;
+    height: 2.8rem;
+    background-color: var(--color-bg);
+    border-radius: 999px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+
+  .section-overlay-title {
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    font-size: 0.9rem;
+  }
+
+  .section-overlay-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text);
+    font-family: inherit;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    font-size: 0.9rem;
+    padding: 0;
   }
 
   .section-overlay .entry {

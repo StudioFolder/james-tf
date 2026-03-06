@@ -369,31 +369,56 @@
           });
         });
 
-        // Portrait overlay (mobile)
+        // Mobile overlays
         if (window.innerWidth <= 768) {
-          const overlay = document.querySelector('.portrait-overlay');
-          const portraitNavItem = Array.from(items).find(i => i.dataset.section === 'portrait');
-          
+          const overlay = document.querySelector('.section-overlay');
+          const overlayContent = document.querySelector('.section-overlay-content');
+          const overlayTitle = document.querySelector('.section-overlay-title');
+
+          items.forEach(item => {
+            if (item.dataset.section === 'portrait') return;
+            item.style.pointerEvents = 'auto';
+            item.style.cursor = 'pointer';
+            item.addEventListener('click', () => {
+              const panel = document.getElementById(item.dataset.section);
+              if (!panel) return;
+              overlayTitle.textContent = item.querySelector('.nav-label').textContent;
+              overlayContent.innerHTML = panel.innerHTML;
+              overlayContent.querySelectorAll('a').forEach(link => {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+              });
+              overlay.classList.add('visible');
+            });
+          });
+
+          document.querySelector('.section-overlay-close').addEventListener('click', () => {
+            overlay.classList.remove('visible');
+          });
+
+          // Portrait overlay
+          const portraitOverlay = document.querySelector('.portrait-overlay');
           const portraitPanel = document.getElementById('portrait');
+          const portraitNavItem = Array.from(items).find(i => i.dataset.section === 'portrait');
+
           if (portraitNavItem && portraitPanel) {
             const link = portraitPanel.querySelector('a');
             if (link) {
-              overlay.querySelector('img').src = link.getAttribute('href');
+              portraitOverlay.querySelector('img').src = link.getAttribute('href');
             }
-
             portraitNavItem.style.pointerEvents = 'auto';
             portraitNavItem.style.cursor = 'pointer';
             portraitNavItem.addEventListener('click', () => {
-              overlay.classList.add('visible');
+              portraitOverlay.classList.add('visible');
             });
           }
 
           document.querySelector('.portrait-close').addEventListener('click', () => {
-            overlay.classList.remove('visible');
+            portraitOverlay.classList.remove('visible');
           });
 
           document.querySelector('.portrait-share').addEventListener('click', async () => {
-            const imgSrc = overlay.querySelector('img').src;
+            const imgSrc = portraitOverlay.querySelector('img').src;
             try {
               const response = await fetch(imgSrc);
               const blob = await response.blob();
@@ -407,6 +432,14 @@
 
       });
     </script>
+
+    <div class="section-overlay">
+      <div class="section-overlay-content"></div>
+      <div class="section-overlay-bar">
+        <span class="section-overlay-title"></span>
+        <button class="section-overlay-close">Close</button>
+      </div>
+    </div>
 
     <div class="portrait-overlay">
       <img src="" alt="Portrait">
