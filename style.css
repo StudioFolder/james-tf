@@ -632,17 +632,6 @@ button {
     padding-bottom: 5rem;
   }
 
-  .section-overlay .entry {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1.2rem;
-  }
-
-  .section-overlay .entry-year {
-    font-size: 0.75rem;
-    opacity: 0.5;
-  }
-
   .section-overlay .entry-full {
     margin-bottom: 1.2rem;
   }
@@ -687,13 +676,27 @@ button {
   .section-overlay .entry {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1rem;
   }
 
   .section-overlay .entry-year {
+    margin-top: 2rem;
+    margin-bottom: 0.3rem;
     padding-left: 1.75rem;
     font-family: 'ABCDiatypeMono', monospace;
-    font-size: 1.05rem;
-    opacity: 1;
+    font-size: 1.1rem;
+    opacity: 0.95;
+  }
+
+  .section-overlay .entry:first-child .entry-year {
+    margin-top: 0;
+  }
+
+  .section-overlay-content p {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
   }
 
   .section-overlay-content a {

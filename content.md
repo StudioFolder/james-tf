@@ -27,8 +27,8 @@ Their most recent group exhibition ([*Worldglimpsing: Roleplay and the Design of
 2018-23 | [BOXEN](https://www.e-flux.com/announcements/206872/boxen-at-arkdes/) by Dehlin Brattgård Arkitekter, ArkDes
 2022 | [Watch & Chill 2.0: Streaming Senses](https://www.e-flux.com/announcements/470228/watch-and-chill-2-0-streaming-senses/), ArkDes × National Museum of Modern and Contemporary Art, Korea × Sharjah Art Foundation with Jihoi Lee, Hoor Al Qasimi
 2022 | [Swedish Girls: Utomhusverket 2022](https://www.e-flux.com/announcements/437164/mira-bergh-and-josefin-zachrisson/), Utsikten, ArkDes; Alcova 2022
-2021 | [Studio Ossidiana: Utomhusverket 2021](https://www.e-flux.com/announcements/399526/studio-ossidianautomhusverket-2021/), Exercisplan, ArkDes
 2021-22 | [Solicited: Proposals](https://www.e-flux.com/architecture/solicited-proposals/) feat. Esther Choi, Jia Yi Gu, Gilly Karjevsky and Rosario Talevi, Vasif Kortun, Prem Krishnamurthy, Maria Lind, Federico Martelli, Mpho Matsipa, Lynhan Balatbat-Helbock, Molemo Moiloa, Shirley Surya, ArkDes × *e-flux Architecture* with Nikolaus Hirsch, Nick Axel
+2021 | [Studio Ossidiana: Utomhusverket 2021](https://www.e-flux.com/announcements/399526/studio-ossidianautomhusverket-2021/), Exercisplan, ArkDes
 2020 | [Interdependence](https://archive.pinupmagazine.org/articles/interdependence-video-sweden-response-covid-james-taylor-foster) by james taylor-foster × Studio Reko, presented by *PIN-UP*
 2019 | [Cruising Pavilion: Architecture, Gay Sex, and Cruising Culture](https://www.e-flux.com/announcements/265850/cruising-pavilion/), Boxen, ArkDes, with Pierre-Alexandre Mateos, Rasmus Myrup, Octave Perrault, Charles Teyssou
 2018 | [Space Popular: Value in the Virtual](https://www.e-flux.com/announcements/214128/space-popularvalue-in-the-virtual/), Boxen, ArkDes
