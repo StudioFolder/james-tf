@@ -24,7 +24,9 @@
 </head>
 <body>
   <img class="cursor-portrait" src="" alt="">
-  <div class="mobile-header"></div>
+  <div class="mobile-header">
+    <span class="name-jtf">JTF</span>
+  </div>
   <div class="layout">
     <span class="face">
       <span class="eye left-eye">◕</span>
@@ -242,6 +244,21 @@
           }
         });
 
+        document.querySelector('.section-overlay-content').addEventListener('scroll', () => {
+          if (window.innerWidth <= 768) {
+            const overlayContent = document.querySelector('.section-overlay-content');
+            const scrolled = overlayContent.scrollTop > 10;
+            mobileHeader.classList.toggle('visible', scrolled);
+            if (scrolled && !mobileHeader.querySelector('.name-clone')) {
+              const clone = document.createElement('span');
+              clone.className = 'name-clone';
+              clone.textContent = 'James Taylor-Foster';
+              mobileHeader.appendChild(clone);
+            }
+            mobileHeader.classList.toggle('name-visible', scrolled);
+          }
+        });
+
         function showPanel(target) {
           clearTimeout(hideTimeout);
           panels.forEach(p => {
@@ -388,12 +405,16 @@
                 link.setAttribute('target', '_blank');
                 link.setAttribute('rel', 'noopener noreferrer');
               });
+              overlayContent.scrollTop = 0;
+              mobileHeader.classList.remove('visible', 'name-visible');
               overlay.classList.add('visible');
             });
           });
 
           document.querySelector('.section-overlay-close').addEventListener('click', () => {
             overlay.classList.remove('visible');
+            overlayContent.scrollTop = 0;
+            mobileHeader.classList.remove('visible', 'name-visible');
           });
 
           // Portrait overlay

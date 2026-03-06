@@ -459,6 +459,18 @@ button {
     height: 100%;
   }
 
+  .name-jtf {
+    position: absolute;
+    top: 50%;
+    left: 2.5rem;
+    transform: translateY(-50%);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
   .mobile-header {
     display: block;
     position: fixed;
@@ -471,12 +483,20 @@ button {
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     opacity: 0;
     transition: opacity 0.3s ease;
-    z-index: 50;
+    z-index: 90;
     pointer-events: none;
   }
 
   .mobile-header.visible {
     opacity: 1;
+  }
+
+  .mobile-header.visible .name-jtf {
+    opacity: 1;
+  }
+
+  .mobile-header.name-visible .name-jtf {
+    opacity: 0;
   }
 
   .col-left {
