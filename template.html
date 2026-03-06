@@ -398,10 +398,13 @@
               if (!panel) return;
               overlayTitle.textContent = item.querySelector('.nav-label').textContent;
               overlayContent.innerHTML = panel.innerHTML;
-              overlayContent.querySelectorAll('.entry, .entry-full').forEach(entry => {
-                entry.classList.remove('visible', 'leaving');
-                entry.style.transitionDelay = '';
-                entry.style.opacity = '1';
+              overlayContent.querySelectorAll('.entry, .entry-full').forEach((entry, i) => {
+                entry.style.opacity = '0';
+                entry.style.transition = 'opacity 0.4s ease';
+                entry.style.transitionDelay = `${i * ENTRY_IN_STEP}s`;
+                requestAnimationFrame(() => {
+                  entry.style.opacity = '1';
+                });
               });
               let lastYear = null;
               overlayContent.querySelectorAll('.entry').forEach(entry => {
