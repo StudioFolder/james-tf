@@ -398,6 +398,18 @@
               if (!panel) return;
               overlayTitle.textContent = item.querySelector('.nav-label').textContent;
               overlayContent.innerHTML = panel.innerHTML;
+              let lastYear = null;
+              overlayContent.querySelectorAll('.entry').forEach(entry => {
+                const yearEl = entry.querySelector('.entry-year');
+                if (yearEl) {
+                  const year = yearEl.textContent.trim();
+                  if (year === lastYear) {
+                    yearEl.style.visibility = 'hidden';
+                  } else {
+                    lastYear = year;
+                  }
+                }
+              });
               overlayContent.querySelectorAll('a').forEach(link => {
                 link.setAttribute('target', '_blank');
                 link.setAttribute('rel', 'noopener noreferrer');
