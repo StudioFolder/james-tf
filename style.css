@@ -278,7 +278,7 @@ button {
 
 .bio-wordcount[data-state='copied']::before,
 .bio-wordcount[data-state='copied']:hover::before {
-  content: 'copied';
+  content: 'copied!';
 }
 
 .bio-wordcount::after {
