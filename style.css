@@ -138,11 +138,28 @@ button {
 
 .face.sleeping .mouth {
   animation: breathe 3s ease-in-out infinite;
+  transform: translateY(0.4em);
+}
+
+.face.sleeping .left-eye {
+  margin-right: 0.2em;
+}
+
+.face.sleeping .right-eye {
+  margin-left: 0.2em;
 }
 
 @keyframes breathe {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.4); }
+  0%, 100% { transform: translateY(0.4em) scale(1); }
+  50% { transform: translateY(0.4em) scale(1.2); }
+}
+
+.face.surprised .left-eye {
+  margin-right: 0.2em;
+}
+
+.face.surprised .right-eye {
+  margin-left: 0.2em;
 }
 
 /* ── Name ── */

@@ -81,11 +81,11 @@
           
           states: {
             default:   { leftEye: '◕', rightEye: '◕', mouth: '‿', canBlink: true },
-            sleeping:  { leftEye: '˘', rightEye: '˘', mouth: '‿', canBlink: false },
+            sleeping:  { leftEye: '◡', rightEye: '◡', mouth: '○', canBlink: false },
             blushing:  { leftEye: '◡', rightEye: '◡', mouth: '‿', canBlink: false },
             winking:   { leftEye: '◕', rightEye: '◠', mouth: '‿', canBlink: false },
-            surprised: { leftEye: '◕', rightEye: '◕', mouth: '○', canBlink: true },
-            reading:   { leftEye: '◕', rightEye: '◕', mouth: '·', canBlink: true },
+            surprised: { leftEye: '>', rightEye: ' <', mouth: 'ᴗ', canBlink: true },
+            reading:   { leftEye: '^', rightEye: '^', mouth: 'ｖ', canBlink: true },
           },
 
           current() {
@@ -115,7 +115,9 @@
             document.querySelector('.left-eye').textContent = s.leftEye;
             document.querySelector('.right-eye').textContent = s.rightEye;
             document.querySelector('.mouth').textContent = s.mouth;
-            document.querySelector('.face').classList.toggle('sleeping', this.current() === 'sleeping');
+            const faceEl = document.querySelector('.face');
+            faceEl.className = 'face';
+            if (this.current() !== 'default') faceEl.classList.add(this.current());
           }
         };
 
@@ -327,7 +329,10 @@
             }
           });
           items.forEach(i => i.classList.toggle('panel-hover', i.dataset.section === target));
-          face.enter('reading');
+          const primarySections = document.querySelectorAll('.sections-primary [data-section]');
+          const isPrimary = Array.from(primarySections).some(btn => btn.dataset.section === target);
+          if (isPrimary) face.enter('reading');
+          else face.leave('reading');
         }
 
         function hideAll() {
