@@ -558,6 +558,7 @@ button {
     margin-left: 0;
     width: 100%;
     position: relative;
+    margin-bottom: 2.8rem;
   }
 
   .bio-buttons {
@@ -585,7 +586,7 @@ button {
 
   .sections-primary {
     display: block;
-    margin-top: 9rem;
+    margin-top: auto;
     margin-bottom: 1.4rem;
     pointer-events: none;
   }
@@ -782,17 +783,14 @@ button {
   }
 
   .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     padding-left: 1.5rem;
     padding-right: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 3rem;
     padding-top: 1rem;
     max-width: 100%;
     font-size: 0.75rem;
-    background-color: var(--color-bg);
   }
 
   .footer a::after {
