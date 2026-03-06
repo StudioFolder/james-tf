@@ -460,15 +460,20 @@ button {
   }
 
   .name-jtf {
-    position: absolute;
-    top: 50%;
+    position: fixed;
+    top: 1.25rem;
     left: 2.5rem;
-    transform: translateY(-50%);
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.01em;
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: 90;
+    pointer-events: none;
+  }
+
+  .name-jtf.visible {
+    opacity: 1;
   }
 
   .mobile-header {
@@ -490,22 +495,6 @@ button {
   .mobile-header.visible {
     opacity: 1;
   }
-
-  .mobile-header.visible .name-jtf {
-    opacity: 1;
-  }
-
-  .mobile-header.name-visible .name-jtf {
-    opacity: 0;
-  }
-
-  .mobile-header.overlay-open {
-      opacity: 1;
-    }
-
-    .mobile-header.overlay-open .name-jtf {
-      opacity: 1;
-    }
 
   .col-left {
     position: fixed;

@@ -24,9 +24,9 @@
 </head>
 <body>
   <img class="cursor-portrait" src="" alt="">
-  <div class="mobile-header">
-    <span class="name-jtf">JTF</span>
-  </div>
+  <div class="mobile-header"></div>
+  <span class="name-jtf">JTF</span>
+  
   <div class="layout">
     <span class="face">
       <span class="eye left-eye">◕</span>
@@ -256,6 +256,7 @@
               mobileHeader.appendChild(clone);
             }
             mobileHeader.classList.toggle('name-visible', scrolled);
+            document.querySelector('.name-jtf').classList.toggle('visible', !scrolled);
           }
         });
 
@@ -406,8 +407,8 @@
                 link.setAttribute('rel', 'noopener noreferrer');
               });
               overlayContent.scrollTop = 0;
-              mobileHeader.classList.remove('name-visible');
-              mobileHeader.classList.add('overlay-open');
+              mobileHeader.classList.remove('visible', 'name-visible', 'overlay-open');
+              document.querySelector('.name-jtf').classList.add('visible');
               overlay.classList.add('visible');
             });
           });
@@ -416,6 +417,7 @@
             overlay.classList.remove('visible');
             overlayContent.scrollTop = 0;
             mobileHeader.classList.remove('visible', 'name-visible', 'overlay-open');
+            document.querySelector('.name-jtf').classList.remove('visible');
           });
 
           // Portrait overlay
