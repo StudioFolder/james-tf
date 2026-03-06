@@ -365,18 +365,21 @@ button {
 }
 
 .section-panel .entry,
-.section-panel .entry-full {
+.section-panel .entry-full,
+.section-panel .entry-portrait {
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 
 .section-panel .entry.visible,
-.section-panel .entry-full.visible {
+.section-panel .entry-full.visible,
+.section-panel .entry-portrait.visible {
   opacity: 1;
 }
 
 .section-panel .entry.leaving,
-.section-panel .entry-full.leaving {
+.section-panel .entry-full.leaving,
+.section-panel .entry-portrait.leaving {
   opacity: 0;
 }
 
@@ -394,6 +397,61 @@ button {
   display: block;
 }
 
+.entry-portrait {
+  display: block;
+  cursor: default;
+}
+
+.entry-trigger {
+  cursor: pointer;
+}
+
+.entry-trigger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-text);
+  transform-origin: right;
+  transition: transform 0.2s linear, background-color 0.6s ease;
+}
+
+.entry-trigger:hover::after {
+  transform: scaleX(0);
+}
+
+.entry-trigger {
+  position: relative;
+}
+
+.entry-download {
+  color: var(--color-text);
+  text-decoration: none;
+  position: relative;
+}
+
+.entry-download::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-text);
+  transform-origin: right;
+  transition: transform 0.2s linear, background-color 0.6s ease;
+}
+
+.entry-download:hover::after {
+  transform: scaleX(0);
+}
+
+.entry-caption {
+  display: none;
+}
+
 /* ── Cursor portrait ── */
 
 .cursor-portrait {
@@ -407,6 +465,25 @@ button {
 }
 
 .cursor-portrait.visible {
+  opacity: 1;
+}
+
+.cursor-caption {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  max-width: 350px;
+  padding-top: 0.4rem;
+}
+
+.cursor-caption.visible {
   opacity: 1;
 }
 
@@ -748,12 +825,6 @@ button {
     visibility: visible;
   }
 
-  .portrait-overlay img {
-    width: 100%;
-    display: block;
-    flex-shrink: 0;
-  }
-
  .portrait-controls {
     display: flex;
     justify-content: space-between;
@@ -782,15 +853,49 @@ button {
     padding: 0;
   }
 
+  .portrait-images {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    flex: 1;
+  }
+
+  .portrait-item {
+    margin-bottom: 2rem;
+  }
+
+  .portrait-item img {
+    width: 100%;
+    display: block;
+  }
+
+  .portrait-caption {
+    padding: 0.75rem 1.75rem 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin-left: -0.5rem;
+  }
+
+  .entry-download {
+    display: none;
+  }
+
   .footer {
     position: relative;
     width: 100%;
-    padding-left: 1.5rem;
+    padding-left: 0;
     padding-right: 0.5rem;
     padding-bottom: 3rem;
     padding-top: 1rem;
+    margin-left: -0.5rem;
     max-width: 100%;
     font-size: 0.75rem;
+  }
+
+  .footer a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 0.5px;
   }
 
   .footer a::after {

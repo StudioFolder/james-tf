@@ -255,7 +255,7 @@
             if (p.id === target) {
               clearTimeout(panelCleanupTimeouts.get(p.id));
               panelCleanupTimeouts.delete(p.id);
-              const entries = p.querySelectorAll('.entry, .entry-full');
+              const entries = p.querySelectorAll('.entry, .entry-full, .entry-portrait');
               entries.forEach(entry => {
                 entry.classList.remove('leaving');
                 entry.style.transitionDelay = '';
@@ -266,7 +266,7 @@
                 entry.classList.add('visible');
               });
             } else {
-              const entries = p.querySelectorAll('.entry, .entry-full');
+              const entries = p.querySelectorAll('.entry, .entry-full, .entry-portrait');
               entries.forEach(entry => {
                 entry.style.transitionDelay = '0s';
                 entry.classList.remove('visible');
@@ -281,7 +281,7 @@
           items.forEach(i => i.setAttribute('aria-expanded', 'false'));
           panels.forEach(p => {
             if (p.classList.contains('visible')) {
-              const entries = p.querySelectorAll('.entry, .entry-full');
+              const entries = p.querySelectorAll('.entry, .entry-full, .entry-portrait');
               const visibleEntries = Array.from(entries).filter(e => e.classList.contains('visible'));
               visibleEntries.reverse().forEach((entry, i) => {
                 entry.style.transitionDelay = `${i * ENTRY_OUT_STEP}s`;
@@ -345,33 +345,37 @@
 
         document.addEventListener('mousemove', (e) => {
           if (portraitVisible) {
-            cursorPortrait.style.left = e.clientX + 20 + 'px';
-            cursorPortrait.style.top = e.clientY - cursorPortrait.offsetHeight - 20 + 'px';
+            const x = e.clientX + 30;
+            const y = e.clientY - cursorPortrait.offsetHeight - 60;
+            cursorPortrait.style.left = x + 'px';
+            cursorPortrait.style.top = y + 'px';
+            cursorCaption.style.left = x + 'px';
+            cursorCaption.style.top = (y + cursorPortrait.offsetHeight + 6) + 'px';
           }
         });
 
-        document.querySelectorAll('.section-panel a').forEach(link => {
-          if (!link.getAttribute('target')) {
-            link.setAttribute('target', '_blank');
-            link.setAttribute('rel', 'noopener noreferrer');
-          }
-        });
+        const cursorCaption = document.createElement('span');
+        cursorCaption.className = 'cursor-caption';
+        document.body.appendChild(cursorCaption);
 
-        document.querySelectorAll('.section-panel a').forEach(link => {
-          const href = link.getAttribute('href');
-          if (!href || !href.match(/\.(jpg|jpeg|png|gif|webp)$/i)) return;
+        document.querySelectorAll('#portrait .entry-portrait').forEach(entry => {
+          const src = entry.dataset.src;
+          const caption = entry.querySelector('.entry-caption')?.innerHTML || '';
+          const trigger = entry.querySelector('.entry-trigger');
+          if (!trigger) return;
 
-          link.addEventListener('click', (e) => e.preventDefault());
-
-          link.addEventListener('mouseenter', () => {
-            cursorPortrait.src = href;
+          trigger.addEventListener('mouseenter', () => {
+            cursorPortrait.src = src;
+            cursorCaption.innerHTML = caption;
             cursorPortrait.classList.add('visible');
+            cursorCaption.classList.add('visible');
             portraitVisible = true;
             document.querySelectorAll('.eye').forEach(e => e.textContent = '◡');
           });
 
-          link.addEventListener('mouseleave', () => {
+          trigger.addEventListener('mouseleave', () => {
             cursorPortrait.classList.remove('visible');
+            cursorCaption.classList.remove('visible');
             portraitVisible = false;
             document.querySelectorAll('.eye').forEach(e => e.textContent = '◕');
           });
@@ -450,10 +454,20 @@
           const portraitNavItem = Array.from(items).find(i => i.dataset.section === 'portrait');
 
           if (portraitNavItem && portraitPanel) {
-            const link = portraitPanel.querySelector('a');
-            if (link) {
-              portraitOverlay.querySelector('img').src = link.getAttribute('href');
-            }
+            const entries = portraitPanel.querySelectorAll('.entry-portrait');
+            const container = document.createElement('div');
+            container.className = 'portrait-images';
+            portraitOverlay.insertBefore(container, portraitOverlay.querySelector('.portrait-controls'));
+
+            entries.forEach(entry => {
+              const src = entry.dataset.src;
+              const caption = entry.querySelector('.entry-caption')?.innerHTML || '';
+              const wrapper = document.createElement('div');
+              wrapper.className = 'portrait-item';
+              wrapper.innerHTML = `<img src="${src}" alt="Portrait"><p class="portrait-caption">${caption}</p>`;
+              container.appendChild(wrapper);
+            });
+
             portraitNavItem.style.pointerEvents = 'auto';
             portraitNavItem.style.cursor = 'pointer';
             portraitNavItem.addEventListener('click', () => {
@@ -466,16 +480,17 @@
           });
 
           document.querySelector('.portrait-share').addEventListener('click', async () => {
-            const imgSrc = portraitOverlay.querySelector('img').src;
+            const img = portraitOverlay.querySelector('.portrait-images img');
+            if (!img) return;
             try {
-              const response = await fetch(imgSrc);
+              const response = await fetch(img.src);
               const blob = await response.blob();
               const file = new File([blob], 'portrait.jpg', { type: blob.type });
               await navigator.share({ files: [file] });
             } catch (err) {
               console.log('Share failed:', err);
             }
-          });
+          });     
         }
 
       });
@@ -490,8 +505,6 @@
     </div>
 
     <div class="portrait-overlay">
-      <img src="" alt="Portrait">
-      <p class="portrait-caption"></p>
       <div class="portrait-controls">
         <button class="portrait-share">Share</button>
         <button class="portrait-close">Close</button>

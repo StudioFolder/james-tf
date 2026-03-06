@@ -65,7 +65,7 @@
       </nav>
       <nav class="sections sections-secondary">
         <div class="nav-row"><button class="nav-item" data-section="speaking" aria-expanded="false" style="animation-delay: 1.5000000000000002s"><span class="nav-indicator">–</span><span class="nav-label">Speaking</span></button><div class="section-panel" id="speaking"><p><span class="entry-full">For speaking inquiries, please contact <a href="mailto:name@email.com">Agency</a></span></p></div></div>
-<div class="nav-row"><button class="nav-item" data-section="portrait" aria-expanded="false" style="animation-delay: 1.7000000000000002s"><span class="nav-indicator">–</span><span class="nav-label">Portrait</span></button><div class="section-panel" id="portrait"><p><span class="entry-full"><a href="/assets/images/portrait-01.jpg">View</a>, Download</span></p></div></div>
+<div class="nav-row"><button class="nav-item" data-section="portrait" aria-expanded="false" style="animation-delay: 1.7000000000000002s"><span class="nav-indicator">–</span><span class="nav-label">Portrait</span></button><div class="section-panel" id="portrait"><p><span class="entry-portrait" data-id="01" data-src="/assets/images/portrait-01.jpg"><span class="entry-trigger">View</span>, <a class="entry-download" href="/assets/images/portrait-01.jpg" download>Download</a><span class="entry-caption">james taylor-foster © 2026 by Pierre Björk<br>CC BY-ND 4.0</span></span></p></div></div>
 <div class="nav-row"><button class="nav-item" data-section="contact" aria-expanded="false" style="animation-delay: 1.9000000000000001s"><span class="nav-indicator">–</span><span class="nav-label">Contact</span></button><div class="section-panel" id="contact"><p><span class="entry-full"><a href="hej@james.tf">email</a>, <a href="https://www.instagram.com/jtaylorfoster/">instagram</a>, <a href="https://www.are.na/james-taylor-foster/">ar.ena</a>, <a href="https://bsky.app/profile/james.tf">bluesky</a>, <a href="https://www.linkedin.com/in/jtaylorfoster/">linkedin</a></span></p></div></div>
       </nav>
       <footer class="footer" style="animation-delay: 2.1s">
@@ -259,7 +259,7 @@
             if (p.id === target) {
               clearTimeout(panelCleanupTimeouts.get(p.id));
               panelCleanupTimeouts.delete(p.id);
-              const entries = p.querySelectorAll('.entry, .entry-full');
+              const entries = p.querySelectorAll('.entry, .entry-full, .entry-portrait');
               entries.forEach(entry => {
                 entry.classList.remove('leaving');
                 entry.style.transitionDelay = '';
@@ -270,7 +270,7 @@
                 entry.classList.add('visible');
               });
             } else {
-              const entries = p.querySelectorAll('.entry, .entry-full');
+              const entries = p.querySelectorAll('.entry, .entry-full, .entry-portrait');
               entries.forEach(entry => {
                 entry.style.transitionDelay = '0s';
                 entry.classList.remove('visible');
@@ -285,7 +285,7 @@
           items.forEach(i => i.setAttribute('aria-expanded', 'false'));
           panels.forEach(p => {
             if (p.classList.contains('visible')) {
-              const entries = p.querySelectorAll('.entry, .entry-full');
+              const entries = p.querySelectorAll('.entry, .entry-full, .entry-portrait');
               const visibleEntries = Array.from(entries).filter(e => e.classList.contains('visible'));
               visibleEntries.reverse().forEach((entry, i) => {
                 entry.style.transitionDelay = `${i * ENTRY_OUT_STEP}s`;
@@ -349,33 +349,37 @@
 
         document.addEventListener('mousemove', (e) => {
           if (portraitVisible) {
-            cursorPortrait.style.left = e.clientX + 20 + 'px';
-            cursorPortrait.style.top = e.clientY - cursorPortrait.offsetHeight - 20 + 'px';
+            const x = e.clientX + 30;
+            const y = e.clientY - cursorPortrait.offsetHeight - 60;
+            cursorPortrait.style.left = x + 'px';
+            cursorPortrait.style.top = y + 'px';
+            cursorCaption.style.left = x + 'px';
+            cursorCaption.style.top = (y + cursorPortrait.offsetHeight + 6) + 'px';
           }
         });
 
-        document.querySelectorAll('.section-panel a').forEach(link => {
-          if (!link.getAttribute('target')) {
-            link.setAttribute('target', '_blank');
-            link.setAttribute('rel', 'noopener noreferrer');
-          }
-        });
+        const cursorCaption = document.createElement('span');
+        cursorCaption.className = 'cursor-caption';
+        document.body.appendChild(cursorCaption);
 
-        document.querySelectorAll('.section-panel a').forEach(link => {
-          const href = link.getAttribute('href');
-          if (!href || !href.match(/\.(jpg|jpeg|png|gif|webp)$/i)) return;
+        document.querySelectorAll('#portrait .entry-portrait').forEach(entry => {
+          const src = entry.dataset.src;
+          const caption = entry.querySelector('.entry-caption')?.innerHTML || '';
+          const trigger = entry.querySelector('.entry-trigger');
+          if (!trigger) return;
 
-          link.addEventListener('click', (e) => e.preventDefault());
-
-          link.addEventListener('mouseenter', () => {
-            cursorPortrait.src = href;
+          trigger.addEventListener('mouseenter', () => {
+            cursorPortrait.src = src;
+            cursorCaption.innerHTML = caption;
             cursorPortrait.classList.add('visible');
+            cursorCaption.classList.add('visible');
             portraitVisible = true;
             document.querySelectorAll('.eye').forEach(e => e.textContent = '◡');
           });
 
-          link.addEventListener('mouseleave', () => {
+          trigger.addEventListener('mouseleave', () => {
             cursorPortrait.classList.remove('visible');
+            cursorCaption.classList.remove('visible');
             portraitVisible = false;
             document.querySelectorAll('.eye').forEach(e => e.textContent = '◕');
           });
@@ -454,10 +458,20 @@
           const portraitNavItem = Array.from(items).find(i => i.dataset.section === 'portrait');
 
           if (portraitNavItem && portraitPanel) {
-            const link = portraitPanel.querySelector('a');
-            if (link) {
-              portraitOverlay.querySelector('img').src = link.getAttribute('href');
-            }
+            const entries = portraitPanel.querySelectorAll('.entry-portrait');
+            const container = document.createElement('div');
+            container.className = 'portrait-images';
+            portraitOverlay.insertBefore(container, portraitOverlay.querySelector('.portrait-controls'));
+
+            entries.forEach(entry => {
+              const src = entry.dataset.src;
+              const caption = entry.querySelector('.entry-caption')?.innerHTML || '';
+              const wrapper = document.createElement('div');
+              wrapper.className = 'portrait-item';
+              wrapper.innerHTML = `<img src="${src}" alt="Portrait"><p class="portrait-caption">${caption}</p>`;
+              container.appendChild(wrapper);
+            });
+
             portraitNavItem.style.pointerEvents = 'auto';
             portraitNavItem.style.cursor = 'pointer';
             portraitNavItem.addEventListener('click', () => {
@@ -470,16 +484,17 @@
           });
 
           document.querySelector('.portrait-share').addEventListener('click', async () => {
-            const imgSrc = portraitOverlay.querySelector('img').src;
+            const img = portraitOverlay.querySelector('.portrait-images img');
+            if (!img) return;
             try {
-              const response = await fetch(imgSrc);
+              const response = await fetch(img.src);
               const blob = await response.blob();
               const file = new File([blob], 'portrait.jpg', { type: blob.type });
               await navigator.share({ files: [file] });
             } catch (err) {
               console.log('Share failed:', err);
             }
-          });
+          });     
         }
 
       });
@@ -494,8 +509,6 @@
     </div>
 
     <div class="portrait-overlay">
-      <img src="" alt="Portrait">
-      <p class="portrait-caption"></p>
       <div class="portrait-controls">
         <button class="portrait-share">Share</button>
         <button class="portrait-close">Close</button>

@@ -85,7 +85,7 @@ For speaking inquiries, please contact [Agency](mailto:name@email.com)
 
 ## Portrait
 
-[View](/assets/images/portrait-01.jpg), Download
+01 | /assets/images/portrait-01.jpg | james taylor-foster © 2026 by Pierre Björk<br>CC BY-ND 4.0
 
 ## Contact
 

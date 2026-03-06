@@ -6,6 +6,13 @@ const renderer = new marked.Renderer();
 renderer.paragraph = (token) => {
   const lines = token.text.split('\n');
   const formatted = lines.map(line => {
+    if (/^\d{2}\s*\|/.test(line)) {
+      const parts = line.split('|');
+      const id = parts[0].trim();
+      const src = parts[1].trim();
+      const caption = parts[2] ? marked.parseInline(parts[2].trim()) : '';
+      return `<span class="entry-portrait" data-id="${id}" data-src="${src}"><span class="entry-trigger">View</span>, <a class="entry-download" href="${src}" download>Download</a><span class="entry-caption">${caption}</span></span>`;
+    }
     if (/^\d{4}[-–]?\d*\s*\|/.test(line)) {
       const [year, ...rest] = line.split('|');
       const content = marked.parseInline(rest.join('|').trim());
