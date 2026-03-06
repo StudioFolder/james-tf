@@ -273,7 +273,7 @@ button {
 }
 
 .bio-wordcount:hover::before {
-  content: 'copy';
+  content: 'copy bio';
 }
 
 .bio-wordcount[data-state='copied']::before,
