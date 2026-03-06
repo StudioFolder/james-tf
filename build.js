@@ -68,12 +68,12 @@ const navOffset    = 3;
 
 const navPrimaryHtml = navPrimary.map((s, i) => {
   const delay = baseDelay + step * (navOffset + i);
-  return `<div class="nav-row"><button class="nav-item" data-section="${s.slug}" style="animation-delay: ${delay}s"><span class="nav-indicator">–</span><span class="nav-label">${s.title}</span></button><div class="section-panel" id="${s.slug}">${s.content}</div></div>`;
+  return `<div class="nav-row"><button class="nav-item" data-section="${s.slug}" aria-expanded="false" style="animation-delay: ${delay}s"><span class="nav-indicator">–</span><span class="nav-label">${s.title}</span></button><div class="section-panel" id="${s.slug}">${s.content}</div></div>`;
 }).join('\n');
 
 const navSecondaryHtml = navSecondary.map((s, i) => {
   const delay = baseDelay + step * (navOffset + navPrimary.length + i);
-  return `<div class="nav-row"><button class="nav-item" data-section="${s.slug}" style="animation-delay: ${delay}s"><span class="nav-indicator">–</span><span class="nav-label">${s.title}</span></button><div class="section-panel" id="${s.slug}">${s.content}</div></div>`;
+  return `<div class="nav-row"><button class="nav-item" data-section="${s.slug}" aria-expanded="false" style="animation-delay: ${delay}s"><span class="nav-indicator">–</span><span class="nav-label">${s.title}</span></button><div class="section-panel" id="${s.slug}">${s.content}</div></div>`;
 }).join('\n');
 
 const footerDelay = baseDelay + step * (navOffset + navSections.length);

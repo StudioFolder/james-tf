@@ -40,7 +40,7 @@ The project is built with plain HTML and CSS (with minimal vanilla JavaScript), 
 - **`main`** → production, maps to `james.tf`
 - **`dev`** → staging, maps to Vercel preview URL
 
-All development work happens on the `dev` branch. Once tested and approved on the Vercel preview URL, changes are merged into `main` and deployed to the live domain.
+All development work happens on the `dev` branch. Feature branches (e.g. `mobile-overlays`) are created for significant new interactions, tested on Vercel preview, then merged into `dev`. Once stable, `dev` is merged into `main`.
 
 ---
 
@@ -95,7 +95,7 @@ The build script uses a custom `marked` paragraph renderer. Each line within a p
 - Lines matching `year | content` (e.g. `2025–27 | *Title*`) are wrapped in `<span class="entry">` with separate `.entry-year` and `.entry-text` spans
 - All other lines are wrapped in `<span class="entry-full">`
 
-This allows individual entries to fade in/out as part of the section panel cascade.
+This allows individual entries to fade in/out as part of the section panel cascade. The year regex matches 4-digit years and ranges (e.g. `2025–27`). A planned extension will support 2-digit index numbers (`01`, `02`) for the Portrait section to pair images with captions.
 
 ### content.md structure
 
@@ -130,9 +130,13 @@ James Taylor-Foster is a curator, editor, and writer. [...]
 
 2025–27 | *Project Title* – Institution
 
-# Writings
+# Writing
 
 2026 | [*Article Title*](https://url.com), Publication
+
+## Portrait
+
+[View](/assets/images/portrait-01.jpg), Download
 
 ## Contact
 
@@ -193,8 +197,8 @@ James Taylor-Foster can update all page content autonomously using the GitHub we
 
 ### Typography
 
-- **UI typeface:** Instrument Sans (Google Fonts) — all nav, footer, controls, wordcount
-- **Bio typeface:** ABC Diatype Mono Condensed (local OTF) — bio text only
+- **UI typeface:** Instrument Sans (Google Fonts) — all nav, footer, controls, wordcount, mobile overlays
+- **Bio typeface:** ABC Diatype Mono Condensed (local OTF) — bio text only; also used for entry years inside mobile overlays
 - **Base size:** `0.9rem` (set on `:root`, all elements inherit)
 - **Line height:** `1.4` (`--line-height`)
 - **Weight:** 400 throughout
@@ -208,9 +212,13 @@ Note: `button { font-size: inherit; }` is set globally to override browser butto
 - **Background:** `#f0f0f0` (`--color-bg`)
 - **Text:** `#1a1a1a` (`--color-text`)
 - **Dark mode background:** `#2d2c2c`
-- **Dark mode text:** `#edebeb`
+- **Dark mode text:** `#EFE1E8`
 
-All colours are CSS custom properties on `:root`. Dark mode is toggled by adding `.dark` to `<body>`, which overrides the custom properties with a smooth 0.6s crossfade.
+All colours are CSS custom properties on `:root`. Dark mode is toggled by adding `.dark` to `<body>`, which overrides the custom properties with a smooth 0.6s crossfade. Links transition colour at 0.6s ease to match. All `::after` underline pseudo-elements also transition `background-color` at 0.6s to stay in sync.
+
+### Dark mode — automatic
+
+On page load, if the device hour is between 20:00 and 07:00, dark mode is applied automatically. The face click still works as a manual override in both directions.
 
 ### CSS Variables
 
@@ -234,27 +242,29 @@ All colours are CSS custom properties on `:root`. Dark mode is toggled by adding
 
 ### DOM structure
 
-The page consists of a `.cursor-portrait` image (for the cursor-following portrait interaction), a `.layout` div containing the `.face` (positioned independently) and `.col-left` (the main column). There is no `.col-right` container — section panels are positioned via `position: fixed` from within `.nav-row` elements inside the nav.
-
 ```
 .cursor-portrait              — fixed, pointer-events: none, z-index: 1000
+.mobile-header                — fixed pill, mobile only, z-index: 90
+.name-jtf                     — fixed, mobile only, z-index: 90, display: none on desktop
 .layout
-├── .face                     — fixed, left: calc(var(--left) - 5rem), outside the column
-└── .col-left (fixed, left: 0, width: 100vw, height: 100vh, padding-left: var(--left))
-    ├── .name                 — top of column, padding-top: var(--top), flex-shrink: 0
-    ├── .bio                  — flows below name, margin-left: -6rem (outdented into padding), flex-shrink: 0
-    ├── .bio-controls         — flows below bio, aligned to column edge
-    ├── .bio-spacer           — flex-shrink: 1, absorbs compression when viewport shrinks
-    ├── .sections-primary     — flex-shrink: 0
-    │   └── .nav-row ×N       — each contains a .nav-item button + .section-panel
-    ├── .sections-secondary   — margin-top: auto (pushed to lower third), flex-shrink: 0
-    │   └── .nav-row ×N       — each contains a .nav-item button + .section-panel
-    └── .footer               — margin-top: auto (pinned to bottom), flex-shrink: 0
+├── .face                     — fixed, outside the column
+└── .col-left                 — fixed, full viewport, flex column
+    ├── .name
+    ├── .bio
+    ├── .bio-controls
+    ├── .bio-spacer
+    ├── .sections-primary
+    │   └── .nav-row ×N
+    ├── .sections-secondary
+    │   └── .nav-row ×N
+    └── .footer
+.section-overlay              — fixed full-screen, mobile only, z-index: 80
+.portrait-overlay             — fixed full-screen, mobile only, z-index: 80
 ```
 
 ### Scrolling strategy
 
-`.col-left` spans the full viewport width (`left: 0; width: 100vw`) with `padding-left: var(--left)` to position content. It uses `overflow-y: auto; overflow-x: hidden`. On most viewports, content fits within `100vh` and no scrollbar appears. When the bio is long enough to push nav labels and footer below the viewport, the column becomes scrollable with the scrollbar at the right edge of the window.
+`.col-left` spans the full viewport width with `padding-left: var(--left)` to position content. It uses `overflow-y: auto; overflow-x: hidden`. On most viewports, content fits within `100vh` and no scrollbar appears. When content overflows, the column becomes scrollable.
 
 ### Flex shrink strategy
 
@@ -262,90 +272,109 @@ When the viewport shrinks vertically, the `.bio-spacer` (the gap between bio-con
 
 ### Bio outdent
 
-`.bio` uses `margin-left: -6rem` to visually extend left into the `padding-left` area of `.col-left`. Since the column now starts at `left: 0` with `padding-left: var(--left)`, the negative margin pulls the bio into the padding space rather than outside the container — this allows `overflow-x: hidden` on the column without clipping the bio. Its width is `calc(100vw - var(--left) - 3rem)` with `max-width: 80vw`. All other column elements stay flush at `--left`.
+`.bio` uses `margin-left: -6rem` on desktop to visually extend left into the padding area. On mobile, `margin-left: -0.5rem` provides a slight outdent from the other UI elements.
 
 ### Face
 
-`.face` is independently `position: fixed` at `left: calc(var(--left) - 5rem)`, outside the column. It renders as `◕‿◕` with blinking eye animation. Clicking toggles dark mode. The face expression changes contextually — when hovering a portrait image link, the eyes change to `◡` (blushing: `◡‿◡`).
+`.face` is independently `position: fixed`. On desktop: `left: calc(var(--left) - 5rem)`. On mobile: `right: 3.5rem`. It renders as `◕‿◕` with blinking eye animation. Clicking toggles dark mode. The face expression changes contextually — when hovering a portrait image link on desktop, the eyes change to `◡` (blushing).
 
-### Nav indicators
+### Section panels (desktop only)
 
-The `–` indicator on each nav item uses `position: absolute; right: 100%` to sit outside the column to the left, never affecting text alignment. It appears on hover and when pinned.
+Section panels are `position: fixed` with `left: calc(var(--left) + 280px)` and `width: calc(100vw - var(--left) - 280px - 3rem)`. They use a vertical translate of `calc(-1 * var(--line-height) * 0.9rem)` to align with their nav item's baseline. On mobile, panels are `display: none` — content is accessed via overlay instead.
 
-### Section panels
+### Links
 
-Section panels are `position: fixed` with `left: calc(var(--left) + 280px)` and `width: calc(100vw - var(--left) - 280px - 3rem)`. They use a vertical translate of `calc(-1 * var(--line-height) * 0.9rem)` to align with their nav item's baseline. Panels live inside `.nav-row` divs as siblings of their corresponding `.nav-item` button.
+All links in section panels open in a new tab (`target="_blank"`, `rel="noopener noreferrer"`), applied at runtime via JS on page load. This applies to both desktop and mobile.
 
 ---
 
 ## 9. JavaScript
 
-All JS lives inside a single `DOMContentLoaded` listener in `template.html`. There is no `positionPanels()` function — panels are aligned via CSS `translate` rather than JS-calculated `top` values.
+All JS lives inside a single `DOMContentLoaded` listener in `template.html`.
 
 ### `positionNav()`
-Sets the `.bio-spacer` flex-basis to push `.sections-primary` to the ideal 33vh position. First recalculates the `.bio` container height from the active panel's `scrollHeight` (to account for text reflow on resize). Then measures the gap between the bottom of `.bio-controls` and 33vh, and sets the spacer's `flex-basis` to that gap with a minimum of one line-height. The flex container handles compression automatically — when the viewport is too small, the spacer (the only `flex-shrink: 1` child) compresses first. Called on `fonts.ready`, `resize`, and whenever bio version changes.
+Sets the `.bio-spacer` flex-basis to push `.sections-primary` to the ideal 33vh position on desktop. Returns early on mobile (`window.innerWidth <= 768`) — nav position is controlled by CSS `margin-top` on mobile. Called on `fonts.ready`, `resize`, and whenever bio version changes.
 
 ### `showBio(index, animate)`
-Manages the three-step bio transition: fade out current panel → animate container height → fade in next panel. Updates control states immediately (disabled buttons, wordcount display, `.at-longest` class). When `animate` is false (initial load), performs an instant switch. Uses a `bioAnimating` lock to prevent overlapping transitions. The height transition completion is detected via `transitionend` on the `.bio` container, filtered to `propertyName === 'height'`.
+Manages the three-step bio transition: fade out current panel → animate container height → fade in next panel. On mobile, tapping `–` also scrolls `.col-left` to `scrollTop: 0` instantly before the transition.
 
 ### Bio copy
-The wordcount button doubles as a copy-to-clipboard button. Its `::before` pseudo-element shows the word count by default, switches to "copy" on hover, and "copied" after clicking (via `data-state` attribute). The copied state resets after 2 seconds.
+The wordcount button doubles as a copy-to-clipboard button. Uses `navigator.clipboard.writeText` — requires HTTPS, so only works on the deployed Vercel URL, not locally.
 
-### `showPanel(target)` / `hideAll()`
-Controls section panel visibility with staggered entry animations. Entries fade in top-to-bottom (`ENTRY_IN_STEP: 0.06s`) and fade out bottom-to-top (`ENTRY_OUT_STEP: 0.04s`). `hideAll()` is triggered after `HIDE_DELAY: 2400ms` when mouse leaves the nav or layout area. Panel cleanup timeouts are tracked in a `Map` keyed by panel ID, and cleared when a panel is re-shown via `showPanel` — this prevents stale `hideAll` timeouts from stripping classes on panels that are mid-entrance.
+### `showPanel(target)` / `hideAll()` (desktop only)
+Controls section panel visibility with staggered entry animations. `ENTRY_IN_STEP: 0.06s`, `ENTRY_OUT_STEP: 0.04s`, `HIDE_DELAY: 2400ms`.
 
-### Pinning behaviour
-Hovering a nav item shows its panel temporarily. Clicking pins it — content persists until the item is clicked again. Only one section can be pinned at a time. The `–` indicator remains visible while pinned. Unpinning triggers `hideAll()` immediately.
+### Duplicate year suppression
+On page load, all `.section-panel` elements are scanned and duplicate `.entry-year` elements are set to `display: none` (not `visibility: hidden` — the latter would leave a gap). The same logic runs when populating mobile overlays. This means the year is shown only once per group of same-year entries.
 
-### Mouse event zones
-The hide timeout is managed across two zone types: `.sections-primary`/`.sections-secondary` (nav areas) and `.layout` (full page). Moving between these cancels the timeout. The timeout only fires when the mouse leaves all zones. Note: there is no separate `.col-right` zone since no `.col-right` element exists in the DOM.
+### Scroll listener — `.col-left`
+Tracks scroll position for mobile header behaviour. When `scrollTop > 10`: shows `.mobile-header` pill, injects `.name-clone` span ("James Taylor-Foster") into the header on first scroll, applies `.name-visible` class to fade in the full name.
 
-### Cursor-following portrait
-A fixed `<img class="cursor-portrait">` element follows the cursor when hovering links inside section panels that point to image files (matched by extension: jpg, jpeg, png, gif, webp). The image is offset 20px right and 20px above the cursor (anchored at its bottom-left corner above the cursor). On mouseenter, the image fades in (`opacity` transition, 0.25s), the link's default click is prevented, and the face expression changes to blushing (`◡‿◡`). On mouseleave, the image fades out and the face resets. This interaction is wired up once at page load by scanning all `.section-panel a` elements.
+### Scroll listener — `.section-overlay-content`
+Same header behaviour as `.col-left` scroll, but triggered by scrolling inside a mobile overlay. The `.name-jtf` element (showing "JTF") fades out as the full name fades in.
+
+### Mobile overlays
+On mobile, all nav items except Portrait open a `.section-overlay`. The overlay is populated dynamically by copying the corresponding `.section-panel` innerHTML, then:
+- Entry `visible`/`leaving` classes and `transitionDelay` styles are stripped
+- Entries fade in top-to-bottom using `ENTRY_IN_STEP` delays via `requestAnimationFrame`
+- Duplicate years are suppressed (`display: none`)
+- All links get `target="_blank"`
+- On open: `overlayContent.scrollTop = 0`, header state reset, `.name-jtf` shown
+- On close: overlay hidden, scroll reset, header state cleared, `.name-jtf` hidden
+
+### Portrait overlay (mobile)
+The Portrait nav item opens `.portrait-overlay`. The image `src` is read at runtime from the `<a>` tag inside `#portrait` section panel. Share button uses Web Share API (`navigator.share` with a fetched `File` object) — requires HTTPS.
+
+### Dark mode
+Automatic: checks `new Date().getHours()` on load, applies `.dark` to `<body>` if between 20:00–07:00. Manual override: clicking `.face` toggles `.dark`. `updateFace(isDark)` updates eye characters (`◕` / `˘`) and swaps `.mouth` / `.mouth-sleep` display.
+
+### Zoom prevention (mobile)
+`maximum-scale=1.0, user-scalable=no` in the viewport meta tag. Safari ignores this, so a JS fallback intercepts multi-touch `touchmove` events with `e.preventDefault()`.
 
 ---
 
 ## 10. Bio Component
 
-The bio sits between the name and the primary nav, set in ABC Diatype Mono Condensed at `2rem`. It has three versions (short, medium, long) defined in `content.md` as `## bio-short`, `## bio-medium`, `## bio-long`.
+The bio sits between the name and the primary nav, set in ABC Diatype Mono Condensed at `2rem` (desktop) / `1.2rem` (mobile). Three versions defined in `content.md`.
 
-The `.bio` container uses `overflow: hidden` and an explicit `height` (set via JS) to animate between versions. Each `.bio-panel` is `position: absolute` within the container, with only the `.active` panel visible (`opacity: 1`, `pointer-events: auto`).
+The `.bio` container uses `overflow: hidden` and an explicit `height` (set via JS) to animate between versions. Each `.bio-panel` is `position: absolute` within the container.
 
-Controls sit below the bio text, aligned to the column edge:
-- `–` and `+` are inline SVG buttons sitting to the left of the wordcount via `position: absolute; right: 100%`
-- At the shortest bio, `–` is hidden (`disabled` + `display: none`); at the longest, `+` is hidden
-- At the longest bio, `.bio-buttons` gets the `.at-longest` class which nudges the `–` down to align with the wordcount
-- Wordcount displays the word count of the active bio version (calculated at build time, stored as `data-words` on each `.bio-panel`)
-- Clicking the wordcount copies the active bio text to clipboard
+Controls:
+- `–` / `+` SVG buttons, hidden when at shortest/longest respectively
+- Wordcount button copies active bio text to clipboard on click
+- On mobile, `–` also scrolls page to top
 
 ---
 
 ## 11. Animations
 
-- **Fade-in cascade:** name → bio → bio-controls → primary nav items → secondary nav items → footer. Base delay 0.3s, step 0.2s, calculated dynamically in `build.js`. Name is index 0, bio index 1, bio-controls index 2, nav items start at index 3.
-- **Eye blink:** both eyes sync, random interval 2–6s, `scaleY(0.1)` for 120ms. First blink after 1–3s random delay.
-- **Dark mode:** 0.6s ease transition on `background-color` and `color`
-- **Bio transition:** three-step sequence — 0.2s fade out, 0.3s height animation, 0.2s fade in
-- **Section panels:** `opacity` + `visibility` transition, 0.3s ease
+- **Fade-in cascade:** name → bio → bio-controls → primary nav items → secondary nav items → footer. Base delay 0.3s, step 0.2s.
+- **Eye blink:** random interval 2–6s, `scaleY(0.1)` for 120ms.
+- **Dark mode:** 0.6s ease on `background-color`, `color`, and link `::after` `background-color`
+- **Bio transition:** 0.2s fade out → 0.3s height → 0.2s fade in
+- **Section panels (desktop):** `opacity` + `visibility`, 0.3s ease
 - **Entry cascade in:** top to bottom, 0.06s step
-- **Entry cascade out:** bottom to top, 0.04s step, panel removed after cascade + 400ms buffer
-- **Link underline:** `scaleX(0)` from right (`transform-origin: right`), 0.2s linear, via `::after` pseudo-element. Applied to section panel links, footer links, and wordcount button.
-- **Nav indicator:** `opacity` transition 0.2s on hover and when pinned. Indicator is scaled `scaleX(1.8)` with slight upward nudge `translateY(-0.1em)`.
-- **Cursor portrait:** `opacity` transition 0.25s ease on the fixed `<img>`, triggered by hovering image links in section panels.
-- **Noscript fallback:** A `<noscript>` block in `<head>` forces `opacity: 1` and `animation: none` on all animated elements (`.name`, `.bio`, `.bio-controls`, `.nav-item`, `.footer`), ensuring content is visible without JavaScript.
+- **Entry cascade out:** bottom to top, 0.04s step + 400ms buffer
+- **Link underline (desktop):** `scaleX(0)` from right, 0.2s linear, via `::after`. Hidden on mobile via `display: none`.
+- **Link underline (mobile overlays):** CSS `text-decoration: underline` with `text-underline-offset: 4px`, `text-decoration-thickness: 1px` — handles multi-line links correctly.
+- **Mobile overlay:** `opacity` + `visibility`, 0.4s ease
+- **Mobile header pill:** `opacity`, 0.3s ease
+- **`.name-clone` / `.name-jtf`:** `opacity`, 0.3s ease
+- **Mouth breathe (dark mode):** `scale(1)` → `scale(1.4)`, 3s ease-in-out infinite
+- **Noscript fallback:** forces `opacity: 1`, `animation: none` on all animated elements
 
 ---
 
 ## 12. Holding Page Sections
 
-### Primary sections (upper nav, min 33vh)
+### Primary sections (upper nav, ≥33vh on desktop, CSS margin-top on mobile)
 - **Projects**
-- **Writings**
+- **Writing**
 - **Press**
 
-### Secondary sections (lower nav, auto-pushed to lower third)
+### Secondary sections (lower nav, margin-top: auto on desktop, CSS margin-top on mobile)
 - **Speaking**
-- **Portrait** — contains image link(s) that trigger the cursor-following portrait interaction
+- **Portrait** — desktop: cursor-following image on hover; mobile: full-screen portrait overlay with Share button
 - **Contact**
 
 ### Special sections (not in nav)
@@ -356,44 +385,55 @@ Controls sit below the bio text, aligned to the column edge:
 
 ## 13. Mobile (≤768px)
 
-Mobile layout reimagines the desktop column as a full-width scrollable page.
+### Layout
 
-### Layout changes
-- `html, body`: `overflow-y: auto; overflow-x: hidden` — page scrolls vertically when bio is long
-- `.col-left`: `position: static; width: 100vw; height: auto; min-height: 100vh; padding: 0 1.75rem` — no longer fixed, flows naturally
-- `.name`: `padding-top: 1.25rem; margin-left: 1.75rem` — indented from left edge, aligns with bio-controls
-- `.face`: `position: fixed; top: 1.25rem; right: 1.75rem; z-index: 100` — pinned top-right, above all content
-- `.bio`: `margin-left: 0; width: 100%; max-width: 100%` — full width, no outdent
-- `.bio-panel`: `font-size: 1.2rem` — reduced from desktop 2rem
-- `.bio-spacer`: `display: none` — no spacer needed on mobile
+- `html, body`: `overflow: hidden` — scrolling handled by `.col-left`
+- `.col-left`: `position: fixed; height: 100vh; padding: 0 1.75rem` — same containment as desktop, no `padding-left: var(--left)`
+- `.name`, `.bio-controls`, `.sections-primary`, `.sections-secondary`: `padding-left: 1.75rem` — indent from left edge
+- `.bio`: `margin-left: -0.5rem` — slight outdent, flush with left padding edge of column
+- `.bio-panel`: `font-size: 1.2rem`
+- `.bio-spacer`: present but `positionNav()` returns early — nav spacing is CSS-only
+- `.face`: `position: fixed; right: 3.5rem` — mirroring the name indent on the right
+- `.bio-buttons`: `right: 1.75rem` — aligns with face
+- `.sections-primary`: `margin-top: 9rem` — fixed distance below bio
+- `.sections-secondary`: `margin-top: 2rem; margin-bottom: 7.5rem` — fixed gap above footer
+- `.footer`: `position: fixed; bottom: 0` — always visible at bottom
+- `.nav-item`: `pointer-events: none; line-height: 1.75` — non-interactive labels with increased line spacing
 
-### Controls layout
-- `.bio-controls`: `margin-left: 1.75rem; width: calc(100vw - 3.5rem); position: relative` — spans from indent to right edge
-- `.bio-buttons`: `position: absolute; right: 0.5rem; padding-right: 1.25rem` — aligned right, mirroring face position
-- `.bio-wordcount`: hover state disabled on mobile (no "copy" label on hover, just shows word count; tap copies and shows "copied")
+### Mobile header
 
-### Sections
-- `.sections-primary`, `.sections-secondary`: `display: none` — hidden, accordion interaction planned
-- `.section-panel`: `display: none` — not accessible on mobile yet
+A `position: fixed` pill (`.mobile-header`) sits at `top: 0.6rem`, `z-index: 90`, with `border-radius: 999px` and a light drop shadow. It is `opacity: 0` by default and fades in after scrolling (`scrollTop > 10`).
 
-### Footer
-- `position: sticky; bottom: 0` — sticks to bottom of viewport, pushed down by bio when content is long
-- `margin-left: 0` — aligned with bio, not indented like name/controls
-- `font-size: 0.75rem` — smaller than desktop
-- `background-color: var(--color-bg)` — prevents bio text showing through when scrolling
-- `padding-bottom: 0.75rem` — reduced from desktop
+Inside the header, a `.name-clone` span ("James Taylor-Foster") is injected on first scroll and fades in via `.name-visible` class. The `.name-jtf` element ("JTF") is a separate `position: fixed` element shown when a section overlay is open but not yet scrolled.
 
-Mobile accordion interaction for sections is a planned next step.
+### Section overlays
+
+Tapping any nav label (except Portrait) opens `.section-overlay` — a full-screen overlay (`z-index: 80`) that fades in at `opacity` 0.4s. Content is populated dynamically from the corresponding section panel.
+
+Inside the overlay:
+- `.section-overlay-content`: scrollable (`overflow-y: auto; -webkit-overflow-scrolling: touch`), `padding-top: 5rem`
+- `.section-overlay-bar`: fixed bottom pill (same style as top header, mirrored), contains section title (left) and Close button (right)
+- Entry years: ABC Diatype Mono, `font-size: 1.1rem`, `padding-left: 1.75rem`, `margin-top: 2rem` between year groups. Duplicate years hidden with `display: none`.
+- Links: `text-decoration: underline`, `text-underline-offset: 4px` — handles multi-line links
+- Entry cascade: top-to-bottom fade using `ENTRY_IN_STEP` delays
+
+### Portrait overlay
+
+Tapping Portrait opens `.portrait-overlay` — full-screen, image anchored to top. Bottom bar (`.portrait-controls`) has Share (left) and Close (right), `padding-left: calc(1.75rem + 1.75rem)`, `padding-right: 3.5rem`.
+
+Share uses Web Share API with a fetched image File — HTTPS required, fails silently on HTTP.
+
+Caption support for multiple portraits is planned: structure will use `01 | [Portrait](url) | Caption` format, requiring a `build.js` regex update to match 2-digit numbers.
 
 ---
 
 ## 14. Next Steps
 
-- Design and implement mobile accordion for sections
-- Explore additional face expressions for different interaction states
+- Dark mode face: finish `updateFace()` implementation with sleep emoticon (`˘˳˘`) and breathing mouth animation
+- Portrait caption: implement consistent caption display for mobile and desktop; support multiple portraits with `01 | url | caption` format in `content.md`
+- Desktop: extend duplicate year suppression (already in JS, just needs enabling in `fonts.ready` block)
+- Mobile accordion / overlay refinements as needed
 - Add favicon
-- Populate all sections with final content in `content.md`
-- James to write final bio texts (short, medium, long)
 - Connect custom domain `james.tf` to Vercel production
 - Give client GitHub access to `content.md`
 - Plan full SvelteKit website architecture and CMS selection

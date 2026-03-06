@@ -58,7 +58,7 @@ Their most recent group exhibition ([*Worldglimpsing: Roleplay and the Design of
 
 2026 | Space In-Between, *Koozarch*
 2026 | [Inside *Worldglimopsing*](https://www.stirworld.com/think-opinions-inside-worldglimpsing-worlding-and-roleplay-as-rehearsals-for-the-real-world) by Bansari Paghdar, *Stir*
-2025 | [This Hong Kong Art Show Aims to Put You to Sleep](https://www.nytimes.com/2025/03/21/arts/design/hong-kong-asmr-art-show.html)by Christy Choi, *The New York Times* (22/03, Section S, Page 7)  
+2025 | [This Hong Kong Art Show Aims to Put You to Sleep](https://www.nytimes.com/2025/03/21/arts/design/hong-kong-asmr-art-show.html) by Christy Choi, *The New York Times* (22/03, Section S, Page 7)  
 2025 | [Hong Kong ASMR show triggers ‘weird sensation’ of internet trend](https://www.scmp.com/lifestyle/arts/article/3303313/hong-kong-asmr-show-triggers-weird-sensation-internet-trend-things-you-can-touch) by Ashlyn Chak, *South China Morning Post*
 2024 | [James Taylor-Foster × ĒTER on their One Night Only Installation: MEATRACK](https://fuckingyoung.es/james-taylor-foster-x-eter-on-their-one-night-only-installation-meatrack-curated-by-weekday/) by Anna Barr, *Fucking Young!*
 2024 | [MEATRACK: An Exploration of Interconnections by James Taylor-Foster × ĒTER](https://collectibledry.com/art-design/meatrack-an-exploration-of-interconnections-by-james-taylor-foster-x-eter-for-weekday/) by Tomasso Faloci, *Collectible Dry*

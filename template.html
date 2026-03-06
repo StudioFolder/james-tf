@@ -7,7 +7,7 @@
   <title>James Taylor-Foster</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <noscript>
       <style>
@@ -172,6 +172,14 @@
 
         window.addEventListener('resize', positionNav);
 
+        let wasMobile = window.innerWidth <= 768;
+        window.addEventListener('resize', () => {
+          const isMobile = window.innerWidth <= 768;
+          if (isMobile !== wasMobile) {
+            location.reload();
+          }
+        });
+
         bioMinus.addEventListener('click', () => {
           if (bioIndex > 0 && !bioAnimating) {
             if (window.innerWidth <= 768) {
@@ -240,24 +248,9 @@
           }
         });
 
-        document.querySelector('.section-overlay-content').addEventListener('scroll', () => {
-          if (window.innerWidth <= 768) {
-            const overlayContent = document.querySelector('.section-overlay-content');
-            const scrolled = overlayContent.scrollTop > 10;
-            mobileHeader.classList.toggle('visible', scrolled);
-            if (scrolled && !mobileHeader.querySelector('.name-clone')) {
-              const clone = document.createElement('span');
-              clone.className = 'name-clone';
-              clone.textContent = 'James Taylor-Foster';
-              mobileHeader.appendChild(clone);
-            }
-            mobileHeader.classList.toggle('name-visible', scrolled);
-            document.querySelector('.name-jtf').classList.toggle('visible', !scrolled);
-          }
-        });
-
         function showPanel(target) {
           clearTimeout(hideTimeout);
+          items.forEach(i => i.setAttribute('aria-expanded', i.dataset.section === target ? 'true' : 'false'));
           panels.forEach(p => {
             if (p.id === target) {
               clearTimeout(panelCleanupTimeouts.get(p.id));
@@ -285,6 +278,7 @@
         }
 
         function hideAll() {
+          items.forEach(i => i.setAttribute('aria-expanded', 'false'));
           panels.forEach(p => {
             if (p.classList.contains('visible')) {
               const entries = p.querySelectorAll('.entry, .entry-full');
@@ -385,9 +379,23 @@
 
         // Mobile overlays
         if (window.innerWidth <= 768) {
+
           const overlay = document.querySelector('.section-overlay');
           const overlayContent = document.querySelector('.section-overlay-content');
           const overlayTitle = document.querySelector('.section-overlay-title');
+
+          overlayContent.addEventListener('scroll', () => {
+            const scrolled = overlayContent.scrollTop > 10;
+            mobileHeader.classList.toggle('visible', scrolled);
+            if (scrolled && !mobileHeader.querySelector('.name-clone')) {
+              const clone = document.createElement('span');
+              clone.className = 'name-clone';
+              clone.textContent = 'James Taylor-Foster';
+              mobileHeader.appendChild(clone);
+            }
+            mobileHeader.classList.toggle('name-visible', scrolled);
+            document.querySelector('.name-jtf').classList.toggle('visible', !scrolled);
+          });
 
           items.forEach(item => {
             if (item.dataset.section === 'portrait') return;
