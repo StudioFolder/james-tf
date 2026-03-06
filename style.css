@@ -343,6 +343,7 @@ button {
 .section-panel.visible {
   opacity: 1;
   visibility: visible;
+  z-index: 10;
 }
 
 .section-panel p {
