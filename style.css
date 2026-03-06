@@ -78,12 +78,47 @@ button {
   overflow-x: hidden;
 }
 
+.desktop-header {
+  display: block;
+  position: fixed;
+  top: 0.6rem;
+  left: calc(var(--left) - 5.5rem);
+  height: 2.8rem;
+  background-color: var(--color-bg);
+  border-radius: 999px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 90;
+  pointer-events: none;
+  padding-left: 2rem;
+  padding-right: 1.5rem;
+}
+
+.desktop-header.visible {
+  opacity: 1;
+}
+
+.desktop-header .name-clone {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  line-height: 3.1rem;
+  margin-left: 3.5rem;
+}
+
+.desktop-header.name-visible .name-clone {
+  opacity: 1;
+}
+
 /* ── Face ── */
 
 .face {
   position: fixed;
-  top: var(--top);
-  left: calc(var(--left) - 5rem);
+  top: 1.3rem;
+  left: calc(var(--left) - 4rem);
   cursor: pointer;
   z-index: 100;
 }
@@ -316,7 +351,8 @@ button {
 }
 
 .nav-item:hover .nav-indicator,
-.nav-item.pinned .nav-indicator {
+.nav-item.pinned .nav-indicator,
+.nav-item.panel-hover .nav-indicator {
   opacity: 1;
 }
 
@@ -398,8 +434,12 @@ button {
 
 .entry {
   display: grid;
-  grid-template-columns: 5rem 1fr;
+  grid-template-columns: 4.5rem 1fr;
   gap: 0;
+}
+
+.entry-year {
+  font-family: 'ABCDiatypeMono', monospace;
 }
 
 .entry-full {
@@ -496,12 +536,16 @@ button {
   opacity: 1;
 }
 
+.portrait-overlay {
+  display: none;
+}
+
 /* ── Footer ── */
 
 .footer {
   position: fixed;
   bottom: 1.5rem;
-  left: var(--left);
+  left: calc(var(--left) - 1rem);
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.01em;
@@ -514,6 +558,7 @@ button {
   border-radius: 999px;
   box-shadow: none;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 50;
 }
 
 .footer.pill-visible {
@@ -616,6 +661,10 @@ button {
     padding: 0 1.75rem;
     overflow-y: auto;
     overflow-x: hidden;
+  }
+
+  .desktop-header {
+    display: none;
   }
 
   .name {
@@ -903,6 +952,8 @@ button {
 
   .footer {
     position: relative;
+    bottom: auto;
+    left: auto;
     width: 100%;
     padding-left: 0;
     padding-right: 0.5rem;
@@ -911,6 +962,10 @@ button {
     margin-left: -0.5rem;
     max-width: 100%;
     font-size: 0.75rem;
+    text-transform: none;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
   }
 
   .footer a {

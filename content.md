@@ -89,7 +89,7 @@ For speaking inquiries, please contact [Agency](mailto:name@email.com)
 
 ## Contact
 
-[email](hej@james.tf), [instagram](https://www.instagram.com/jtaylorfoster/), [ar.ena](https://www.are.na/james-taylor-foster/), [bluesky](https://bsky.app/profile/james.tf), [linkedin](https://www.linkedin.com/in/jtaylorfoster/)
+[email](mailto:hej@james.tf), [instagram](https://www.instagram.com/jtaylorfoster/), [ar.ena](https://www.are.na/james-taylor-foster/), [bluesky](https://bsky.app/profile/james.tf), [linkedin](https://www.linkedin.com/in/jtaylorfoster/)
 
 ## footer
 

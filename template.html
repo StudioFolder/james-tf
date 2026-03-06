@@ -25,6 +25,7 @@
 <body>
   <img class="cursor-portrait" src="" alt="">
   <div class="mobile-header"></div>
+  <div class="desktop-header"></div>
   <span class="name-jtf">JTF</span>
   
   <div class="layout">
@@ -62,14 +63,13 @@
         {{NAV_PRIMARY}}
       </nav>
       <nav class="sections sections-secondary">
-        {{NAV_SECONDARY}}
-      </nav>
-      <div class="footer-spacer"></div>
+          {{NAV_SECONDARY}}
+        </nav>
+        <div class="footer-spacer"></div>
+        <footer class="footer" style="animation-delay: {{FOOTER_DELAY}}">
+          {{FOOTER}}
+        </footer>
     </aside>
-  </div>
-  <footer class="footer" style="animation-delay: {{FOOTER_DELAY}}">
-    {{FOOTER}}
-  </footer>
 
   <script>
 
@@ -207,7 +207,7 @@
 
         const ENTRY_IN_STEP = 0.06;
         const ENTRY_OUT_STEP = 0.04;
-        const HIDE_DELAY = 2400;
+        const HIDE_DELAY = 1800;
 
         // Position nav: pinned at 33vh, only moves if bio fills the gap
         function positionNav() {
@@ -220,11 +220,11 @@
         const colLeft = document.querySelector('.col-left');
         const mobileHeader = document.querySelector('.mobile-header');
         const nameEl = document.querySelector('.name');
+        
         colLeft.addEventListener('scroll', () => {
           const scrolled = colLeft.scrollTop > 10;
           document.querySelector('.footer').classList.toggle('pill-visible', scrolled);
           if (window.innerWidth <= 768) {
-            const scrolled = colLeft.scrollTop > 10;
             mobileHeader.classList.toggle('visible', scrolled);
             if (scrolled && !mobileHeader.querySelector('.name-clone')) {
               const clone = document.createElement('span');
@@ -233,6 +233,16 @@
               mobileHeader.appendChild(clone);
             }
             mobileHeader.classList.toggle('name-visible', scrolled);
+          } else {
+            const dh = document.querySelector('.desktop-header');
+            dh.classList.toggle('visible', scrolled);
+            if (scrolled && !dh.querySelector('.name-clone')) {
+              const clone = document.createElement('span');
+              clone.className = 'name-clone';
+              clone.textContent = 'James Taylor-Foster';
+              dh.appendChild(clone);
+            }
+            dh.classList.toggle('name-visible', scrolled);
           }
         });
 
@@ -263,10 +273,12 @@
               p.classList.remove('visible');
             }
           });
+          items.forEach(i => i.classList.toggle('panel-hover', i.dataset.section === target));
         }
 
         function hideAll() {
           items.forEach(i => i.setAttribute('aria-expanded', 'false'));
+          items.forEach(i => i.classList.remove('panel-hover'));
           panels.forEach(p => {
             if (p.classList.contains('visible')) {
               const entries = p.querySelectorAll('.entry, .entry-full, .entry-portrait');
