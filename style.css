@@ -581,6 +581,11 @@ button {
     display: none;
   }
 
+  .section-overlay .entry {
+    display: flex;
+    flex-direction: column;
+  }
+
   .portrait-overlay {
     display: flex;
     flex-direction: column;

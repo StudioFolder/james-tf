@@ -4,13 +4,13 @@ james taylor-foster [he/they] is a curator, writer, and cultural leader investig
 
 ## bio-medium
 
-james taylor-foster [he/they] is a curator, writer, and cultural leader investigating how the creativity of artists, designers and thinkers reimagines our world – shaping popular culture and public life.  
+james taylor-foster [he/they] is a curator, writer, and cultural leader investigating how the creativity of artists, designers, and thinkers reimagines our world – shaping popular culture and public life.  
   
 Their practice bridges contemporary art, design, architecture, and digital culture, blurring disciplinary boundaries and exploring unconventional ways of nurturing institutions and their audiences. This expansive approach is both greenhouse and staging ground: cultivating emergent ideas for wider cultural spheres while building ambitious platforms for assembling many forms of making into new ways of seeing, feeling, and imagining.
 
 ## bio-long
 
-james taylor-foster [he/they] is a curator, writer, and cultural leader investigating how the creativity of artists, designers and thinkers reimagines our world – shaping popular culture and public life.  
+james taylor-foster [he/they] is a curator, writer, and cultural leader investigating how the creativity of artists, designers, and thinkers reimagines our world – shaping popular culture and public life.  
   
 Their practice bridges contemporary art, design, architecture, and digital culture, blurring disciplinary boundaries and exploring unconventional ways of nurturing institutions and their audiences. This expansive approach is both greenhouse and staging ground: cultivating emergent ideas for wider cultural spheres while building ambitious platforms for assembling many forms of making into new ways of seeing, feeling, and imagining.  
   

@@ -339,6 +339,13 @@
         });
 
         document.querySelectorAll('.section-panel a').forEach(link => {
+          if (!link.getAttribute('target')) {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+          }
+        });
+
+        document.querySelectorAll('.section-panel a').forEach(link => {
           const href = link.getAttribute('href');
           if (!href || !href.match(/\.(jpg|jpeg|png|gif|webp)$/i)) return;
 
