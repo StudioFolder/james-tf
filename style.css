@@ -267,14 +267,14 @@ button {
 }
 
 .bio-spacer {
-  flex-shrink: 1;
+  display: none;
 }
 
 /* ── Navigation ── */
 
 .sections-primary {
   flex-shrink: 0;
-  margin-top: 0;
+  margin-top: auto;
   margin-bottom: 1.4rem;
 }
 
@@ -323,10 +323,10 @@ button {
 /* ── Section panels ── */
 
 .section-panel {
-  position: fixed;
-  left: calc(var(--left) + 280px);
+  position: absolute;
+  left: 280px;
   width: calc(100vw - var(--left) - 280px - 3rem);
-  translate: 0 calc(-1 * var(--line-height) * 0.9rem);
+  top: 0;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease;
@@ -647,10 +647,6 @@ button {
     display: flex;
     gap: 1.25rem;
     align-items: baseline;
-  }
-
-  .bio-spacer {
-    flex-shrink: 1;
   }
 
   .bio-wordcount:hover::before {

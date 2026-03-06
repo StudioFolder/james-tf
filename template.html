@@ -210,21 +210,9 @@
 
         // Position nav: pinned at 33vh, only moves if bio fills the gap
         function positionNav() {
-          // Update bio height in case text has reflowed
           const bioContainer = document.querySelector('.bio');
           const activePanel = bioPanels[bioIndex];
           bioContainer.style.height = activePanel.scrollHeight + 'px';
-
-          if (window.innerWidth <= 768) return;
-
-          const spacer = document.querySelector('.bio-spacer');
-          const bioControls = document.querySelector('.bio-controls');
-          const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
-          const oneLine = remPx * parseFloat(getComputedStyle(document.body).lineHeight);
-          const bcBottom = bioControls.getBoundingClientRect().bottom;
-          const idealTop = window.innerHeight * 0.33;
-          const gap = idealTop - bcBottom;
-          spacer.style.flexBasis = Math.max(oneLine, gap) + 'px';
         }
 
         // Keep section panels aligned with nav when column scrolls
@@ -232,9 +220,6 @@
         const mobileHeader = document.querySelector('.mobile-header');
         const nameEl = document.querySelector('.name');
         colLeft.addEventListener('scroll', () => {
-          panels.forEach(p => {
-            p.style.translate = `0 calc(-1 * var(--line-height) * 0.9rem - ${colLeft.scrollTop}px)`;
-          });
           if (window.innerWidth <= 768) {
             const scrolled = colLeft.scrollTop > 10;
             mobileHeader.classList.toggle('visible', scrolled);
