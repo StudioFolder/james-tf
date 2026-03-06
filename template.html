@@ -64,11 +64,12 @@
       <nav class="sections sections-secondary">
         {{NAV_SECONDARY}}
       </nav>
-      <footer class="footer" style="animation-delay: {{FOOTER_DELAY}}">
-        {{FOOTER}}
-      </footer>
+      <div class="footer-spacer"></div>
     </aside>
   </div>
+  <footer class="footer" style="animation-delay: {{FOOTER_DELAY}}">
+    {{FOOTER}}
+  </footer>
 
   <script>
 
@@ -220,6 +221,8 @@
         const mobileHeader = document.querySelector('.mobile-header');
         const nameEl = document.querySelector('.name');
         colLeft.addEventListener('scroll', () => {
+          const scrolled = colLeft.scrollTop > 10;
+          document.querySelector('.footer').classList.toggle('pill-visible', scrolled);
           if (window.innerWidth <= 768) {
             const scrolled = colLeft.scrollTop > 10;
             mobileHeader.classList.toggle('visible', scrolled);
