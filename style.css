@@ -53,6 +53,10 @@ h1 {
   padding: 0;
 }
 
+a {
+  transition: color 0.6s ease;
+}
+
 button {
   font-size: inherit;
 }
@@ -161,7 +165,7 @@ button {
   height: 1px;
   background-color: var(--color-text);
   transform-origin: right;
-  transition: transform 0.2s linear;
+  transition: transform 0.2s linear, background-color 0.6s ease;
 }
 
 .bio-panel a:hover::after {
@@ -247,7 +251,7 @@ button {
   height: 1px;
   background-color: var(--color-text);
   transform-origin: right;
-  transition: transform 0.2s linear;
+  transition: transform 0.2s linear, background-color 0.6s ease;
 }
 
 .bio-wordcount:hover::after {
@@ -349,7 +353,7 @@ button {
   height: 1px;
   background-color: var(--color-text);
   transform-origin: right;
-  transition: transform 0.2s linear;
+  transition: transform 0.2s linear, background-color 0.6s ease;;
 }
 
 .section-panel a:hover::after {
@@ -431,7 +435,7 @@ button {
   height: 1px;
   background-color: var(--color-text);
   transform-origin: right;
-  transition: transform 0.2s linear;
+  transition: transform 0.2s linear, background-color 0.6s ease;
 }
 
 .footer a:hover::after {
@@ -701,8 +705,10 @@ button {
 
   .section-overlay-content a {
     color: var(--color-text);
-    text-decoration: none;
-    position: relative;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-text);
   }
 
   .section-overlay-content a::after {
@@ -714,11 +720,18 @@ button {
     height: 1px;
     background-color: var(--color-text);
     transform-origin: right;
-    transition: transform 0.2s linear;
+    transition: transform 0.2s linear, background-color 0.6s ease;;
   }
 
   .section-overlay-content a:hover::after {
     transform: scaleX(0);
+  }
+
+  .section-overlay-content a::after,
+  .bio-panel a::after,
+  .section-panel a::after,
+  .footer a::after {
+    display: none;
   }
 
   .portrait-overlay {
