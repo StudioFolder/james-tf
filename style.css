@@ -522,6 +522,16 @@ button {
   transform: scaleX(0);
 }
 
+.entry-download-size {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.entry-download:hover ~ .entry-download-size {
+  opacity: 1;
+}
+
 .entry-caption {
   display: none;
 }

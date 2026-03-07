@@ -1,5 +1,27 @@
 const fs = require('fs');
+const path = require('path');
+const sharp = require('sharp');
 const { marked } = require('marked');
+
+async function generatePreview(srcPath) {
+  const fullSrc = path.join(__dirname, srcPath);
+  const ext = path.extname(srcPath);
+  const previewPath = srcPath.replace(ext, `-preview${ext}`);
+  const fullPreview = path.join(__dirname, previewPath);
+  if (!fs.existsSync(fullPreview)) {
+    await sharp(fullSrc)
+      .resize({ width: 800, withoutEnlargement: true })
+      .jpeg({ quality: 80 })
+      .toFile(fullPreview);
+    console.log(`✓ Generated preview: ${previewPath}`);
+  }
+  return previewPath;
+}
+
+function formatFileSize(bytes) {
+  if (bytes >= 1024 * 1024) return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+  return `${Math.round(bytes / 1024)} KB`;
+}
 
 const renderer = new marked.Renderer();
 
@@ -11,8 +33,11 @@ renderer.paragraph = (token) => {
       const id = parts[0].trim();
       const src = parts[1].trim();
       const caption = parts[2] ? marked.parseInline(parts[2].trim()) : '';
-      return `<span class="entry-portrait" data-id="${id}" data-src="${src}"><span class="entry-trigger">View</span>, <a class="entry-download" href="${src}" download>Download</a><span class="entry-caption">${caption}</span></span>`;
-    }
+      const fullSrcPath = path.join(__dirname, src);
+      const fileSize = fs.existsSync(fullSrcPath) ? formatFileSize(fs.statSync(fullSrcPath).size) : '';
+      const ext = path.extname(src);
+      const previewSrc = src.replace(ext, `-preview${ext}`);
+      return `<span class="entry-portrait" data-id="${id}" data-src="${previewSrc}"><span class="entry-trigger">View</span>, <a class="entry-download" href="${src}" download>Download</a><span class="entry-download-size"> [${fileSize}]</span><span class="entry-caption">${caption}</span></span>`;    }
     if (/^\d{4}[-–]?\d*\s*\|/.test(line)) {
       const [year, ...rest] = line.split('|');
       const content = marked.parseInline(rest.join('|').trim());
@@ -24,6 +49,8 @@ renderer.paragraph = (token) => {
 };
 
 marked.use({ renderer });
+
+(async () => {
 
 const template = fs.readFileSync('template.html', 'utf-8');
 const markdown = fs.readFileSync('content.md', 'utf-8');
@@ -115,5 +142,16 @@ let output = template
   .replace('{{BIO_MEDIUM_WORDS}}', bioMediumWords)
   .replace('{{BIO_LONG_WORDS}}', bioLongWords);
 
+// Generate preview images
+const portraitMatches = markdown.matchAll(/^\d{2}\s*\|(.+?)\|/gm);
+for (const match of portraitMatches) {
+  const src = match[1].trim();
+  if (src.match(/\.(jpg|jpeg|png|webp)$/i)) {
+    await generatePreview(src);
+  }
+}
+
 fs.writeFileSync('index.html', output);
 console.log('✓ Built index.html from content.md');
+
+})();
