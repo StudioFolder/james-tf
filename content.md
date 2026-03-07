@@ -18,8 +18,8 @@ Over the past decade, their curatorial projects and artistic collaborations have
 
 # Projects
 
-2026 | [Worldglimpsing: Roleplay and the Design of Alternate Realities] – Chapter II (https://nieuweinstituut.nl/articles/worldglimpsing), Nieuwe Instituut × ArkDes/Moderna Museet + (Rotterdam)
-2025 | [Worldglimpsing: Roleplay and the Design of Alternate Realities] – Chapter I(https://www.e-flux.com/announcements/642952/worldglimpsing/), ArkDes/Moderna Museet × Nieuwe Instituut + (Stockholm)
+2026 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://nieuweinstituut.nl/articles/worldglimpsing) – Chapter II, Nieuwe Instituut × ArkDes/Moderna Museet + (Rotterdam)
+2025 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://www.e-flux.com/announcements/642952/worldglimpsing/) – Chapter I, ArkDes/Moderna Museet × Nieuwe Instituut + (Stockholm)
 2025 | [《感官怪奇：走進ASMR的世界》](https://arkdes.se/en/news/weird-sensation-feels-good-tours-to-hong-kong/), ArkDes × the Design Museum with Gate 33/AIRSIDE (Hong Kong)
 2024 | [MEATRACK](https://www.rigaartweek.com/en-events/meatrack-jtf-x-eter) by james taylor-foster × ĒTER, supported by WEEKDAY (Paris Art Week, 2024; Riga Art Week, 2025)
 2024 | [The New ArkDes](https://www.e-flux.com/announcements/623179/reopening-in-stockholm), ArkDes (Stockholm)
