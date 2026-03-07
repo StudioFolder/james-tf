@@ -721,6 +721,14 @@ button {
     z-index: 100;
   }
 
+  .face.sleeping .eye {
+    font-size: 0.9em;
+  }
+
+  .face.sleeping .mouth {
+    font-size: 0.7em;
+  }
+
   .bio {
     margin-left: -0.5rem;
     margin-top: 1.5rem;

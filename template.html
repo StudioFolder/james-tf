@@ -329,16 +329,11 @@
             }
           });
           items.forEach(i => i.classList.toggle('panel-hover', i.dataset.section === target));
-          const primarySections = document.querySelectorAll('.sections-primary [data-section]');
-          const isPrimary = Array.from(primarySections).some(btn => btn.dataset.section === target);
-          if (isPrimary) face.enter('reading');
-          else face.leave('reading');
         }
 
         function hideAll() {
           items.forEach(i => i.setAttribute('aria-expanded', 'false'));
           items.forEach(i => i.classList.remove('panel-hover'));
-          face.leave('reading');
           panels.forEach(p => {
             if (p.classList.contains('visible')) {
               const entries = p.querySelectorAll('.entry, .entry-full, .entry-portrait');
