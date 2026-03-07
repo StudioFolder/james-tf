@@ -696,7 +696,6 @@ button {
     padding: 0 1.75rem;
     overflow-y: auto;
     overflow-x: hidden;
-    padding-bottom: env(safe-area-inset-bottom);
   }
 
   .desktop-header {
@@ -1004,7 +1003,7 @@ button {
     width: 100%;
     padding-left: 0;
     padding-right: 0.5rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 2.75rem;
     padding-top: 1rem;
     margin-left: -0.5rem;
     max-width: 100%;
