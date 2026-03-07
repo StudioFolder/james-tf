@@ -496,7 +496,10 @@
           document.querySelector('.section-overlay-close').addEventListener('click', () => {
             overlay.classList.remove('visible');
             overlayContent.scrollTop = 0;
-            mobileHeader.classList.remove('visible', 'name-visible', 'overlay-open');
+            const mainScrolled = colLeft.scrollTop > 10;
+            mobileHeader.classList.toggle('visible', mainScrolled);
+            mobileHeader.classList.toggle('name-visible', mainScrolled);
+            mobileHeader.classList.remove('overlay-open');
             document.querySelector('.name-jtf').classList.remove('visible');
           });
 
