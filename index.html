@@ -79,15 +79,61 @@
 
       document.addEventListener('DOMContentLoaded', () => {
 
+        const face = {
+          priority: ['blushing', 'winking', 'surprised', 'reading', 'sleeping', 'default'],
+          active: new Set(['default']),
+          
+          states: {
+            default:   { leftEye: '◕', rightEye: '◕', mouth: '‿', canBlink: true },
+            sleeping:  { leftEye: '◡', rightEye: '◡', mouth: '○', canBlink: false },
+            blushing:  { leftEye: '◡', rightEye: '◡', mouth: '‿', canBlink: false },
+            winking:   { leftEye: '◕', rightEye: '◠', mouth: '‿', canBlink: false },
+            surprised: { leftEye: '>', rightEye: ' <', mouth: 'ᴗ', canBlink: true },
+            reading:   { leftEye: '^', rightEye: '^', mouth: 'ｖ', canBlink: true },
+          },
+
+          current() {
+            for (const state of this.priority) {
+              if (this.active.has(state)) return state;
+            }
+            return 'default';
+          },
+
+          enter(stateName) {
+            this.active.add(stateName);
+            this.render();
+          },
+
+          leave(stateName) {
+            this.active.delete(stateName);
+            this.render();
+          },
+
+          flash(stateName, duration = 1000) {
+            this.enter(stateName);
+            setTimeout(() => this.leave(stateName), duration);
+          },
+
+          render() {
+            const s = this.states[this.current()];
+            document.querySelector('.left-eye').textContent = s.leftEye;
+            document.querySelector('.right-eye').textContent = s.rightEye;
+            document.querySelector('.mouth').textContent = s.mouth;
+            const faceEl = document.querySelector('.face');
+            faceEl.className = 'face';
+            if (this.current() !== 'default') faceEl.classList.add(this.current());
+          }
+        };
+
         // Blinking eyes
         function blink() {
-          const eyes = document.querySelectorAll('.eye');
-          eyes.forEach(e => e.classList.add('blinking'));
-          setTimeout(() => {
-            eyes.forEach(e => e.classList.remove('blinking'));
-          }, 120);
-          const next = 2000 + Math.random() * 4000;
-          setTimeout(blink, next);
+          const current = face.states[face.current()];
+          if (current.canBlink) {
+            const eyes = document.querySelectorAll('.eye');
+            eyes.forEach(e => e.classList.add('blinking'));
+            setTimeout(() => eyes.forEach(e => e.classList.remove('blinking')), 120);
+          }
+          setTimeout(blink, 2000 + Math.random() * 4000);
         }
         setTimeout(blink, 1000 + Math.random() * 2000);
 
@@ -95,10 +141,16 @@
         const hour = new Date().getHours();
         if (hour >= 20 || hour < 7) {
           document.body.classList.add('dark');
+          face.enter('sleeping');
         }
 
         document.querySelector('.face').addEventListener('click', () => {
           document.body.classList.toggle('dark');
+          if (document.body.classList.contains('dark')) {
+            face.enter('sleeping');
+          } else {
+            face.leave('sleeping');
+          }
         });
 
         // Bio version switcher
@@ -117,6 +169,7 @@
           const text = activePanel.innerText.trim();
           navigator.clipboard.writeText(text).then(() => {
             bioCopy.dataset.state = 'copied';
+            face.flash('winking', 2000);
             clearTimeout(copyResetTimeout);
             copyResetTimeout = setTimeout(() => {
               delete bioCopy.dataset.state;
@@ -190,6 +243,7 @@
             if (window.innerWidth <= 768) {
               document.querySelector('.col-left').scrollTop = 0;
             }
+            face.flash('surprised', 500);
             bioIndex--;
             showBio(bioIndex);
           }
@@ -197,6 +251,7 @@
 
         bioPlus.addEventListener('click', () => {
           if (bioIndex < bioPanels.length - 1 && !bioAnimating) {
+            face.flash('surprised', 500);
             bioIndex++;
             showBio(bioIndex);
           }
@@ -374,15 +429,16 @@
             cursorPortrait.classList.add('visible');
             cursorCaption.classList.add('visible');
             portraitVisible = true;
-            document.querySelectorAll('.eye').forEach(e => e.textContent = '◡');
+            face.enter('blushing');
           });
 
           trigger.addEventListener('mouseleave', () => {
             cursorPortrait.classList.remove('visible');
             cursorCaption.classList.remove('visible');
             portraitVisible = false;
-            document.querySelectorAll('.eye').forEach(e => e.textContent = '◕');
+            face.leave('blushing');
           });
+          
         });
 
         // Mobile overlays
