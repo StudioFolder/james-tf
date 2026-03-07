@@ -341,7 +341,9 @@
             }
           });
           items.forEach(i => i.classList.toggle('panel-hover', i.dataset.section === target));
-          if (face.active.has('sleeping')) {
+          // Only wake face for primary nav items, and only in dark mode
+          const isPrimary = !!document.querySelector(`.sections-primary .nav-item[data-section="${target}"]`);
+          if (isPrimary && face.active.has('sleeping')) {
             face.leave('sleeping');
             face._wokenByPanel = true;
           }
@@ -350,10 +352,6 @@
         function hideAll() {
           items.forEach(i => i.setAttribute('aria-expanded', 'false'));
           items.forEach(i => i.classList.remove('panel-hover'));
-          if (face._wokenByPanel) {
-            face.enter('sleeping');
-            face._wokenByPanel = false;
-          }
           panels.forEach(p => {
             if (p.classList.contains('visible')) {
               const entries = p.querySelectorAll('.entry, .entry-full, .entry-portrait');
@@ -363,17 +361,28 @@
                 entry.classList.add('leaving');
                 entry.classList.remove('visible');
               });
-                const cleanupId = setTimeout(() => {
+              const sleepDelay = visibleEntries.length * ENTRY_OUT_STEP * 1000 + 400;
+              const cleanupId = setTimeout(() => {
                 p.classList.remove('visible');
                 visibleEntries.forEach(entry => {
                   entry.classList.remove('leaving');
                   entry.style.transitionDelay = '';
                 });
                 panelCleanupTimeouts.delete(p.id);
-              }, visibleEntries.length * ENTRY_OUT_STEP * 1000 + 400);
+                // Re-sleep after entries finish animating out
+                if (face._wokenByPanel) {
+                  face.enter('sleeping');
+                  face._wokenByPanel = false;
+                }
+              }, sleepDelay);
               panelCleanupTimeouts.set(p.id, cleanupId);
             }
           });
+          // If no panels were visible but flag is set, still re-sleep
+          if (face._wokenByPanel && ![...panels].some(p => p.classList.contains('visible'))) {
+            face.enter('sleeping');
+            face._wokenByPanel = false;
+          }
         }
 
         items.forEach(item => {
