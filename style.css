@@ -738,6 +738,13 @@ button {
     font-size: 1.2rem;
   }
 
+  .bio-panel a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-text);
+  }
+
   .bio-controls {
     margin-left: 0;
     width: 100%;
