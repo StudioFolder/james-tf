@@ -68,20 +68,21 @@
           <div class="nav-row"><button class="nav-item" data-section="speaking" aria-expanded="false" style="animation-delay: 1.5000000000000002s"><span class="nav-indicator">–</span><span class="nav-label">Speaking</span></button><div class="section-panel" id="speaking"><p><span class="entry-full">For speaking inquiries, please contact <a href="mailto:name@email.com">Agency</a></span></p></div></div>
 <div class="nav-row"><button class="nav-item" data-section="portrait" aria-expanded="false" style="animation-delay: 1.7000000000000002s"><span class="nav-indicator">–</span><span class="nav-label">Portrait</span></button><div class="section-panel" id="portrait"><p><span class="entry-portrait" data-id="01" data-src="/assets/images/portrait-01.jpg"><span class="entry-trigger">View</span>, <a class="entry-download" href="/assets/images/portrait-01.jpg" download>Download</a><span class="entry-caption">james taylor-foster © 2026 by Pierre Björk<br>CC BY-ND 4.0</span></span></p></div></div>
 <div class="nav-row"><button class="nav-item" data-section="contact" aria-expanded="false" style="animation-delay: 1.9000000000000001s"><span class="nav-indicator">–</span><span class="nav-label">Contact</span></button><div class="section-panel" id="contact"><p><span class="entry-full"><a href="mailto:hej@james.tf">email</a>, <a href="https://www.instagram.com/jtaylorfoster/">instagram</a>, <a href="https://www.are.na/james-taylor-foster/">ar.ena</a>, <a href="https://bsky.app/profile/james.tf">bluesky</a>, <a href="https://www.linkedin.com/in/jtaylorfoster/">linkedin</a></span></p></div></div>
-        </nav>
-        <div class="footer-spacer"></div>
-        <footer class="footer" style="animation-delay: 2.1s">
-          <p><span class="entry-full">Unless otherwise stated content on this site by james taylor-foster is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY-ND 4.0</a>.</span></p>
-        </footer>
+      </nav>
+      <div class="footer-spacer"></div>
+      <footer class="footer" style="animation-delay: 2.1s">
+        <p><span class="entry-full">Unless otherwise stated content on this site by james taylor-foster is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY-ND 4.0</a>.</span></p>
+      </footer>
     </aside>
-
+  </div>
   <script>
 
       document.addEventListener('DOMContentLoaded', () => {
 
         const face = {
-          priority: ['blushing', 'winking', 'surprised', 'reading', 'sleeping', 'default'],
+          priority: ['blushing', 'winking', 'surprised', 'sleeping', 'default'],
           active: new Set(['default']),
+          _wokenByPanel: false,
           
           states: {
             default:   { leftEye: '◕', rightEye: '◕', mouth: '‿', canBlink: true },
@@ -89,7 +90,6 @@
             blushing:  { leftEye: '◡', rightEye: '◡', mouth: '‿', canBlink: false },
             winking:   { leftEye: '◕', rightEye: '◠', mouth: '‿', canBlink: false },
             surprised: { leftEye: '>', rightEye: ' <', mouth: 'ᴗ', canBlink: true },
-            reading:   { leftEye: '^', rightEye: '^', mouth: 'ｖ', canBlink: true },
           },
 
           current() {
@@ -278,7 +278,6 @@
         // Keep section panels aligned with nav when column scrolls
         const colLeft = document.querySelector('.col-left');
         const mobileHeader = document.querySelector('.mobile-header');
-        const nameEl = document.querySelector('.name');
         
         colLeft.addEventListener('scroll', () => {
           const scrolled = colLeft.scrollTop > 10;

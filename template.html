@@ -64,20 +64,21 @@
       </nav>
       <nav class="sections sections-secondary">
           {{NAV_SECONDARY}}
-        </nav>
-        <div class="footer-spacer"></div>
-        <footer class="footer" style="animation-delay: {{FOOTER_DELAY}}">
-          {{FOOTER}}
-        </footer>
+      </nav>
+      <div class="footer-spacer"></div>
+      <footer class="footer" style="animation-delay: {{FOOTER_DELAY}}">
+        {{FOOTER}}
+      </footer>
     </aside>
-
+  </div>
   <script>
 
       document.addEventListener('DOMContentLoaded', () => {
 
         const face = {
-          priority: ['blushing', 'winking', 'surprised', 'reading', 'sleeping', 'default'],
+          priority: ['blushing', 'winking', 'surprised', 'sleeping', 'default'],
           active: new Set(['default']),
+          _wokenByPanel: false,
           
           states: {
             default:   { leftEye: '◕', rightEye: '◕', mouth: '‿', canBlink: true },
@@ -85,7 +86,6 @@
             blushing:  { leftEye: '◡', rightEye: '◡', mouth: '‿', canBlink: false },
             winking:   { leftEye: '◕', rightEye: '◠', mouth: '‿', canBlink: false },
             surprised: { leftEye: '>', rightEye: ' <', mouth: 'ᴗ', canBlink: true },
-            reading:   { leftEye: '^', rightEye: '^', mouth: 'ｖ', canBlink: true },
           },
 
           current() {
@@ -274,7 +274,6 @@
         // Keep section panels aligned with nav when column scrolls
         const colLeft = document.querySelector('.col-left');
         const mobileHeader = document.querySelector('.mobile-header');
-        const nameEl = document.querySelector('.name');
         
         colLeft.addEventListener('scroll', () => {
           const scrolled = colLeft.scrollTop > 10;

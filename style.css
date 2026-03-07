@@ -479,6 +479,7 @@ button {
 
 .entry-trigger {
   cursor: pointer;
+  position: relative;
 }
 
 .entry-trigger::after {
@@ -495,10 +496,6 @@ button {
 
 .entry-trigger:hover::after {
   transform: scaleX(0);
-}
-
-.entry-trigger {
-  position: relative;
 }
 
 .entry-download {
@@ -896,10 +893,6 @@ button {
     text-underline-offset: 4px;
     text-decoration-thickness: 1px;
     text-decoration-color: var(--color-text);
-  }
-
-  .section-overlay-content a:hover::after {
-    transform: scaleX(0);
   }
 
   .section-overlay-content a::after,
