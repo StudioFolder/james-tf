@@ -329,11 +329,19 @@
             }
           });
           items.forEach(i => i.classList.toggle('panel-hover', i.dataset.section === target));
+          if (face.active.has('sleeping')) {
+            face.leave('sleeping');
+            face._wokenByPanel = true;
+          }
         }
 
         function hideAll() {
           items.forEach(i => i.setAttribute('aria-expanded', 'false'));
           items.forEach(i => i.classList.remove('panel-hover'));
+          if (face._wokenByPanel) {
+            face.enter('sleeping');
+            face._wokenByPanel = false;
+          }
           panels.forEach(p => {
             if (p.classList.contains('visible')) {
               const entries = p.querySelectorAll('.entry, .entry-full, .entry-portrait');
