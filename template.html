@@ -549,7 +549,7 @@
               const caption = entry.querySelector('.entry-caption')?.innerHTML || '';
               const wrapper = document.createElement('div');
               wrapper.className = 'portrait-item';
-              wrapper.innerHTML = `<img src="${src}" alt="Portrait"><p class="portrait-caption">${caption}</p>`;
+              wrapper.innerHTML = `<img src="${src}" alt="Portrait" data-download="${entry.dataset.download}"><p class="portrait-caption">${caption}</p>`;
               container.appendChild(wrapper);
             });
 
@@ -574,7 +574,7 @@
             const img = portraitOverlay.querySelector('.portrait-images img');
             if (!img) return;
             try {
-              const response = await fetch(img.src);
+              const response = await fetch(img.dataset.download || img.src);
               const blob = await response.blob();
               const file = new File([blob], 'portrait.jpg', { type: blob.type });
               await navigator.share({ files: [file] });

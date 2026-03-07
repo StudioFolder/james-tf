@@ -37,7 +37,7 @@ renderer.paragraph = (token) => {
       const fileSize = fs.existsSync(fullSrcPath) ? formatFileSize(fs.statSync(fullSrcPath).size) : '';
       const ext = path.extname(src);
       const previewSrc = src.replace(ext, `-preview${ext}`);
-      return `<span class="entry-portrait" data-id="${id}" data-src="${previewSrc}"><span class="entry-trigger">View</span>, <a class="entry-download" href="${src}" download>Download</a><span class="entry-download-size"> [${fileSize}]</span><span class="entry-caption">${caption}</span></span>`;    }
+      return `<span class="entry-portrait" data-id="${id}" data-src="${previewSrc}" data-download="${src}"><span class="entry-trigger">View</span>, <a class="entry-download" href="${src}" download>Download</a><span class="entry-download-size"> [${fileSize}]</span><span class="entry-caption">${caption}</span></span>`;    }
     if (/^\d{4}[-–]?\d*\s*\|/.test(line)) {
       const [year, ...rest] = line.split('|');
       const content = marked.parseInline(rest.join('|').trim());
