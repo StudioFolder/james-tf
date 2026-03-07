@@ -150,8 +150,8 @@ button {
 }
 
 @keyframes breathe {
-  0%, 100% { transform: translateY(0.4em) scale(1); }
-  50% { transform: translateY(0.4em) scale(1.2); }
+  0%, 100% { transform: translateY(0.55em) scale(1); }
+  50% { transform: translateY(0.55em) scale(1.2); }
 }
 
 .face.surprised .left-eye {
