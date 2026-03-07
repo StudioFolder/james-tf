@@ -139,14 +139,15 @@ button {
 .face.sleeping .mouth {
   animation: breathe 3s ease-in-out infinite;
   transform: translateY(0.4em);
+  font-size: 0.8em;
 }
 
 .face.sleeping .left-eye {
-  margin-right: 0.2em;
+  margin-right: 0.1em;
 }
 
 .face.sleeping .right-eye {
-  margin-left: 0.2em;
+  margin-left: 0.1em;
 }
 
 @keyframes breathe {
@@ -730,8 +731,14 @@ button {
     z-index: 100;
   }
 
-  .face.sleeping .eye {
+  .face.sleeping .left-eye {
     font-size: 0.9em;
+    margin-right: 0.2em;
+  }
+
+  .face.sleeping .right-eye {
+    font-size: 0.9em;
+    margin-left: 0.2em;
   }
 
   .face.sleeping .mouth {
