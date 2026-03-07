@@ -253,6 +253,15 @@
           }
         });
 
+        // Open all links in new tab
+        document.querySelectorAll('a[href]').forEach(link => {
+          const href = link.getAttribute('href');
+          if (href && !href.startsWith('#') && !href.startsWith('mailto:')) {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+          }
+        });
+
         // Nav interactions
         const items = document.querySelectorAll('.nav-item');
         const panels = document.querySelectorAll('.section-panel');
@@ -452,6 +461,7 @@
           const overlayTitle = document.querySelector('.section-overlay-title');
 
           overlayContent.addEventListener('scroll', () => {
+            if (!overlay.classList.contains('visible')) return;
             const scrolled = overlayContent.scrollTop > 10;
             mobileHeader.classList.toggle('visible', scrolled);
             if (scrolled && !mobileHeader.querySelector('.name-clone')) {
@@ -488,7 +498,9 @@
               });
               overlayContent.scrollTop = 0;
               mobileHeader.classList.remove('visible', 'name-visible', 'overlay-open');
-              document.querySelector('.name-jtf').classList.add('visible');
+              const nameJtf = document.querySelector('.name-jtf');
+              nameJtf.textContent = 'James Taylor-Foster';
+              nameJtf.classList.add('visible');
               overlay.classList.add('visible');
             });
           });
@@ -496,11 +508,12 @@
           document.querySelector('.section-overlay-close').addEventListener('click', () => {
             overlayContent.scrollTop = 0;
             overlay.classList.remove('visible');
+            const nameJtf = document.querySelector('.name-jtf');
+            nameJtf.textContent = 'JTF';
+            nameJtf.classList.remove('visible');
             const mainScrolled = colLeft.scrollTop > 10;
             mobileHeader.classList.toggle('visible', mainScrolled);
             mobileHeader.classList.toggle('name-visible', mainScrolled);
-            mobileHeader.classList.remove('overlay-open');
-            document.querySelector('.name-jtf').classList.toggle('visible', !mainScrolled);
           });
 
           // Portrait overlay
@@ -527,11 +540,17 @@
             portraitNavItem.style.cursor = 'pointer';
             portraitNavItem.addEventListener('click', () => {
               portraitOverlay.classList.add('visible');
+              face.enter('blushing');
+              mobileHeader.classList.remove('visible', 'name-visible');
             });
           }
 
           document.querySelector('.portrait-close').addEventListener('click', () => {
             portraitOverlay.classList.remove('visible');
+            face.leave('blushing');
+            const mainScrolled = colLeft.scrollTop > 10;
+            mobileHeader.classList.toggle('visible', mainScrolled);
+            mobileHeader.classList.toggle('name-visible', mainScrolled);
           });
 
           document.querySelector('.portrait-share').addEventListener('click', async () => {

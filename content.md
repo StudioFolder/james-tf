@@ -6,7 +6,7 @@ james taylor-foster [he/they] is a curator, writer, and cultural leader investig
 
 james taylor-foster [he/they] is a curator, writer, and cultural leader investigating how the creativity of artists, designers, and thinkers reimagines our world – shaping popular culture and public life.  
   
-Their practice bridges contemporary art, design, architecture, and digital culture, blurring disciplinary boundaries and exploring unconventional ways of nurturing institutions and their audiences. This expansive approach is both greenhouse and staging ground: cultivating emergent ideas for wider cultural spheres while building ambitious platforms for assembling many forms of making into new ways of seeing, feeling, and imagining.
+Their practice bridges contemporary art, design, architecture, and digital culture, blurring disciplinary boundaries to explore unconventional ways of nurturing institutions and their audiences. This expansive approach is both greenhouse and staging ground: cultivating emergent ideas for wider cultural spheres while assembling many forms of making into alternate ways of seeing, feeling, and imagining.
 
 ## bio-long
 
@@ -14,51 +14,53 @@ james taylor-foster [he/they] is a curator, writer, and cultural leader investig
   
 Their practice bridges contemporary art, design, architecture, and digital culture, blurring disciplinary boundaries and exploring unconventional ways of nurturing institutions and their audiences. This expansive approach is both greenhouse and staging ground: cultivating emergent ideas for wider cultural spheres while building ambitious platforms for assembling many forms of making into new ways of seeing, feeling, and imagining.  
   
-Their most recent group exhibition ([*Worldglimpsing: Roleplay and the Design of Alternate Realities*](https://www.e-flux.com/announcements/674326/worldglimpsing)) is currently on view at ArkDes/Moderna Museet in Stockholm, with a second chapter opening at the Nieuwe Instituut in Rotterdam in 2026. Over the past decade, their curatorial projects and artistic collaborations have traced queer belonging, investigated how creativity meets technology and popular culture, and explored the city as an expressive body. They have twice co-organised exhibitions for the Nordic Countries Pavilion at *La Biennale di Venezia*. Their work, ideas, and creative alliances have been featured in the likes of *The New York Times*, *PIN-UP*, *London Review of Books*, *The Economist*, *e-flux*, *The Guardian*, and *BBC Culture*. They write criticism, fiction, and poetry, and speaks regularly at institutions and events internationally.
+Over the past decade, their curatorial projects and artistic collaborations have traced queer belonging, investigated how creativity meets technology and popular culture, and explored the city as an expressive body. Their most recent group exhibition ([*Worldglimpsing*](https://www.e-flux.com/announcements/674326/worldglimpsing)) is currently on view at ArkDes/Moderna Museet in Stockholm, with a second chapter opening at the Nieuwe Instituut in Rotterdam in 2026. Their work, ideas, and creative alliances have been featured in the likes of *The New York Times*, *PIN-UP*, *London Review of Books*, *The Economist*, *e-flux*, *The Guardian*, and *BBC Culture*. They write criticism, fiction and poetry, and speaks regularly at institutions and events internationally.
 
 # Projects
 
-2025-27 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://www.e-flux.com/announcements/642952/worldglimpsing/), ArkDes/Moderna Museet × Nieuwe Instituut with Shedhalle, Callie’s, Haus der Kunst
-2020-25 | [WEIRD SENSATION FEELS GOOD: The World of ASMR](https://www.e-flux.com/announcements/465138/weird-sensation-feels-good), ArkDes × the Design Museum with Gate 33/AIRSIDE 《感官怪奇：走進ASMR的世界》
+2026 | [Worldglimpsing: Roleplay and the Design of Alternate Realities] – Chapter II (https://nieuweinstituut.nl/articles/worldglimpsing), Nieuwe Instituut × ArkDes/Moderna Museet + (Rotterdam)
+2025 | [Worldglimpsing: Roleplay and the Design of Alternate Realities] – Chapter I(https://www.e-flux.com/announcements/642952/worldglimpsing/), ArkDes/Moderna Museet × Nieuwe Instituut + (Stockholm)
+2025 | [《感官怪奇：走進ASMR的世界》](https://arkdes.se/en/news/weird-sensation-feels-good-tours-to-hong-kong/), ArkDes × the Design Museum with Gate 33/AIRSIDE (Hong Kong)
 2024 | [MEATRACK](https://www.rigaartweek.com/en-events/meatrack-jtf-x-eter) by james taylor-foster × ĒTER, supported by WEEKDAY (Paris Art Week, 2024; Riga Art Week, 2025)
-2024 | [The New ArkDes](https://www.e-flux.com/announcements/623179/reopening-in-stockholm), ArkDes
-2023 | [MYCKET: Utsikten](https://www.e-flux.com/announcements/613790/mycketutsikten), Utsikten, ArkDes
-2023 | [Joar Nango and collaborators: Girjegumpi: The Sámi Architecture Library](https://www.e-flux.com/announcements/514462/joar-nangogirjegumpi/), Nordic Countries Pavilion, 18th *Biennale Architettura* with Carlos Mínguez Carrasco
-2018-23 | [BOXEN](https://www.e-flux.com/announcements/206872/boxen-at-arkdes/) by Dehlin Brattgård Arkitekter, ArkDes
-2022 | [Watch & Chill 2.0: Streaming Senses](https://www.e-flux.com/announcements/470228/watch-and-chill-2-0-streaming-senses/), ArkDes × National Museum of Modern and Contemporary Art, Korea × Sharjah Art Foundation with Jihoi Lee, Hoor Al Qasimi
-2022 | [Swedish Girls: Utomhusverket 2022](https://www.e-flux.com/announcements/437164/mira-bergh-and-josefin-zachrisson/), Utsikten, ArkDes; Alcova 2022
-2021-22 | [Solicited: Proposals](https://www.e-flux.com/architecture/solicited-proposals/) feat. Esther Choi, Jia Yi Gu, Gilly Karjevsky and Rosario Talevi, Vasif Kortun, Prem Krishnamurthy, Maria Lind, Federico Martelli, Mpho Matsipa, Lynhan Balatbat-Helbock, Molemo Moiloa, Shirley Surya, ArkDes × *e-flux Architecture* with Nikolaus Hirsch, Nick Axel
-2021 | [Studio Ossidiana: Utomhusverket 2021](https://www.e-flux.com/announcements/399526/studio-ossidianautomhusverket-2021/), Exercisplan, ArkDes
+2024 | [The New ArkDes](https://www.e-flux.com/announcements/623179/reopening-in-stockholm), ArkDes (Stockholm)
+2023 | [MYCKET: Utsikten](https://www.e-flux.com/announcements/613790/mycketutsikten), ArkDes (Stockholm)
+2023 | [*Girjegumpi: The Sámi Architecture Library*](https://www.e-flux.com/announcements/514462/joar-nangogirjegumpi/) by Joar Nango and collaborators, Nordic Countries Pavilion, 18th *Biennale Architettura* (Venice)
+2018-23 | [BOXEN](https://www.e-flux.com/announcements/206872/boxen-at-arkdes/) by Dehlin Brattgård Arkitekter, ArkDes (Stockholm)
+2022 | [WEIRD SENSATION FEELS GOOD: The World of ASMR](https://www.e-flux.com/announcements/465138/weird-sensation-feels-good), the Design Museum × ArkDes (London)
+2022 | [Watch & Chill 2.0: Streaming Senses](https://www.e-flux.com/announcements/470228/watch-and-chill-2-0-streaming-senses/), ArkDes × MMCA, Korea × Sharjah Art Foundation
+2022 | [Swedish Girls: Utomhusverket 2022](https://www.e-flux.com/announcements/437164/mira-bergh-and-josefin-zachrisson/), ArkDes (Stockholm), Alcova 2023 (Milan)
+2021 | [Studio Ossidiana: Utomhusverket 2021](https://www.e-flux.com/announcements/399526/studio-ossidianautomhusverket-2021/), ArkDes (Stockholm)
+2021-22 | [Solicited: Proposals](https://www.e-flux.com/architecture/solicited-proposals/) feat. Esther Choi, Jia Yi Gu, Gilly Karjevsky and Rosario Talevi, Vasif Kortun, Prem Krishnamurthy, Maria Lind, Federico Martelli, Mpho Matsipa, Lynhan Balatbat-Helbock, Molemo Moiloa, Shirley Surya with Nikolaus Hirsch, Nick Axel
 2020 | [Interdependence](https://archive.pinupmagazine.org/articles/interdependence-video-sweden-response-covid-james-taylor-foster) by james taylor-foster × Studio Reko, presented by *PIN-UP*
-2019 | [Cruising Pavilion: Architecture, Gay Sex, and Cruising Culture](https://www.e-flux.com/announcements/265850/cruising-pavilion/), Boxen, ArkDes, with Pierre-Alexandre Mateos, Rasmus Myrup, Octave Perrault, Charles Teyssou
-2018 | [Space Popular: Value in the Virtual](https://www.e-flux.com/announcements/214128/space-popularvalue-in-the-virtual/), Boxen, ArkDes
-2016 | [In Therapy], Nordic Countries Pavilion, 16th *Biennale Architettura* with David Basulto
+2020 | [WEIRD SENSATION FEELS GOOD: An Exhibition About ASMR](https://www.e-flux.com/announcements/322199/weird-sensation-feels-good) and [Virtual Vernissage](https://www.e-flux.com/events/437809/weird-sensation-feels-good), ArkDes (Stockholm)
+2019 | [Cruising Pavilion: Architecture, Gay Sex, and Cruising Culture](https://www.e-flux.com/announcements/265850/cruising-pavilion/) with Pierre-Alexandre Mateos, Rasmus Myrup, Octave Perrault, Charles Teyssou, ArkDes (Stockholm)
+2018 | [Space Popular: Value in the Virtual](https://www.e-flux.com/announcements/214128/space-popularvalue-in-the-virtual/), ArkDes (Stockholm)
 
 # Writing
 
 2026 | [when the faggots leave their nest](https://buttmagazine.com/library/butt-38/), *BUTT* #38
 2026 | [Tobias Bradford's "Collecting Shells"](https://www.e-flux.com/criticism/6782383/tobias-bradford-s-collecting-shells), *e-flux Criticism*
 2025 | [Trevor Yeung's "Courtyard of Detachments"](https://www.e-flux.com/criticism/6782313/trevor-yeung-s-courtyard-of-detachments), *e-flux Criticism*
-2025 | [19th Venice Architecture Biennale], e-flux Criticism
-2025 | Interviewed by Beatrice Leanza for [*The New Design Museum*](https://www.park-books.com/en/product/the-new-design-museum/1648), Park Books
+2025 | [19th Venice Architecture Biennale, “Intelligens. Natural. Artificial. Collective.”](https://www.e-flux.com/criticism/672241/19th-venice-architecture-biennale-intelligens-natural-artificial-collective), *e-flux Criticism*
+2025 | [*The New Design Museum*](https://www.park-books.com/en/product/the-new-design-museum/1648), ed. Beatrice Leanza, Park Books
 2025 | [Death-Cleaning with Ann-Sofie Back](https://spikeartmagazine.com/articles/interview-ann-sofie-back), *Spike*
 2024 | [ASMR: A Story of Mika Rottenberg](https://mikarottenberg-antimatterfactory.com/asmr/media/mb6sfewb), Museum Tinguely
-2024 | [Vaginal Davis at Moderna Museet](https://spikeartmagazine.com/articles/review-vaginal-davis-moderna-museet-stockholm), *Spike* #80 – The State of the Arts
-2024 | [Gutted: A Sympathetic Primer in Six Parts](https://www.koozarch.com/author/james-taylor-foster), Koozarch
+2024 | [Vaginal Davis at Moderna Museet](https://spikeartmagazine.com/articles/review-vaginal-davis-moderna-museet-stockholm), *Spike* #80 – *The State of the Arts*
+2024 | [Gutted: A Sympathetic Primer in Six Parts](https://www.koozarch.com/author/james-taylor-foster), *Koozarch*
 2023 | [Lisa Tan: "Dodge and/or Burn"](https://www.e-flux.com/criticism/575585/lisa-tan-s-dodge-and-or-burn), *e-flux Criticism*
 2023 | [ASMRology](https://www.permanentbeta.network/episode/206), *Permanent Beta*, Fotomuseum Winterthur
-2023 | [Royal Chambers by Wang & Söderström](https://ao-publishing.com/product/royal-chambers-wang-soderstrom/), Arvinius + Orpheus
+2023 | [*Royal Chambers*, Wang & Söderström](https://ao-publishing.com/product/royal-chambers-wang-soderstrom/), Arvinius + Orpheus
 2022 | [Studio Ossidiana on the Sentimental Scale of the City](https://extraextramagazine.com/talk/studio-ossidiana-on-the-sentimental-scale-of-the-city/), *Extra Extra* #18
 2021 | [softspot](https://in-other-words.co.uk/products/softspot-b-w) by james taylor-foster × OK-RM, InOtherWords
 2020 | [Don’t Fear a Snowflake](https://www.e-flux.com/announcements/332279/voices-towards-other-institutions-14-james-taylor-foster/), *Open? Voices (towards other institutions)* #14
 2019 | [TO SPEAK AS IF IN CAPITAL LETTERS](https://www.moussemagazine.it/magazine/to-speak-as-if-in-capital-letters-james-taylor-foster-2019/), *Mousse* #68
-2018 | Virgil Abloh, Editor in Brief, *PIN-UP* #25
+2018 | [Virgil Abloh, Editor in Brief](https://www.pinupmagazine.org/issues/pinup-25-home-issue), *PIN-UP* #25
 
 # Press
 
-2026 | Space In-Between, *Koozarch*
-2026 | [Inside *Worldglimopsing*](https://www.stirworld.com/think-opinions-inside-worldglimpsing-worlding-and-roleplay-as-rehearsals-for-the-real-world) by Bansari Paghdar, *Stir*
-2025 | [This Hong Kong Art Show Aims to Put You to Sleep](https://www.nytimes.com/2025/03/21/arts/design/hong-kong-asmr-art-show.html) by Christy Choi, *The New York Times* (22/03, Section S, Page 7)  
+2026 | [Space Between](https://www.koozarch.com/podcasts/space-between-podcast) with Daryan Knoblauch and Shumi Bose, *Koozarch*
+2026 | [Inside *Worldglimpsing*](https://www.stirworld.com/think-opinions-inside-worldglimpsing-worlding-and-roleplay-as-rehearsals-for-the-real-world) by Bansari Paghdar, *Stir*
+2025 | [This Hong Kong Art Show Aims to Put You to Sleep](https://www.nytimes.com/2025/03/21/arts/design/hong-kong-asmr-art-show.html)by Christy Choi, *The New York Times* (22/03, Section S, Page 7)  
 2025 | [Hong Kong ASMR show triggers ‘weird sensation’ of internet trend](https://www.scmp.com/lifestyle/arts/article/3303313/hong-kong-asmr-show-triggers-weird-sensation-internet-trend-things-you-can-touch) by Ashlyn Chak, *South China Morning Post*
 2024 | [James Taylor-Foster × ĒTER on their One Night Only Installation: MEATRACK](https://fuckingyoung.es/james-taylor-foster-x-eter-on-their-one-night-only-installation-meatrack-curated-by-weekday/) by Anna Barr, *Fucking Young!*
 2024 | [MEATRACK: An Exploration of Interconnections by James Taylor-Foster × ĒTER](https://collectibledry.com/art-design/meatrack-an-exploration-of-interconnections-by-james-taylor-foster-x-eter-for-weekday/) by Tomasso Faloci, *Collectible Dry*
@@ -77,20 +79,20 @@ Their most recent group exhibition ([*Worldglimpsing: Roleplay and the Design of
 2021 | [Series 2, Episode 2: James Taylor-Foster](https://open.spotify.com/episode/2NuhrrmibUqybfcbSjSuNm) presented by Hamza Yassin, *Get Birding*
 2021 | [Studio Ossidiana: Utomhusverket 2021](https://www.e-flux.com/events/437835/studio-ossidiana-utomhusverket-2021/) documentary film by ArkDes, *e-flux Live*
 2020 | [This way for brain tingles: ASMR gets a shiver-inducing exhibition](https://www.theguardian.com/artanddesign/2020/mar/31/this-way-for-a-braingasm-asmr-gets-a-tingly-exhibition) by Oliver Wainwright, *The Guardian*
-2019 | [*Cruising Pavilion* Considers the Architecture of Queer Sex from Grindr to Glory Holes](https://archive.pinupmagazine.org/articles/essay-cruising-pavilion-gay-sex-public-space-michael-bullock) by Michael Bullock, *PIN-UP*   
+2019 | [*Cruising Pavilion* Considers the Architecture of Queer Sex from Grindr to Glory Holes](https://archive.pinupmagazine.org/articles/essay-cruising-pavilion-gay-sex-public-space-michael-bullock) by Michael Bullock, *PIN-UP* 
 
 ## Speaking
 
-For speaking inquiries, please contact [Agency](mailto:name@email.com)
+For speaking inquiries, please contact 
 
 ## Portrait
 
-01 | /assets/images/portrait-01.jpg | james taylor-foster © 2026 by Pierre Björk<br>CC BY-ND 4.0
+01 | /assets/images/james-tf-portrait-01.jpg | james taylor-foster © 2026 by Pierre Björk<br>CC BY-ND 4.0
 
 ## Contact
 
-[email](mailto:hej@james.tf), [instagram](https://www.instagram.com/jtaylorfoster/), [ar.ena](https://www.are.na/james-taylor-foster/), [bluesky](https://bsky.app/profile/james.tf), [linkedin](https://www.linkedin.com/in/jtaylorfoster/)
+[instagram](https://www.instagram.com/jtaylorfoster/), [ar.ena](https://www.are.na/james-taylor-foster/), [bluesky](https://bsky.app/profile/james.tf), [linkedin](https://www.linkedin.com/in/jtaylorfoster/)
 
 ## footer
 
-Unless otherwise stated content on this site by james taylor-foster is licensed under [CC BY-ND 4.0](https://creativecommons.org/licenses/by/4.0/).
+Unless otherwise stated, content on this site by james taylor-foster is licensed under [CC BY-ND 4.0](https://creativecommons.org/licenses/by/4.0/). Design [Studio Folder](https://www.studiofolder.it/) 
