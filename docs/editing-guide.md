@@ -82,6 +82,27 @@ A single blank line between paragraphs will not produce the empty line gap on th
 
 ---
 
+## Changing the portrait
+
+The portrait section in `content.md` looks like this:
+
+```
+01 | /assets/images/james-tf-portrait-01.jpg | Caption text
+```
+
+The three parts are: an index number, the image path, and a caption. The site automatically generates a lightweight preview version of the image for display, while keeping the original available for download.
+
+To update the portrait:
+
+1. Upload the new hi-res image (JPG) to `assets/images/` in the repository — click **Add file → Upload files** from the repository root
+2. If there is an existing preview file (same name with `-preview` before the extension, e.g. `james-tf-portrait-01-preview.jpg`), delete it from `assets/images/` — otherwise the old preview will persist
+3. Update the filename in `content.md` under `## Portrait` to match the new file
+4. Commit both changes — the site will regenerate the preview automatically on deploy
+
+The caption supports basic formatting including line breaks written as `<br>`.
+
+---
+
 ## What not to touch
 
 - `index.html` — generated automatically, do not edit
