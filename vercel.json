@@ -3,7 +3,7 @@
   "outputDirectory": ".",
   "redirects": [
     {
-      "source": "/(.*)",
+      "source": "/:path+",
       "destination": "/",
       "permanent": true
     }
