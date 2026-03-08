@@ -84,16 +84,16 @@ Over the past decade, their curatorial projects and artistic collaborations have
 
 ## Speaking
 
-For speaking inquiries, please contact this [address](mailto:hej@james.tf) to be connected with the agency.
+For speaking inquiries, please contact this [address](mailto:hej@james.tf) to be connected with an agency.
 
 ## Portrait
 
 01 | /assets/images/james-tf-portrait-01.jpg | james taylor-foster © 2026 by Pierre Björk<br>CC BY-ND 4.0
 
-## Contact
+## Connect
 
 [Instagram](https://www.instagram.com/jtaylorfoster/), [Ar.ena](https://www.are.na/james-taylor-foster/), [BlueSky](https://bsky.app/profile/james.tf), [LinkedIn](https://www.linkedin.com/in/jtaylorfoster/)
 
 ## footer
 
-Unless otherwise stated, content on this site by james taylor-foster is licensed under [CC BY-ND 4.0](https://creativecommons.org/licenses/by/4.0/). Design: [Studio Folder](https://www.studiofolder.it/) 
+Unless otherwise stated, content on this site by james taylor-foster is licensed under [CC BY-ND 4.0](https://creativecommons.org/licenses/by/4.0/). Design: [Studio Folder](https://www.studiofolder.it/).
