@@ -14,7 +14,7 @@ james taylor-foster [he/they] is a curator, writer, and cultural leader investig
   
 Their practice bridges contemporary art, design, architecture, and digital culture, blurring disciplinary boundaries to explore unconventional ways of nurturing institutions and their audiences. This expansive approach is both greenhouse and staging ground: cultivating emergent ideas for wider cultural spheres while assembling many forms of making into alternate ways of seeing, feeling, and imagining.
   
-Over the past decade, their curatorial projects and artistic collaborations have traced queer belonging, investigated how creativity meets technology and popular culture, and explored the city as an expressive body. Their most recent group exhibition ([*Worldglimpsing*](https://www.e-flux.com/announcements/674326/worldglimpsing)) is currently on view at ArkDes/Moderna Museet in Stockholm, with a second chapter opening at the Nieuwe Instituut in Rotterdam in 2026. Their work, ideas, and creative alliances have been featured in the likes of *The New York Times*, *PIN-UP*, *London Review of Books*, *The Economist*, *e-flux*, *The Guardian*, and *BBC Culture*. They write criticism, fiction and poetry, and speaks regularly at institutions and events internationally.
+Over the past decade, their curatorial projects and artistic collaborations have traced queer belonging, investigated how creativity meets technology and popular culture, and explored the city as an expressive body. Their most recent group exhibition—[*Worldglimpsing*](https://www.e-flux.com/announcements/674326/worldglimpsing)—is currently on view in Stockholm, with a second chapter opening in Rotterdam in 2026. Their work, ideas, and creative alliances have been featured in the *The New York Times*, *PIN-UP*, *London Review of Books*, *The Economist*, *e-flux*, *The Guardian*, and *BBC Culture*. They write criticism, fiction, and poetry, and speak regularly at institutions and events internationally.
 
 # Projects
 
@@ -84,7 +84,7 @@ Over the past decade, their curatorial projects and artistic collaborations have
 
 ## Speaking
 
-For speaking inquiries, please contact [hej@](hej@james.tf) to be connected with the agency.
+For speaking inquiries, please contact [this address](hej@james.tf) to be connected with the agency.
 
 ## Portrait
 
@@ -92,7 +92,7 @@ For speaking inquiries, please contact [hej@](hej@james.tf) to be connected with
 
 ## Contact
 
-[instagram](https://www.instagram.com/jtaylorfoster/), [ar.ena](https://www.are.na/james-taylor-foster/), [bluesky](https://bsky.app/profile/james.tf), [linkedin](https://www.linkedin.com/in/jtaylorfoster/)
+[Instagram](https://www.instagram.com/jtaylorfoster/), [Ar.ena](https://www.are.na/james-taylor-foster/), [BlueSky](https://bsky.app/profile/james.tf), [LinkedIn](https://www.linkedin.com/in/jtaylorfoster/)
 
 ## footer
 
