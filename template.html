@@ -521,12 +521,14 @@
               nameJtf.textContent = 'James Taylor-Foster';
               nameJtf.classList.add('visible');
               overlay.classList.add('visible');
+              mobileHeader.style.pointerEvents = 'auto';
             });
           });
 
           document.querySelector('.section-overlay-close').addEventListener('click', () => {
             overlayContent.scrollTop = 0;
             overlay.classList.remove('visible');
+            mobileHeader.style.pointerEvents = '';
             const nameJtf = document.querySelector('.name-jtf');
             nameJtf.textContent = 'JTF';
             nameJtf.classList.remove('visible');
