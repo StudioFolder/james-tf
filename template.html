@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <meta name="description" content="James Taylor-Foster — curator, editor, and writer">
-  <meta name="author" content="James Taylor-Foster">
+  <meta name="description" content="james taylor-foster — curator, editor, and writer">
+  <meta name="author" content="james taylor-foster">
   <meta property="og:title" content="James Taylor-Foster">
   <meta property="og:description" content="Curator, writer, and cultural leader.">
   <meta property="og:url" content="https://james.tf">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://james.tf/assets/images/james-tf-portrait-01.jpg">
-  <title>James Taylor-Foster</title>
+  <title>james taylor-foster</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
@@ -533,6 +533,12 @@
             const mainScrolled = colLeft.scrollTop > 10;
             mobileHeader.classList.toggle('visible', mainScrolled);
             mobileHeader.classList.toggle('name-visible', mainScrolled);
+          });
+
+          document.querySelector('.name-jtf').addEventListener('click', () => {
+            if (overlay.classList.contains('visible')) {
+              document.querySelector('.section-overlay-close').click();
+            }
           });
 
           // Portrait overlay
