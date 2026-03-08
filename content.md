@@ -84,6 +84,8 @@ Over the past decade, their curatorial projects and artistic collaborations have
 
 ## Speaking
 
+james speaks regularly at institutions and events internationally including: Bangkok Kunsthall, Post Books (Tokyo), National Museum Denmark, The Conference (Malmö), Arkitektur im Magazin (Vienna), Estoril (Lisbon), Salons (Rīga), CAC (Vilnius), CCA (Montréal), MAO (Ljubljana), among others. They have lectured and reviewed at academic institutions including: Columbia GSAPP (New York, NY), Akademie der bildenden Künste (Vienna), AHO (Oslo), Estonian Academy of Arts, University of Cambridge, The Bartlett (London), University College Dublin, Architectural Association (London), Strelka Institute (Moscow), TU Delft / Berlage Institute, Design Academy Eindhoven, Massachusetts Institute of Technology (Cambridge, MA), KTH (Stockholm), KKH, Royal Institute of Art (Stockholm), Konstfack (Stockholm), ETH (Zürich), MIARD / Piet Zwart (Rotterdam), Basel Academy of Art and Design, among others.
+
 For speaking inquiries, please contact [this address](hej@james.tf) to be connected with the agency.
 
 ## Portrait
