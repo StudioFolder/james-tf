@@ -1,11 +1,4 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": ".",
-  "redirects": [
-    {
-      "source": "/:path((?!style.css|assets/).*)+",
-      "destination": "/",
-      "permanent": false
-    }
-  ]
+  "outputDirectory": "."
 }
