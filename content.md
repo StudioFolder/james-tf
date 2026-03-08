@@ -18,15 +18,16 @@ Over the past decade, their curatorial projects and artistic collaborations have
 
 # Projects
 
-2026-27 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://nieuweinstituut.nl/articles/worldglimpsing) – Chapter II, Nieuwe Instituut × ArkDes/Moderna Museet + (Rotterdam)
-2025-26 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://www.e-flux.com/announcements/642952/worldglimpsing/) – Chapter I, ArkDes/Moderna Museet × Nieuwe Instituut + (Stockholm)
-2025 | [《感官怪奇：走進ASMR的世界》](https://arkdes.se/en/news/weird-sensation-feels-good-tours-to-hong-kong/), ArkDes × the Design Museum with Gate 33/AIRSIDE (Hong Kong)
+2026-27 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://nieuweinstituut.nl/articles/worldglimpsing) II, Nieuwe Instituut (Rotterdam)
+2025 | [PLAY OVERLAY](https://arkdes.se/en/calendar/play-overlay/) by Teo Ala-Ruona, ArkDes × MDT with Zodiak, Frame Contemporary Art Finland, Arts Promotion Centre Finland
+2025-26 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://www.e-flux.com/announcements/642952/worldglimpsing/) I, ArkDes/Moderna Museet (Stockholm)
+2025 | [《感官怪奇：走進ASMR的世界》](https://arkdes.se/en/news/weird-sensation-feels-good-tours-to-hong-kong/), ArkDes × Design Museum with Gate 33/AIRSIDE (Hong Kong)
 2024 | [MEATRACK](https://www.rigaartweek.com/en-events/meatrack-jtf-x-eter) by james taylor-foster × ĒTER, supported by WEEKDAY (Paris Art Week, 2024; Riga Art Week, 2025)
-2024 | [The New ArkDes](https://www.e-flux.com/announcements/623179/reopening-in-stockholm), ArkDes (Stockholm)
-2023 | [MYCKET: Utsikten](https://www.e-flux.com/announcements/613790/mycketutsikten), ArkDes (Stockholm)
+2024 | [The New ArkDes](https://www.e-flux.com/announcements/623179/reopening-in-stockholm) (Stockholm)
+2023 | [MYCKET: Utsikten](https://www.e-flux.com/announcements/613790/mycketutsikten) — ArkDes (Stockholm)
 2023 | [*Girjegumpi: The Sámi Architecture Library*](https://www.e-flux.com/announcements/514462/joar-nangogirjegumpi/) by Joar Nango and collaborators, Nordic Countries Pavilion, 18th *Biennale Architettura* (Venice)
 2018-23 | [BOXEN](https://www.e-flux.com/announcements/206872/boxen-at-arkdes/) by Dehlin Brattgård Arkitekter, ArkDes (Stockholm)
-2022 | [WEIRD SENSATION FEELS GOOD: The World of ASMR](https://www.e-flux.com/announcements/465138/weird-sensation-feels-good), the Design Museum × ArkDes (London)
+2022 | [WEIRD SENSATION FEELS GOOD: The World of ASMR](https://www.e-flux.com/announcements/465138/weird-sensation-feels-good), Design Museum × ArkDes (London)
 2022 | [Watch & Chill 2.0: Streaming Senses](https://www.e-flux.com/announcements/470228/watch-and-chill-2-0-streaming-senses/), ArkDes × MMCA, Korea × Sharjah Art Foundation
 2022 | [Swedish Girls: Utomhusverket 2022](https://www.e-flux.com/announcements/437164/mira-bergh-and-josefin-zachrisson/), ArkDes (Stockholm), Alcova 2023 (Milan)
 2021 | [Studio Ossidiana: Utomhusverket 2021](https://www.e-flux.com/announcements/399526/studio-ossidianautomhusverket-2021/), ArkDes (Stockholm)
