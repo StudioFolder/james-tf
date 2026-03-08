@@ -23,14 +23,14 @@ Over the past decade, their curatorial projects and artistic collaborations have
 2025-26 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://www.e-flux.com/announcements/642952/worldglimpsing/) I — ArkDes/Moderna Museet (Stockholm)
 2025 | [《感官怪奇：走進ASMR的世界》](https://arkdes.se/en/news/weird-sensation-feels-good-tours-to-hong-kong/) — ArkDes × Design Museum with Gate 33/AIRSIDE (Hong Kong)
 2024- | [MEATRACK](https://www.rigaartweek.com/en-events/meatrack-jtf-x-eter) by jtf × ĒTER, supported by Weekday (Paris, 2024; Rīga, 2025)
-2024 | [The New ArkDes](https://www.e-flux.com/announcements/623179/reopening-in-stockholm) (Stockholm)
+2024 | [The New ArkDes](https://www.e-flux.com/announcements/623179/reopening-in-stockholm) — ArkDes (Stockholm)
 2023 | [MYCKET: Utsikten](https://www.e-flux.com/announcements/613790/mycketutsikten) — ArkDes (Stockholm)
 2023 | [*Girjegumpi: The Sámi Architecture Library*](https://www.e-flux.com/announcements/514462/joar-nangogirjegumpi/) by Joar Nango and collaborators, Nordic Countries Pavilion, 18th *Biennale Architettura* (Venice)
 2022 | [WEIRD SENSATION FEELS GOOD: The World of ASMR](https://www.e-flux.com/announcements/465138/weird-sensation-feels-good) — Design Museum × ArkDes (London)
 2022 | [Watch & Chill 2.0: Streaming Senses](https://www.e-flux.com/announcements/470228/watch-and-chill-2-0-streaming-senses/) — ArkDes × MMCA × Sharjah Art Foundation (Seoul; Sharjah; Stockholm)
 2022 | [Swedish Girls: Utomhusverket 2022](https://www.e-flux.com/announcements/437164/mira-bergh-and-josefin-zachrisson/) — ArkDes (Stockholm); Alcova 2023 (Milan)
 2021 | [Studio Ossidiana: Utomhusverket 2021](https://www.e-flux.com/announcements/399526/studio-ossidianautomhusverket-2021/) — ArkDes (Stockholm)
-2021-22 | [Solicited: Proposals](https://www.e-flux.com/architecture/solicited-proposals/) feat. Esther Choi, Jia Yi Gu, Gilly Karjevsky and Rosario Talevi, Vasif Kortun, Prem Krishnamurthy, Maria Lind, Federico Martelli, Mpho Matsipa, Lynhan Balatbat-Helbock, Molemo Moiloa, Shirley Surya with Nikolaus Hirsch, Nick Axel
+2021-22 | [Solicited: Proposals](https://www.e-flux.com/architecture/solicited-proposals/) feat. Esther Choi, Jia Yi Gu, Gilly Karjevsky and Rosario Talevi, Vasif Kortun, Prem Krishnamurthy, Maria Lind, Federico Martelli, Mpho Matsipa, Lynhan Balatbat-Helbock, Molemo Moiloa, Shirley Surya with Nikolaus Hirsch, Nick Axel — ArkDes × *e-flux*
 2020 | [Interdependence](https://archive.pinupmagazine.org/articles/interdependence-video-sweden-response-covid-james-taylor-foster) by jtf × Studio Reko, presented by *PIN-UP*
 2020 | [WEIRD SENSATION FEELS GOOD: An Exhibition About ASMR](https://www.e-flux.com/announcements/322199/weird-sensation-feels-good) and [A Virtual Vernissage](https://www.e-flux.com/events/437809/weird-sensation-feels-good) — ArkDes (Stockholm)
 2019 | [Cruising Pavilion: Architecture, Gay Sex, and Cruising Culture](https://www.e-flux.com/announcements/265850/cruising-pavilion/) with Pierre-Alexandre Mateos, Rasmus Myrup, Octave Perrault, Charles Teyssou — ArkDes (Stockholm)
@@ -61,10 +61,10 @@ Over the past decade, their curatorial projects and artistic collaborations have
 
 2026 | [Space Between](https://www.koozarch.com/podcasts/space-between-podcast) with Daryan Knoblauch and Shumi Bose, *Koozarch*
 2026 | [Inside *Worldglimpsing*](https://www.stirworld.com/think-opinions-inside-worldglimpsing-worlding-and-roleplay-as-rehearsals-for-the-real-world) by Bansari Paghdar, *Stir*
-2025 | [This Hong Kong Art Show Aims to Put You to Sleep](https://www.nytimes.com/2025/03/21/arts/design/hong-kong-asmr-art-show.html)by Christy Choi, *The New York Times* (22/03, Section S, Page 7)  
+2025 | [This Hong Kong Art Show Aims to Put You to Sleep](https://www.nytimes.com/2025/03/21/arts/design/hong-kong-asmr-art-show.html) by Christy Choi, *The New York Times* (22/03, Section S, Page 7)  
 2025 | [Hong Kong ASMR show triggers ‘weird sensation’ of internet trend](https://www.scmp.com/lifestyle/arts/article/3303313/hong-kong-asmr-show-triggers-weird-sensation-internet-trend-things-you-can-touch) by Ashlyn Chak, *South China Morning Post*
-2024 | [James Taylor-Foster × ĒTER on their One Night Only Installation: MEATRACK](https://fuckingyoung.es/james-taylor-foster-x-eter-on-their-one-night-only-installation-meatrack-curated-by-weekday/) by Anna Barr, *Fucking Young!*
-2024 | [MEATRACK: An Exploration of Interconnections by James Taylor-Foster × ĒTER](https://collectibledry.com/art-design/meatrack-an-exploration-of-interconnections-by-james-taylor-foster-x-eter-for-weekday/) by Tomasso Faloci, *Collectible Dry*
+2024 | [James Taylor-Foster × ĒTER on their One Night Only Installation: *MEATRACK*](https://fuckingyoung.es/james-taylor-foster-x-eter-on-their-one-night-only-installation-meatrack-curated-by-weekday/) by Anna Barr, *Fucking Young!*
+2024 | [*MEATRACK*: An Exploration of Interconnections by James Taylor-Foster × ĒTER](https://collectibledry.com/art-design/meatrack-an-exploration-of-interconnections-by-james-taylor-foster-x-eter-for-weekday/) by Tomasso Faloci, *Collectible Dry*
 2023 | [In Conversation with Joar Nango, James Taylor-Foster and Carlos Mínguez Carrasco](https://www.archdaily.com/1002956/in-conversation-with-joar-nango-james-taylor-foster-and-carlos-minguez-carrasco-the-architect-and-curators-of-the-nordic-pavilion-at-the-2023-venice-biennale) by Nour Fakharany, *ArchDaily*
 2023 | [Nordic Pavilion at Venice Architecture Biennale highlights Sámi architecture](https://www.dezeen.com/2023/05/22/nordic-countries-pavilion-joar-nango-girjegumpi/) by James Parkes, *Dezeen*
 2023 | [At the Design Museum](https://www.lrb.co.uk/the-paper/v45/n07/ben-walker/at-the-design-museum) by Ben Walker, *London Review of Books* (Vol. 45, No. 7)
@@ -72,7 +72,7 @@ Over the past decade, their curatorial projects and artistic collaborations have
 2023 | [Embrace the Weird](https://disegnojournal.com/newsfeed/weird-sensation-feels-good-asmr-review) by Sophie Tolhurst, *Disegno* (Issue 34)
 2022 | [The Weird and Wonderful World of ASMR](https://www.bbc.co.uk/culture/article/20221110-asmr-and-how-whispering-took-over-the-internet) presented by Precious Adesina, *BBC Culture*
 2022 | [On Mental Health](https://www.bbc.co.uk/programmes/p0c5805k) presented by Anne McElvoy, *BBC Radio 3 Arts & Ideas*
-2022 | [Exhibition “expands what can be in a design museum” says James Taylor-Foster](https://www.dezeen.com/2022/05/19/asmr-exhibition-design-museum-video/) interview by Sebastian Jordahn, *Dezeen*
+2022 | [Exhibition “expands what can be in a design museum” says James Taylor-Foster](https://www.dezeen.com/2022/05/19/asmr-exhibition-design-museum-video/) by Sebastian Jordahn, *Dezeen*
 2022 | [Giulia Poerio: The truth behind the tingles of ASMR](https://www.newscientist.com/video/2324774-giulia-poerio-the-truth-behind-the-tingles-of-asmr/), *New Scientist*
 2022 | [The weird sensory thrill of ASMR](https://podcasts.apple.com/se/podcast/economist-podcasts/id151230264?i=1000561042225) / [The curious pleasures of ASMR](https://www.economist.com/culture/2022/05/13/the-curious-pleasures-of-asmr), *The Economist Podcast* / *The Economist*
 2022 | [ASMR proves unexpectedly relevant to design](https://www.ribaj.com/culture/review-weird-sensation-feels-good-design-museum-asmr) by Pamela Buxton, *RIBA Journal*
@@ -84,7 +84,7 @@ Over the past decade, their curatorial projects and artistic collaborations have
 
 ## Speaking
 
-For speaking inquiries, please contact 
+For speaking inquiries, please contact [hej@](hej@james.tf) to be connected with the agency.
 
 ## Portrait
 
@@ -96,4 +96,4 @@ For speaking inquiries, please contact
 
 ## footer
 
-Unless otherwise stated, content on this site by james taylor-foster is licensed under [CC BY-ND 4.0](https://creativecommons.org/licenses/by/4.0/). Design [Studio Folder](https://www.studiofolder.it/) 
+Unless otherwise stated, content on this site by james taylor-foster is licensed under [CC BY-ND 4.0](https://creativecommons.org/licenses/by/4.0/). Design: [Studio Folder](https://www.studiofolder.it/) 
