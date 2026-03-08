@@ -14,7 +14,7 @@ james taylor-foster [he/they] is a curator, writer, and cultural leader investig
   
 Their practice bridges contemporary art, design, architecture, and digital culture, blurring disciplinary boundaries to explore unconventional ways of nurturing institutions and their audiences. This expansive approach is both greenhouse and staging ground: cultivating emergent ideas for wider cultural spheres while assembling many forms of making into alternate ways of seeing, feeling, and imagining.
   
-Over the past decade, their curatorial projects and artistic collaborations have traced queer belonging, investigated how creativity meets technology and popular culture, and explored the city as an expressive body. Their most recent group exhibition—[*Worldglimpsing*](https://www.e-flux.com/announcements/674326/worldglimpsing)—is currently on view in Stockholm, with a second chapter opening in Rotterdam in 2026. Their work, ideas, and creative alliances have been featured in the *The New York Times*, *PIN-UP*, *London Review of Books*, *The Economist*, *e-flux*, *The Guardian*, and *BBC Culture*. They write criticism, fiction, and poetry, and speak regularly at institutions and events internationally.
+Over the past decade, their curatorial projects and artistic collaborations have traced queer belonging, investigated how creativity meets technology and popular culture, and explored the city as an expressive body. Their most recent group exhibition — [*Worldglimpsing*](https://www.e-flux.com/announcements/674326/worldglimpsing) — is currently on view in Stockholm, with its second chapter opening in Rotterdam in 2026. Their work, ideas, and creative alliances have been featured in the *The New York Times*, *PIN-UP*, *London Review of Books*, *The Economist*, *e-flux*, *The Guardian*, and *BBC Culture*. They write criticism, fiction, and poetry, and speak regularly at institutions and events internationally.
 
 # Projects
 
@@ -25,7 +25,7 @@ Over the past decade, their curatorial projects and artistic collaborations have
 2024- | [MEATRACK](https://www.rigaartweek.com/en-events/meatrack-jtf-x-eter) by jtf × ĒTER, supported by Weekday (Paris, 2024; Rīga, 2025)
 2024 | [The New ArkDes](https://www.e-flux.com/announcements/623179/reopening-in-stockholm) — ArkDes (Stockholm)
 2023 | [MYCKET: Utsikten](https://www.e-flux.com/announcements/613790/mycketutsikten) — ArkDes (Stockholm)
-2023 | [*Girjegumpi: The Sámi Architecture Library*](https://www.e-flux.com/announcements/514462/joar-nangogirjegumpi/) by Joar Nango and collaborators, Nordic Countries Pavilion, 18th *Biennale Architettura* (Venice)
+2023 | [Girjegumpi: The Sámi Architecture Library](https://www.e-flux.com/announcements/514462/joar-nangogirjegumpi/) by Joar Nango and collaborators, Nordic Countries Pavilion, 18th *Biennale Architettura* (Venice)
 2022 | [WEIRD SENSATION FEELS GOOD: The World of ASMR](https://www.e-flux.com/announcements/465138/weird-sensation-feels-good) — Design Museum × ArkDes (London)
 2022 | [Watch & Chill 2.0: Streaming Senses](https://www.e-flux.com/announcements/470228/watch-and-chill-2-0-streaming-senses/) — ArkDes × MMCA × Sharjah Art Foundation (Seoul; Sharjah; Stockholm)
 2022 | [Swedish Girls: Utomhusverket 2022](https://www.e-flux.com/announcements/437164/mira-bergh-and-josefin-zachrisson/) — ArkDes (Stockholm); Alcova 2023 (Milan)
