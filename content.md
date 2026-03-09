@@ -88,7 +88,7 @@ For speaking inquiries, please contact this [address](mailto:hej@james.tf) to be
 
 ## Portrait
 
-01 | /assets/images/james-tf-portrait-01.jpg | james taylor-foster © 2026 by Pierre Björk<br>CC BY-ND 4.0
+01 | /assets/images/jtf-2026-PierreBjork-CC-BY.jpg | james taylor-foster © 2026 by Pierre Björk<br>CC BY-ND 4.0
 
 ## Connect
 
