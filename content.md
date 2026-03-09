@@ -27,6 +27,7 @@ Over the past decade, their curatorial projects and artistic collaborations have
 2023 | [MYCKET: Utsikten](https://www.e-flux.com/announcements/613790/mycketutsikten) — ArkDes (Stockholm)
 2023 | [Girjegumpi: The Sámi Architecture Library](https://www.e-flux.com/announcements/514462/joar-nangogirjegumpi/) by Joar Nango and collaborators, Nordic Countries Pavilion, 18th *Biennale Architettura* (Venice)
 2022 | [WEIRD SENSATION FEELS GOOD: The World of ASMR](https://www.e-flux.com/announcements/465138/weird-sensation-feels-good) — Design Museum × ArkDes (London)
+2022 | [The Limits of Our World: LARP and Design](https://arkdes.se/en/calendar/the-limits-of-our-world-larp-and-design/) — ArkDes (Stockholm)
 2022 | [Watch & Chill 2.0: Streaming Senses](https://www.e-flux.com/announcements/470228/watch-and-chill-2-0-streaming-senses/) — ArkDes × MMCA × Sharjah Art Foundation (Seoul; Sharjah; Stockholm)
 2022 | [Swedish Girls: Utomhusverket 2022](https://www.e-flux.com/announcements/437164/mira-bergh-and-josefin-zachrisson/) — ArkDes (Stockholm); Alcova 2023 (Milan)
 2021 | [Studio Ossidiana: Utomhusverket 2021](https://www.e-flux.com/announcements/399526/studio-ossidianautomhusverket-2021/) — ArkDes (Stockholm)
@@ -35,6 +36,7 @@ Over the past decade, their curatorial projects and artistic collaborations have
 2020 | [Soft Gossip](https://arkdes.se/en/exhibitions/weird-sensation-feels-good-an-exhibition-about-asmr/) by Claire Tolan — ArkDes (Stockholm)
 2020 | [WEIRD SENSATION FEELS GOOD: An Exhibition About ASMR](https://www.e-flux.com/announcements/322199/weird-sensation-feels-good) and [A Virtual Vernissage](https://www.e-flux.com/events/437809/weird-sensation-feels-good) — ArkDes (Stockholm)
 2019 | [Cruising Pavilion: Architecture, Gay Sex, and Cruising Culture](https://www.e-flux.com/announcements/265850/cruising-pavilion/) with Pierre-Alexandre Mateos, Rasmus Myrup, Octave Perrault, Charles Teyssou — ArkDes (Stockholm)
+2019 | [Architecture Projects: Skeppsbron](https://www.e-flux.com/announcements/265849/architecture-projects) — ArkDes (Stockholm)
 2018 | [Space Popular: Value in the Virtual](https://www.e-flux.com/announcements/214128/space-popularvalue-in-the-virtual/) — ArkDes (Stockholm)
 2018-23 | [BOXEN](https://www.e-flux.com/announcements/206872/boxen-at-arkdes/) by Dehlin Brattgård Arkitekter — ArkDes (Stockholm)
 
