@@ -88,7 +88,8 @@ Over the past decade, their curatorial projects and artistic collaborations have
 2021 | [Series 2, Episode 2: James Taylor-Foster](https://open.spotify.com/episode/2NuhrrmibUqybfcbSjSuNm) presented by Hamza Yassin, *Get Birding*
 2021 | [Studio Ossidiana: Utomhusverket 2021](https://www.e-flux.com/events/437835/studio-ossidiana-utomhusverket-2021/) documentary film by ArkDes, *e-flux Live*
 2020 | [This way for brain tingles: ASMR gets a shiver-inducing exhibition](https://www.theguardian.com/artanddesign/2020/mar/31/this-way-for-a-braingasm-asmr-gets-a-tingly-exhibition) by Oliver Wainwright, *The Guardian*
-2019 | [*Cruising Pavilion* Considers the Architecture of Queer Sex from Grindr to Glory Holes](https://archive.pinupmagazine.org/articles/essay-cruising-pavilion-gay-sex-public-space-michael-bullock) by Michael Bullock, *PIN-UP* 
+2019 | [*Cruising Pavilion* Considers the Architecture of Queer Sex from Grindr to Glory Holes](https://archive.pinupmagazine.org/articles/essay-cruising-pavilion-gay-sex-public-space-michael-bullock) by Michael Bullock, *PIN-UP*
+2018 | [Augmented environments come alive in a riotous exhibition in Stockholm](https://www.archpaper.com/2018/09/space-popular-value-virtual-stockholm/) by Björn Ehrlemark, *The Architect's Newspaper* 
 
 ## Speaking
 
@@ -96,7 +97,7 @@ For speaking inquiries, please contact this [address](mailto:hej@james.tf) to be
 
 ## Portrait
 
-01 | /assets/images/jtf-2026-PierreBjork-CC-BY.jpg | james taylor-foster © 2026 by Pierre Björk<br>CC BY-ND 4.0
+01 | /assets/images/jtf-2026-PierreBjork-CC-BY.jpg | james taylor-foster © 2026 by Pierre Björk<br>[CC BY-ND 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ## Connect
 
@@ -104,4 +105,4 @@ For speaking inquiries, please contact this [address](mailto:hej@james.tf) to be
 
 ## footer
 
-Unless otherwise stated, content on this site by james taylor-foster is licensed under [CC BY-ND 4.0](https://creativecommons.org/licenses/by/4.0/). Design: [Studio Folder](https://www.studiofolder.it/).
+Unless otherwise stated, content on this site © 2026 by james taylor-foster is licensed under [CC BY-ND 4.0](https://creativecommons.org/licenses/by/4.0/). Design: [Studio Folder](https://www.studiofolder.it/).
