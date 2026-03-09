@@ -48,17 +48,22 @@ Over the past decade, their curatorial projects and artistic collaborations have
 2024 | [ASMR: A Story of Mika Rottenberg](https://mikarottenberg-antimatterfactory.com/asmr/media/mb6sfewb), Museum Tinguely
 2024 | [Vaginal Davis at Moderna Museet](https://spikeartmagazine.com/articles/review-vaginal-davis-moderna-museet-stockholm), *Spike* #80 – *The State of the Arts*
 2024 | [Gutted: A Sympathetic Primer in Six Parts](https://www.koozarch.com/author/james-taylor-foster), *Koozarch*
-2023 | [Lisa Tan: "Dodge and/or Burn"](https://www.e-flux.com/criticism/575585/lisa-tan-s-dodge-and-or-burn), *e-flux Criticism*
+2023 | [Lisa Tan's "Dodge and/or Burn"](https://www.e-flux.com/criticism/575585/lisa-tan-s-dodge-and-or-burn), *e-flux Criticism*
 2023 | [ASMRology](https://www.permanentbeta.network/episode/206), *Permanent Beta*, Fotomuseum Winterthur
 2023 | [*Royal Chambers*, Wang & Söderström](https://ao-publishing.com/product/royal-chambers-wang-soderstrom/), Arvinius + Orpheus
+2022 | [The Protagonist of the Erotic: A Bed](https://www.nts.live/shows/the-protagonist-of-the-erotic/episodes/protagonist-of-erotic-16th-november-2022), NTS × *Extra Extra*
 2022 | [Studio Ossidiana on the Sentimental Scale of the City](https://extraextramagazine.com/talk/studio-ossidiana-on-the-sentimental-scale-of-the-city/), *Extra Extra* #18
 2021 | [softspot](https://in-other-words.co.uk/products/softspot-b-w) by james taylor-foster × OK-RM, InOtherWords
+2021 | [The Protagonist of the Erotic: An Island](https://www.nts.live/shows/the-protagonist-of-the-erotic/episodes/an-island-3rd-november-2021), NTS × *Extra Extra*
 2020 | [Don’t Fear a Snowflake](https://www.e-flux.com/announcements/332279/voices-towards-other-institutions-14-james-taylor-foster/), *Open? Voices (towards other institutions)* #14
 2019 | [TO SPEAK AS IF IN CAPITAL LETTERS](https://www.moussemagazine.it/magazine/to-speak-as-if-in-capital-letters-james-taylor-foster-2019/), *Mousse* #68
 2018 | [Virgil Abloh, Editor in Brief](https://www.pinupmagazine.org/issues/pinup-25-home-issue), *PIN-UP* #25
+2018 | ["The Boat is Leaking, The Captain Lied" – A Rear View Review](https://real-review.org/), *Real Review* #7 – *Woke Awakening*
 2017 | [#003399, #FFCC00; The Meaning of a Flag](https://real-review.org/), *Real Review* #4 – *What It Means To Love Today*
 2017 | [Liquid Modernity](https://real-review.org/), *Real Review* #3 – *Global Civil War*
 2016 | [Rem, Redacted](https://real-review.org/), *Real Review* #2 – *Historical Déjà Vu*
+2016 | [Media States, Or the State of Media](https://archis.org/publications/volume-50-beyond-beyond/), *Volume* #50 – *Beyond Beyond*
+2015 | [A Piece of England to Call One's Own](https://archis.org/publications/volume-46-shelter/), *Volume* #46 – *Shelter*
 
 # Press
 
