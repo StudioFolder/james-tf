@@ -39,6 +39,7 @@ Over the past decade, their curatorial projects and artistic collaborations have
 2019 | [Architecture Projects: Skeppsbron](https://www.e-flux.com/announcements/265849/architecture-projects) — ArkDes (Stockholm)
 2018 | [Space Popular: Value in the Virtual](https://www.e-flux.com/announcements/214128/space-popularvalue-in-the-virtual/) — ArkDes (Stockholm)
 2018-23 | [BOXEN](https://www.e-flux.com/announcements/206872/boxen-at-arkdes/) by Dehlin Brattgård Arkitekter — ArkDes (Stockholm)
+2016 | [In Therapy](https://arkdes.se/en/exhibitions/in-therapy-nordic-countries-face-to-face/) – Nordic Countries Pavilion, 16th *Biennale Architettura* (Venice)
 
 # Writing
 
