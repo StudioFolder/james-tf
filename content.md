@@ -56,6 +56,9 @@ Over the past decade, their curatorial projects and artistic collaborations have
 2020 | [Don’t Fear a Snowflake](https://www.e-flux.com/announcements/332279/voices-towards-other-institutions-14-james-taylor-foster/), *Open? Voices (towards other institutions)* #14
 2019 | [TO SPEAK AS IF IN CAPITAL LETTERS](https://www.moussemagazine.it/magazine/to-speak-as-if-in-capital-letters-james-taylor-foster-2019/), *Mousse* #68
 2018 | [Virgil Abloh, Editor in Brief](https://www.pinupmagazine.org/issues/pinup-25-home-issue), *PIN-UP* #25
+2017 | [#003399, #FFCC00; The Meaning of a Flag](https://real-review.org/), *Real Review* #4 – *What It Means To Love Today*
+2017 | [Liquid Modernity](https://real-review.org/), *Real Review* #3 – *Global Civil War*
+2016 | [Rem, Redacted](https://real-review.org/), *Real Review* #2 – *Historical Déjà Vu*
 
 # Press
 
