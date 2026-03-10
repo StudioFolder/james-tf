@@ -36,7 +36,7 @@ Over the past decade, their curatorial projects and artistic collaborations have
 2020 | [Soft Gossip](https://arkdes.se/en/exhibitions/weird-sensation-feels-good-an-exhibition-about-asmr/) by Claire Tolan — ArkDes (Stockholm)
 2020 | [WEIRD SENSATION FEELS GOOD: An Exhibition About ASMR](https://www.e-flux.com/announcements/322199/weird-sensation-feels-good) and [A Virtual Vernissage](https://www.e-flux.com/events/437809/weird-sensation-feels-good) — ArkDes (Stockholm)
 2019 | [Cruising Pavilion: Architecture, Gay Sex, and Cruising Culture](https://www.e-flux.com/announcements/265850/cruising-pavilion/) with Pierre-Alexandre Mateos, Rasmus Myrup, Octave Perrault, Charles Teyssou — ArkDes (Stockholm)
-2019 | [Architecture Projects: Skeppsbron](https://www.e-flux.com/announcements/265849/architecture-projects) — ArkDes (Stockholm); 2019 Seoul Biennale of Architecture and Urbanism; Röhsska Museum (Gothenburg)
+2019 | [Architecture Projects: Skeppsbron](https://www.e-flux.com/announcements/265849/architecture-projects) — ArkDes (Stockholm); 2019 Seoul Biennale of Architecture + Urbanism; Röhsska (Gothenburg)
 2018 | [Space Popular: Value in the Virtual](https://www.e-flux.com/announcements/214128/space-popularvalue-in-the-virtual/) — ArkDes (Stockholm)
 2018-23 | [BOXEN](https://www.e-flux.com/announcements/206872/boxen-at-arkdes/) by Dehlin Brattgård Arkitekter — ArkDes (Stockholm)
 2016 | [In Therapy](https://arkdes.se/en/exhibitions/in-therapy-nordic-countries-face-to-face/) – Nordic Countries Pavilion, 16th *Biennale Architettura* (Venice)
