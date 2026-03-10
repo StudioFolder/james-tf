@@ -66,7 +66,7 @@ Over the past decade, their curatorial projects and artistic collaborations have
 2018 | ["The Boat is Leaking, The Captain Lied" – A Rear View Review](https://real-review.org/), *Real Review* #7 – *Woke Awakening*
 2017 | [#003399, #FFCC00; The Meaning of a Flag](https://real-review.org/), *Real Review* #4 – *What It Means To Love Today*
 2017 | [Liquid Modernity](https://real-review.org/), *Real Review* #3 – *Global Civil War*
-2017 | [Exhibiting the Postmodern]([https://real-review.org/](https://www.domusweb.it/en/reviews/2017/02/10/exhibiting_the_postmodern.html), *Domus*
+2017 | [Exhibiting the Postmodern](https://www.domusweb.it/en/reviews/2017/02/10/exhibiting_the_postmodern.html), *Domus*
 2016 | [Rem, Redacted](https://real-review.org/), *Real Review* #2 – *Historical Déjà Vu*
 2016 | [Media States, Or the State of Media](https://archis.org/publications/volume-50-beyond-beyond/), *Volume* #50 – *Beyond Beyond*
 2015 | [A Piece of England to Call One's Own](https://archis.org/publications/volume-46-shelter/), *Volume* #46 – *Shelter*
