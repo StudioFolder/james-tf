@@ -103,7 +103,7 @@ For speaking inquiries, please contact this [address](mailto:hej@james.tf) to be
 
 ## Portrait
 
-01 | /assets/images/jtf-2026-PierreBjork-CC-BY.jpg | james taylor-foster © 2026 by Pierre Björk<br>[CC BY-ND 4.0](https://creativecommons.org/licenses/by/4.0/)
+01 | /assets/images/jtf-2026-PierreBjork-CC-BY.jpg | james taylor-foster © 2026 by Pierre Björk<br>CC BY-ND 4.0
 
 ## Connect
 
