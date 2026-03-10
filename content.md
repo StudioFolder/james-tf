@@ -25,13 +25,13 @@ Over the past decade, their curatorial projects and artistic collaborations have
 2024- | [MEATRACK](https://www.rigaartweek.com/en-events/meatrack-jtf-x-eter) by jtf × ĒTER, supported by Weekday (Paris, 2024; Rīga, 2025)
 2024 | [The New ArkDes](https://www.e-flux.com/announcements/623179/reopening-in-stockholm) — ArkDes (Stockholm)
 2023-24 | [MYCKET: Utsikten](https://www.e-flux.com/announcements/613790/mycketutsikten) — ArkDes (Stockholm)
-2023 | [Girjegumpi: The Sámi Architecture Library](https://www.e-flux.com/announcements/514462/joar-nangogirjegumpi/) by Joar Nango and collaborators, Nordic Countries Pavilion, 18th International Architecture Exhibition – *La Biennale di Venezia* (Venice)
+2023 | [Girjegumpi: The Sámi Architecture Library](https://www.e-flux.com/announcements/514462/joar-nangogirjegumpi/) by Joar Nango and collaborators — Nordic Countries Pavilion, 18th International Architecture Exhibition – *La Biennale di Venezia* (Venice)
 2022-23 | [WEIRD SENSATION FEELS GOOD: The World of ASMR](https://www.e-flux.com/announcements/465138/weird-sensation-feels-good) × [Introduction](https://youtu.be/YOg0wnHXtFA?si=3SL6QpDF3G9CVFir) — the Design Museum × ArkDes (London)
 2022 | [The Limits of Our World: LARP and Design](https://arkdes.se/en/calendar/the-limits-of-our-world-larp-and-design/) — ArkDes (Stockholm)
 2022 | [Watch & Chill 2.0: Streaming Senses](https://www.e-flux.com/announcements/470228/watch-and-chill-2-0-streaming-senses/) — MMCA × Sharjah Art Foundation × ArkDes (Seoul; Sharjah; Stockholm)
 2022-23 | [Swedish Girls: Utomhusverket 2022](https://www.e-flux.com/announcements/437164/mira-bergh-and-josefin-zachrisson/) — ArkDes (Stockholm); Alcova 2023 (Milan)
 2021 | [Studio Ossidiana: Utomhusverket 2021](https://www.e-flux.com/announcements/399526/studio-ossidianautomhusverket-2021/) — ArkDes (Stockholm)
-2021-22 | [Solicited: Proposals](https://www.e-flux.com/architecture/solicited-proposals/) feat. Esther Choi, Jia Yi Gu, Gilly Karjevsky, Rosario Talevi, Vasif Kortun, Prem Krishnamurthy, Maria Lind, Federico Martelli, Mpho Matsipa, Lynhan Balatbat-Helbock, Molemo Moiloa, Shirley Surya; ed. Nikolaus Hirsch, Nick Axel, jtf — ArkDes × e-flux Architecture
+2021-22 | [Solicited: Proposals](https://www.e-flux.com/architecture/solicited-proposals/) feat. Esther Choi, Jia Yi Gu, Gilly Karjevsky, Rosario Talevi, Vasif Kortun, Prem Krishnamurthy, Maria Lind, Federico Martelli, Mpho Matsipa, Lynhan Balatbat-Helbock, Molemo Moiloa, Shirley Surya; ed. Nikolaus Hirsch, Nick Axel, james taylor-foster — ArkDes × e-flux Architecture
 2020 | [Interdependence](https://archive.pinupmagazine.org/articles/interdependence-video-sweden-response-covid-james-taylor-foster) by jtf × Studio Reko, presented by *PIN-UP*
 2020 | [Soft Gossip](https://arkdes.se/en/exhibitions/weird-sensation-feels-good-an-exhibition-about-asmr/) by Claire Tolan — ArkDes (Stockholm)
 2020 | [WEIRD SENSATION FEELS GOOD: An Exhibition About ASMR](https://www.e-flux.com/announcements/322199/weird-sensation-feels-good) × [Virtual Vernissage](https://www.e-flux.com/events/437809/weird-sensation-feels-good) — ArkDes (Stockholm)
