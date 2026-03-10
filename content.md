@@ -20,13 +20,13 @@ Over the past decade, their curatorial projects and artistic collaborations have
 
 2026-27 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://www.e-flux.com/announcements/674326/worldglimpsing) #2 — Nieuwe Instituut (Rotterdam)
 2025- | [Play Overlay](https://arkdes.se/en/calendar/play-overlay/) by Teo Ala-Ruona — ArkDes × MDT with Zodiak, Frame Contemporary Art Finland, Arts Promotion Centre Finland
-2025-26 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://arkdes.se/en/exhibitions/worldglimpsing/) #1 × [introduction](https://youtu.be/u6aXTb4-ctM?si=MuLLQ0soO0pEOYgB) — ArkDes/Moderna Museet (Stockholm)
+2025-26 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://arkdes.se/en/exhibitions/worldglimpsing/) #1 × [Introduction](https://youtu.be/u6aXTb4-ctM?si=MuLLQ0soO0pEOYgB) — ArkDes/Moderna Museet (Stockholm)
 2025 | [《感官怪奇：走進ASMR的世界》](https://arkdes.se/en/news/weird-sensation-feels-good-tours-to-hong-kong/) — ArkDes × Design Museum with Gate 33/AIRSIDE (Hong Kong)
 2024- | [MEATRACK](https://www.rigaartweek.com/en-events/meatrack-jtf-x-eter) by jtf × ĒTER, supported by Weekday (Paris, 2024; Rīga, 2025)
 2024 | [The New ArkDes](https://www.e-flux.com/announcements/623179/reopening-in-stockholm) — ArkDes (Stockholm)
 2023 | [MYCKET: Utsikten](https://www.e-flux.com/announcements/613790/mycketutsikten) — ArkDes (Stockholm)
 2023 | [Girjegumpi: The Sámi Architecture Library](https://www.e-flux.com/announcements/514462/joar-nangogirjegumpi/) by Joar Nango and collaborators, Nordic Countries Pavilion, 18th *Biennale Architettura* (Venice)
-2022 | [WEIRD SENSATION FEELS GOOD: The World of ASMR](https://www.e-flux.com/announcements/465138/weird-sensation-feels-good) × [introduction](https://youtu.be/YOg0wnHXtFA?si=3SL6QpDF3G9CVFir) — Design Museum × ArkDes (London)
+2022 | [WEIRD SENSATION FEELS GOOD: The World of ASMR](https://www.e-flux.com/announcements/465138/weird-sensation-feels-good) × [Introduction](https://youtu.be/YOg0wnHXtFA?si=3SL6QpDF3G9CVFir) — Design Museum × ArkDes (London)
 2022 | [The Limits of Our World: LARP and Design](https://arkdes.se/en/calendar/the-limits-of-our-world-larp-and-design/) — ArkDes (Stockholm)
 2022 | [Watch & Chill 2.0: Streaming Senses](https://www.e-flux.com/announcements/470228/watch-and-chill-2-0-streaming-senses/) — ArkDes × MMCA × Sharjah Art Foundation (Seoul; Sharjah; Stockholm)
 2022 | [Swedish Girls: Utomhusverket 2022](https://www.e-flux.com/announcements/437164/mira-bergh-and-josefin-zachrisson/) — ArkDes (Stockholm); Alcova 2023 (Milan)
