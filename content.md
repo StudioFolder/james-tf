@@ -36,7 +36,7 @@ Over the past decade, their curatorial projects and artistic collaborations have
 2020 | [Soft Gossip](https://arkdes.se/en/exhibitions/weird-sensation-feels-good-an-exhibition-about-asmr/) by Claire Tolan — ArkDes (Stockholm)
 2020 | [WEIRD SENSATION FEELS GOOD: An Exhibition About ASMR](https://www.e-flux.com/announcements/322199/weird-sensation-feels-good) and [A Virtual Vernissage](https://www.e-flux.com/events/437809/weird-sensation-feels-good) — ArkDes (Stockholm)
 2019 | [Cruising Pavilion: Architecture, Gay Sex, and Cruising Culture](https://www.e-flux.com/announcements/265850/cruising-pavilion/) with Pierre-Alexandre Mateos, Rasmus Myrup, Octave Perrault, Charles Teyssou — ArkDes (Stockholm)
-2019 | [Architecture Projects: Skeppsbron](https://www.e-flux.com/announcements/265849/architecture-projects) — ArkDes (Stockholm)
+2019 | [Architecture Projects: Skeppsbron](https://www.e-flux.com/announcements/265849/architecture-projects) — ArkDes (Stockholm); 2019 Seoul Biennale of Architecture and Urbanism; Röhsska Museum (Gothenburg)
 2018 | [Space Popular: Value in the Virtual](https://www.e-flux.com/announcements/214128/space-popularvalue-in-the-virtual/) — ArkDes (Stockholm)
 2018-23 | [BOXEN](https://www.e-flux.com/announcements/206872/boxen-at-arkdes/) by Dehlin Brattgård Arkitekter — ArkDes (Stockholm)
 2016 | [In Therapy](https://arkdes.se/en/exhibitions/in-therapy-nordic-countries-face-to-face/) – Nordic Countries Pavilion, 16th *Biennale Architettura* (Venice)
@@ -60,11 +60,13 @@ Over the past decade, their curatorial projects and artistic collaborations have
 2021 | [softspot](https://in-other-words.co.uk/products/softspot-b-w) by james taylor-foster × OK-RM, InOtherWords
 2021 | [The Protagonist of the Erotic: An Island](https://www.nts.live/shows/the-protagonist-of-the-erotic/episodes/an-island-3rd-november-2021), NTS × *Extra Extra*
 2020 | [Don’t Fear a Snowflake](https://www.e-flux.com/announcements/332279/voices-towards-other-institutions-14-james-taylor-foster/), *Open? Voices (towards other institutions)* #14
+2020 | [No Time to Stand and Stare](https://system-magazine.com/issues/issue-15/ok-rm) by james taylor-foster × OK-RM × Esther Cloe Theaker, *System* #15
 2019 | [TO SPEAK AS IF IN CAPITAL LETTERS](https://www.moussemagazine.it/magazine/to-speak-as-if-in-capital-letters-james-taylor-foster-2019/), *Mousse* #68
 2018 | [Virgil Abloh, Editor in Brief](https://www.pinupmagazine.org/issues/pinup-25-home-issue), *PIN-UP* #25
 2018 | ["The Boat is Leaking, The Captain Lied" – A Rear View Review](https://real-review.org/), *Real Review* #7 – *Woke Awakening*
 2017 | [#003399, #FFCC00; The Meaning of a Flag](https://real-review.org/), *Real Review* #4 – *What It Means To Love Today*
 2017 | [Liquid Modernity](https://real-review.org/), *Real Review* #3 – *Global Civil War*
+2017 | [Exhibiting the Postmodern]([https://real-review.org/](https://www.domusweb.it/en/reviews/2017/02/10/exhibiting_the_postmodern.html), *Domus*
 2016 | [Rem, Redacted](https://real-review.org/), *Real Review* #2 – *Historical Déjà Vu*
 2016 | [Media States, Or the State of Media](https://archis.org/publications/volume-50-beyond-beyond/), *Volume* #50 – *Beyond Beyond*
 2015 | [A Piece of England to Call One's Own](https://archis.org/publications/volume-46-shelter/), *Volume* #46 – *Shelter*
