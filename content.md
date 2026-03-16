@@ -1,16 +1,16 @@
 ## bio-short
 
-james taylor-foster [he/they] is a curator, writer, and cultural leader investigating how the creativity of artists, designers, and thinkers reimagines our world – shaping popular culture and public life.
+james taylor-foster [he/they] is a curator, writer, and cultural leader investigating how the creativity of artists, designers, and thinkers reimagines our world – shaping popular culture and public life. They are the incoming Executive Director of [Para Site](https://www.para-site.art) in Hong Kong, assuming the role in summer 2026.
 
 ## bio-medium
 
-james taylor-foster [he/they] is a curator, writer, and cultural leader investigating how the creativity of artists, designers, and thinkers reimagines our world – shaping popular culture and public life.  
+james taylor-foster [he/they] is a curator, writer, and cultural leader investigating how the creativity of artists, designers, and thinkers reimagines our world – shaping popular culture and public life. They are the incoming Executive Director of [Para Site](https://www.para-site.art) in Hong Kong, assuming the role in summer 2026.
   
 Their practice bridges contemporary art, design, architecture, and digital culture, blurring disciplinary boundaries to explore unconventional ways of nurturing institutions and their audiences. This expansive approach is both greenhouse and staging ground: cultivating emergent ideas for wider cultural spheres while assembling many forms of making into seeing, feeling, and imagining anew.
 
 ## bio-long
 
-james taylor-foster [he/they] is a curator, writer, and cultural leader investigating how the creativity of artists, designers, and thinkers reimagines our world – shaping popular culture and public life.  
+james taylor-foster [he/they] is a curator, writer, and cultural leader investigating how the creativity of artists, designers, and thinkers reimagines our world – shaping popular culture and public life. They are the incoming Executive Director of [Para Site](https://www.para-site.art) in Hong Kong, assuming the role in summer 2026.
   
 Their practice bridges contemporary art, design, architecture, and digital culture, blurring disciplinary boundaries to explore unconventional ways of nurturing institutions and their audiences. This expansive approach is both greenhouse and staging ground: cultivating emergent ideas for wider cultural spheres while assembling many forms of making into seeing, feeling, and imagining anew.
   
