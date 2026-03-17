@@ -73,6 +73,7 @@ Over the past decade, their curatorial projects and artistic collaborations have
 
 # Press
 
+2026 | [James Taylor-Foster appointed Para Site's Executive Director](https://www.e-flux.com/announcements/6786936/james-taylor-foster-appointed-executive-director), *e-flux*
 2026 | [【獨家】跨界策展人James Taylor-Foster接掌Para Site 以「共存」精神迎向30週年 | 2026](https://theculturist.hk/2026/03/藝術/【獨家】跨界策展人james-taylor-foster接掌para-site-以「共存」精神/) by 林丰, *The Culturist*
 2026 | [James Taylor-Foster, Para Site’s ‘wild card’ director, on ‘beautiful paradox’ of Hong Kong]([https://www.koozarch.com/podcasts/space-between-podcast](https://www.scmp.com/lifestyle/arts/article/3346461/james-taylor-foster-para-sites-wild-card-director-beautiful-paradox-hong-kong) by Enid Tsui, *South China Morning Post*
 2026 | [Inside *Worldglimpsing*](https://www.stirworld.com/think-opinions-inside-worldglimpsing-worlding-and-roleplay-as-rehearsals-for-the-real-world) by Bansari Paghdar, *Stir*
