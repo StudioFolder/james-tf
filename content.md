@@ -51,7 +51,7 @@ Over the past decade, their curatorial projects and artistic collaborations have
 2025 | [Death-Cleaning with Ann-Sofie Back](https://spikeartmagazine.com/articles/interview-ann-sofie-back), *Spike*
 2024 | [ASMR: A Story of Mika Rottenberg](https://mikarottenberg-antimatterfactory.com/asmr/media/mb6sfewb), Museum Tinguely
 2024 | [Vaginal Davis at Moderna Museet](https://spikeartmagazine.com/articles/review-vaginal-davis-moderna-museet-stockholm), *Spike* #80 – *The State of the Arts*
-2024 | [Gutted: A Sympathetic Primer in Six Parts](https://www.koozarch.com/author/james-taylor-foster) [(.pdf reader)](https://drive.google.com/file/d/1NZS4ComSnv4T-tqWk160sOC6CyzpmuYw/view?pli=1), *Koozarch*
+2024 | [Gutted: A Sympathetic Primer in Six Parts](https://www.koozarch.com/author/james-taylor-foster) + [reader](https://drive.google.com/file/d/1NZS4ComSnv4T-tqWk160sOC6CyzpmuYw/view?pli=1), *Koozarch*
 2023 | [Lisa Tan's "Dodge and/or Burn"](https://www.e-flux.com/criticism/575585/lisa-tan-s-dodge-and-or-burn), *e-flux Criticism*
 2023 | [ASMRology](https://www.permanentbeta.network/episode/206), *Permanent Beta*, Fotomuseum Winterthur
 2023 | [*Royal Chambers*, Wang & Söderström](https://ao-publishing.com/product/royal-chambers-wang-soderstrom/), Arvinius + Orpheus
