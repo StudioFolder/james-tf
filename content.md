@@ -99,7 +99,7 @@ Over the past decade, their curatorial projects and artistic collaborations have
 
 ## Speaking
 
-For speaking inquiries, please contact this [address](mailto:hej@james.tf) to be connected with an agency.
+For speaking inquiries, please contact [Propela](https://www.propela.co.uk/contact-details-for-propela).
 
 ## Portrait
 
