@@ -91,8 +91,8 @@ Over the past decade, their curatorial projects and artistic collaborations have
 2022 | [Giulia Poerio: The truth behind the tingles of ASMR](https://www.newscientist.com/video/2324774-giulia-poerio-the-truth-behind-the-tingles-of-asmr/), *New Scientist*
 2022 | [The weird sensory thrill of ASMR](https://podcasts.apple.com/se/podcast/economist-podcasts/id151230264?i=1000561042225) / [The curious pleasures of ASMR](https://www.economist.com/culture/2022/05/13/the-curious-pleasures-of-asmr), *The Economist Podcast* / *The Economist*
 2022 | [ASMR proves unexpectedly relevant to design](https://www.ribaj.com/culture/review-weird-sensation-feels-good-design-museum-asmr) by Pamela Buxton, *RIBA Journal*
-2022 | [*Scaffold* Episode 61: James Taylor Foster](https://architecturefoundation.org.uk/news/scaffold-episode-61-james-taylor-foster) presented by Matthew Blunderfield, *Architecture Foundation*
-2021 | [Series 2, Episode 2: James Taylor-Foster](https://open.spotify.com/episode/2NuhrrmibUqybfcbSjSuNm) presented by Hamza Yassin, *Get Birding*
+2022 | [*Scaffold* Episode 61](https://architecturefoundation.org.uk/news/scaffold-episode-61-james-taylor-foster) presented by Matthew Blunderfield, *Architecture Foundation*
+2021 | [Series 2, Episode 2](https://open.spotify.com/episode/2NuhrrmibUqybfcbSjSuNm) presented by Hamza Yassin, *Get Birding*
 2021 | [Studio Ossidiana: Utomhusverket 2021](https://www.e-flux.com/events/437835/studio-ossidiana-utomhusverket-2021/) documentary film by ArkDes, *e-flux Live*
 2020 | [This way for brain tingles: ASMR gets a shiver-inducing exhibition](https://www.theguardian.com/artanddesign/2020/mar/31/this-way-for-a-braingasm-asmr-gets-a-tingly-exhibition) by Oliver Wainwright, *The Guardian*
 2019 | [*Cruising Pavilion* Considers the Architecture of Queer Sex from Grindr to Glory Holes](https://archive.pinupmagazine.org/articles/essay-cruising-pavilion-gay-sex-public-space-michael-bullock) by Michael Bullock, *PIN-UP*
