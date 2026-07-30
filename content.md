@@ -43,7 +43,7 @@ Over the past decade, their curatorial projects and artistic collaborations have
 
 # Writing
 
-2026 | [when the faggots leave their nest](https://buttmagazine.com/library/butt-38/), *BUTT* #38
+2026 | [when the faggots leave their nest](https://buttmagazine.com/library/butt-38/), *BUTT* #38; [_Sex Al Fresco_](https://buttmagazine.com/blog/sex-al-fresco/)
 2026 | [Tobias Bradford's "Collecting Shells"](https://www.e-flux.com/criticism/6782383/tobias-bradford-s-collecting-shells), *e-flux Criticism*
 2025 | [Trevor Yeung's "Courtyard of Detachments"](https://www.e-flux.com/criticism/6782313/trevor-yeung-s-courtyard-of-detachments), *e-flux Criticism*
 2025 | [19th Venice Architecture Biennale, “Intelligens. Natural. Artificial. Collective.”](https://www.e-flux.com/criticism/672241/19th-venice-architecture-biennale-intelligens-natural-artificial-collective), *e-flux Criticism*
