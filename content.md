@@ -18,8 +18,8 @@ Over the past decade, their curatorial projects and artistic collaborations have
 
 # Projects
 
-2026-27 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://www.e-flux.com/announcements/674326/worldglimpsing) #2 — Nieuwe Instituut (Rotterdam)
-2026 | [Elsewhere in Me](https://www.e-flux.com/announcements/6787514/elsewhere-in-me-live-art-in-the-city) feat. Yim Sui Fong, River Lin, Tong Wenmin, Justin Talplacido Shoulder (Phasmahammer); curated by Celia Ho, Jessie Kwok — Para Site (Hong Kong)
+2026-27 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://nieuweinstituut.nl/en/projects/worldglimpsing) #2 — Nieuwe Instituut (Rotterdam)
+2026 | [Elsewhere in Me](https://www.e-flux.com/announcements/6787514/elsewhere-in-me-live-art-in-the-city) feat. Yim Sui Fong, River Lin's [My Body is a Para Site](https://www.para-site.art/programme/river-lin-my-body-is-a-para-site/), Tong Wenmin's [Towards Solace](https://www.para-site.art/programme/tong-wenmin-towards-solace/), Justin Talplacido Shoulder (Phasmahammer); curated by Celia Ho, Jessie Kwok — Para Site (Hong Kong)
 2026 | [Unsubscribe All!](https://www.e-flux.com/announcements/6787822/2026-international-conference-and-workshops-for-arts-professionals) – Para Site International Conference and Workshops for Arts Professionals feat. Stanley Qiufan Chen 陳楸帆, Iris Long 龍星如, Bahar Noorizadeh, Clara Che Wei Peh 白其薇, Sophie Penkethman-Young, Charis Poon 潘雋希, Winnie Soon 孫詠怡, Ziyang Wu 武子楊, Günseli Yalcinkaya, Liam Young, Mara Karagianni, Ashley Lee Wong; convened by Yuanyu Li, Stefan Luk — Para Site (Hong Kong)
 2025- | [Play Overlay](https://arkdes.se/en/calendar/play-overlay/) by Teo Ala-Ruona — ArkDes × MDT with Zodiak, Frame Contemporary Art Finland, Arts Promotion Centre Finland
 2025-26 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://arkdes.se/en/exhibitions/worldglimpsing/) #1 × [Introduction](https://youtu.be/u6aXTb4-ctM?si=MuLLQ0soO0pEOYgB) — ArkDes/Moderna Museet (Stockholm)
