@@ -18,12 +18,12 @@ Over the past decade, their curatorial projects and artistic collaborations have
 
 # Projects
 
-2026-27 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://nieuweinstituut.nl/en/projects/worldglimpsing) Chapter II — Nieuwe Instituut (Rotterdam)
+2026-27 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://nieuweinstituut.nl/en/projects/worldglimpsing) II — Nieuwe Instituut (Rotterdam)
 2026 | [Para Site is Live](https://www.para-site.art/programme/para-site-is-live/) with [Hong Kong Community Radio](https://hkcr.live/blog/recappara-site-is-live) — Para Site (Hong Kong)
 2026 | [Elsewhere in Me](https://www.e-flux.com/announcements/6787514/elsewhere-in-me-live-art-in-the-city) feat. Yim Sui Fong, River Lin's [My Body is a Para Site](https://www.para-site.art/programme/river-lin-my-body-is-a-para-site/), Tong Wenmin's [Towards Solace](https://www.para-site.art/programme/tong-wenmin-towards-solace/), Justin Talplacido Shoulder (Phasmahammer); curated by Celia Ho, Jessie Kwok — Para Site (Hong Kong)
-2026 | [Unsubscribe All!](https://www.e-flux.com/announcements/6787822/2026-international-conference-and-workshops-for-arts-professionals) – Para Site International Conference and Workshops for Arts Professionals convened by Yuanyu Li, Stefan Luk — Para Site (Hong Kong)
+2026 | [Unsubscribe All!](https://www.e-flux.com/announcements/6787822/2026-international-conference-and-workshops-for-arts-professionals) – Para Site International Conference & Workshops for Arts Professionals; convened by Yuanyu Li, Stefan Luk — Para Site (Hong Kong)
 2025- | [Play Overlay](https://arkdes.se/en/calendar/play-overlay/) by Teo Ala-Ruona — ArkDes × MDT with Zodiak, Frame Contemporary Art Finland, Arts Promotion Centre Finland
-2025-26 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://arkdes.se/en/exhibitions/worldglimpsing/) Chapter I × [Introduction Film](https://youtu.be/u6aXTb4-ctM?si=MuLLQ0soO0pEOYgB); [talk at Bangkok Kunsthalle](https://youtu.be/bqwphBEkXDE?si=BIHaFWtGX6_bm0X9); [talk at _The Conference_](https://youtu.be/snqZGcKDT9M?si=TCg0CweAJOYII93C) — ArkDes/Moderna Museet (Stockholm)
+2025-26 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://arkdes.se/en/exhibitions/worldglimpsing/) Chapter I × [Introduction Film](https://youtu.be/u6aXTb4-ctM?si=MuLLQ0soO0pEOYgB); [Bangkok Kunsthalle](https://youtu.be/bqwphBEkXDE?si=BIHaFWtGX6_bm0X9); [The Conference](https://youtu.be/snqZGcKDT9M?si=TCg0CweAJOYII93C) — ArkDes/Moderna Museet (Stockholm)
 2025 | [《感官怪奇：走進ASMR的世界》](https://arkdes.se/en/news/weird-sensation-feels-good-tours-to-hong-kong/) — ArkDes × the Design Museum with Gate 33/AIRSIDE (Hong Kong)
 2024- | [MEATRACK](https://www.rigaartweek.com/en-events/meatrack-jtf-x-eter) by jtf × ĒTER, supported by Weekday (Paris, 2024; Rīga, 2025)
 2024 | [The New ArkDes](https://www.e-flux.com/announcements/623179/reopening-in-stockholm) — ArkDes (Stockholm)
