@@ -18,7 +18,7 @@ Over the past decade, their curatorial projects and artistic collaborations have
 
 # Projects
 
-2026-27 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://nieuweinstituut.nl/en/projects/worldglimpsing) Chapter II × [*OUR BR00D* by OMSK Social Club](https://nieuweinstituut.nl/en/projects/worldglimpsing/our-br00d) — Nieuwe Instituut (Rotterdam)
+2026-27 | [Worldglimpsing: Roleplay and the Design of Alternate Realities](https://nieuweinstituut.nl/en/projects/worldglimpsing) Chapter II × [*OUR BR00D* by OMSK Social Club](https://nieuweinstituut.nl/en/projects/worldglimpsing/our-br00d) × [*Volume* #70: Worldglimpsing](https://archis.org/publications/volume-70-worldglimpsing/) — Nieuwe Instituut (Rotterdam)
 2026 | [Para Site is Live](https://www.para-site.art/programme/para-site-is-live/) with [Hong Kong Community Radio](https://hkcr.live/blog/recappara-site-is-live) — Para Site (Hong Kong)
 2026 | [Elsewhere in Me](https://www.e-flux.com/announcements/6787514/elsewhere-in-me-live-art-in-the-city) feat. River Lin's [_My Body is a Para Site_](https://www.para-site.art/programme/river-lin-my-body-is-a-para-site/), Tong Wenmin's [_Towards Solace_](https://www.para-site.art/programme/tong-wenmin-towards-solace/), Justin Talplacido Shoulder (Phasmahammer), Yim Sui Fong; curated by Celia Ho, Jessie Kwok — Para Site (Hong Kong)
 2026 | [Unsubscribe All!](https://www.e-flux.com/announcements/6787822/2026-international-conference-and-workshops-for-arts-professionals) – Para Site International Conference & Workshops for Arts Professionals; convened by Yuanyu Li, Stefan Luk — Para Site (Hong Kong)
@@ -46,6 +46,7 @@ Over the past decade, their curatorial projects and artistic collaborations have
 
 # Writing
 
+2026 | [Worldglimpsing](https://archis.org/publications/volume-70-worldglimpsing/), *Volume* #70
 2026 | [when the faggots leave their nest](https://buttmagazine.com/library/butt-38/), *BUTT* #38; [_Sex Al Fresco_](https://buttmagazine.com/blog/sex-al-fresco/)
 2026 | [Tobias Bradford's "Collecting Shells"](https://www.e-flux.com/criticism/6782383/tobias-bradford-s-collecting-shells), *e-flux Criticism*
 2025 | [Trevor Yeung's "Courtyard of Detachments"](https://www.e-flux.com/criticism/6782313/trevor-yeung-s-courtyard-of-detachments), *e-flux Criticism*
